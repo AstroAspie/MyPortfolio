@@ -6,13 +6,11 @@ function generateTarger() {
   return Math.floor(Math.random() * 10);
 }
 
-
 function compareGuesses(human, computer, answer) {
-  var winner;
-  if ((human === computer || (Math.abs(human) < Math.abs(computer))) || human === answer) {
-    winner = true;
-  } else {
-    winner = false;
+  var result = false;
+  if ((human === computer || (Math.abs(human) < Math.abs(computer)))) {
+    result = true;
   }
-  return winner;
+  return result;
 }
+
