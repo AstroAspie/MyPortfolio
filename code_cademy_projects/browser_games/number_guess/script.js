@@ -3,7 +3,7 @@ let computerScore = 0;
 let currentRoundNumber = 1;
 
 /* Generate target number for guess */
-const generateTarger = () => {
+const generateTarget = () => {
   return Math.floor(Math.random() * 10);
 };
 
@@ -16,7 +16,7 @@ const compareGuesses = (human, computer, answer) => {
   return result;
 };
 
-let updateScore = (winner="") => {
+let updateScore = (winner = "") => {
   switch (winner) {
     case 'human':
       humanScore++;
@@ -32,4 +32,3 @@ let updateScore = (winner="") => {
 const incrementRoundNumber = () => {
   currentRoundNumber++;
 };
-
