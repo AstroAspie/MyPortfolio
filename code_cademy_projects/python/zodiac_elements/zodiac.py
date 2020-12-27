@@ -16,8 +16,11 @@ def user_select():
 def zodiac_element():
   element = input("Enter Element: ")
   if element != "exit":
-    print(zodiac_elements[element])
-    zodiac_element()
+    try:
+      print(zodiac_elements[element])
+      zodiac_element()
+    except KeyError:
+      print(element + " is not a zodiac element")
   else:
     exit(0)
 
