@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+  ],
+  "settings": {
+    "workbench.colorTheme": "BeardedTheme Black & Gold",
+    "workbench.preferredDarkColorTheme": "BeardedTheme Black & Gold"
+  }
+}
