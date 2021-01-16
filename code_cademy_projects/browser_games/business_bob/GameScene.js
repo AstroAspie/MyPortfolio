@@ -120,10 +120,6 @@ class GameScene extends Phaser.Scene {
     this.endGame();
   }
 
-
-
-
-
     // Helper functions to move Bob in 4 directions
     function moveBobRight() {
       gameState.player.flipX = false;

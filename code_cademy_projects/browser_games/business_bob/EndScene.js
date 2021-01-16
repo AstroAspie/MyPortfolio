@@ -11,7 +11,7 @@ class EndScene extends Phaser.Scene {
     screen = this.add.image(0, 0, 'end').setOrigin(0);
 
     // Add code to reset global variables
-    let score = 0;
+    score = 0;
 
     // Reset sprite positions
     gameState.numCoordinates = {};
