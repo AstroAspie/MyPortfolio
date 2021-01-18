@@ -7,13 +7,16 @@ h1 {
   color: turquoise;
 }
 
+body {
+  margin: 64px;
+}
 
 .project_container {
   background-color:rgba(0, 0, 0, 0.172);
   display: inline-flex;
   border: 1px solid black;
   padding: 10px 16px;
-  margin: 6px;
+  margin: 14px 26px;
   width: 288px;
   height: 184px;
 }
