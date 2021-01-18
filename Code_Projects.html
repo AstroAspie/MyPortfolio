@@ -5,7 +5,8 @@
 <head>
   <meta charset=utf-8 />
   <title>Alex Smith | Projects</title>
-  <link rel="stylesheet" href="css/home.css" />
+  <link rel="stylesheet" href="styles/home.css" />
+  <script src="scripts/base.js"></script>
 </head>
 
 <body>
@@ -21,43 +22,61 @@
     <section id="dev_banner">
 
     </section>
+    <section class="overview">
+
+    </section>
     <br />
     <section id="web_dev">
       <h1>Web Development / FullStack & Browser Games</h1>
       <div id="browser_games">
         <h2>Browser Games | Phaser.io Javascript</h2>
-        <div>
+        <div class="project_container">
+          <a href="code_demos/codecademy_projects/browser_games/business_bob/index.html">
+            <img src="./images/business_bob.png" alt="business_bob" width="120" height="184" /> 
+          </a>
           <article>
-            <a href="code_cademy_projects/browser_games/business_bob/index.html">
-              <img src="/images/business_bob.png" alt="business_bob" width="100" height="100" /> 
-            </a>
             <h3>Business Bob</h3>
-              
+            <p><strong>Language: </strong>HTML/CSS/JS</p>
+            <p><strong>Version: </strong>1.0.0</p>
+            <button id="btn1" onclick="openNew(`code_demos/codecademy_projects/browser_games/business_bob/index.html`);">PLAY</button>
+            <button id="btn2">DOCS</button>
           </article>
         </div>
-        <div>
-          <h3>Form Story</h3>
-          <a href="code_cademy_projects/browser_games/form_story/index.html">
-            <img src="form_story.png" alt="form_story" />
+        <div class="project_container">
+          <a href="code_demos/codecademy_projects/browser_games/mole_hunt/index.html">
+            <img src="./images/mole_hunt.png" alt="mole_hunt" width="120" height="184"/>
           </a>
+          <article>
+            <h3>Mole Hunt</h3>
+            <p><strong>Language: </strong>HTML/CSS/JS</p>
+            <p><strong>Version: </strong>1.0.0</p>
+            <button id="btn1" onclick="openNew(`code_demos/codecademy_projects/browser_games/mole_hunt/index.html`);">PLAY</button>
+            <button id="btn2">DOCS</button>
+          </article>
         </div>
-        <div>
-          <h3>Mole Hunt</h3>
-          <a href="code_cademy_projects/browser_games/mole_hunt/index.html">
-            <img src="mole_hunt.png" alt="mole_hunt" />
+        <div class="project_container">
+          <a href="code_demos/codecademy_projects/browser_games/number_guess/index.html">
+            <img src="./images/number_guess.png" alt="number guess" width="120" height="184"/>
           </a>
+          <article>
+            <h3>Number Guess</h3>
+            <p><strong>Language: </strong>HTML/CSS/JS</p>
+            <p><strong>Version: </strong>1.0.0</p>
+            <button id="btn1" onclick="openNew(`code_demos/codecademy_projects/browser_games/number_guess/index.html`);">PLAY</button>
+            <button id="btn2">DOCS</button>
+          </article>
         </div>
-        <div>
-          <h3>Number Guess</h3>
-          <a href="code_cademy_projects/browser_games/number_guess/index.html">
-            <img src="number_guess" alt="number guess" />
+        <div class="project_container">
+          <a href="code_demos/codecademy_projects/browser_games/treasure_hunter/index.html">
+            <img src="./images/treasure_hunter.png" alt="treasure_hunter" width="120" height="184"/>
           </a>
-        </div>
-        <div>
-          <h3>Treasure Hunt</h3>
-          <a href="code_cademy_projects/browser_games/treasure_hunter/index.html">
-            <img src="treasure_hunter" alt="treasure_hunter" />
-          </a>
+          <article>
+            <h3>Treasure Hunt</h3>
+            <p><strong>Language: </strong>HTML/CSS/JS</p>
+            <p><strong>Version: </strong>1.0.0</p>
+            <button id="btn1" onclick="openNew(`code_demos/codecademy_projects/browser_games/treasure_hunter/index.html`);">PLAY</button>
+            <button id="btn2">DOCS</button>
+          </article>
         </div>
       </div>
     </section>

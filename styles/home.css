@@ -1,0 +1,56 @@
+* {
+  margin: 0px;
+  border: 0px;
+}
+
+h1 {
+  color: turquoise;
+}
+
+
+.project_container {
+  background-color:rgba(0, 0, 0, 0.172);
+  display: inline-flex;
+  border: 1px solid black;
+  padding: 10px 16px;
+  margin: 6px;
+  width: 288px;
+  height: 184px;
+}
+
+.project_container article {
+  display: inline-block;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  padding: 2px 12px;
+  max-width: 220px;
+}
+
+.project_container button {
+  margin: 74px 4px 7px 12px;
+  border: 2px solid black;
+  color: white;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+
+#btn1 {
+  background-color: red;  
+}
+
+#btn2 {
+  background-color: blue;
+  border-radius: 12px;
+}
+
+button:active {
+  background: #e5e5e5;
+  -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+     -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+          box-shadow: inset 0px 0px 5px #c1c1c1;
+   outline: none;
+}
+
+article p {
+  font-size: 11px;
+}
