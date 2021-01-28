@@ -1,0 +1,11 @@
+/* Navigation styles */
+#top_nav {
+  font-size: 14px;
+}
+
+#top_nav a{
+  color: rgba(0, 200, 147, 1.0);
+  padding: 7px 24px;
+  margin: 4px 6px;
+  background-color: rgba(255, 0, 0, 0.4);
+}

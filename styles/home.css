@@ -9,10 +9,11 @@ h1 {
 
 body {
   margin: 64px;
+  background-color: rgba(140, 140, 140, 0.7);
 }
 
 .project_container {
-  background-color:rgba(0, 0, 0, 0.172);
+  background-color:rgba(255, 255, 255, 0.172);
   display: inline-flex;
   border: 1px solid black;
   padding: 10px 16px;
@@ -57,3 +58,4 @@ button:active {
 article p {
   font-size: 11px;
 }
+
