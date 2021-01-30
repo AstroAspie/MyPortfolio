@@ -7,21 +7,19 @@
   <title>Alex Smith | Portfolio</title>
   <link rel="stylesheet" href="styles/home.css" />
   <link rel="stylesheet" href="styles/nav.css" />
+  <script src="scripts/base.js"></script>
 </head>
 
 <body>
   <header>
-    <section>
-      <div id="banner">
-        
-      </div>
-    </section>
     <div id="top_nav">
       <a href="home.html">Home</a>
       <a href="Academics.html">Academics</a>
       <a href="Code_Projects.html">Projects</a>
       <a href="Contact_Me.html">Contact Me</a>
-      <span id="menu_tab"><p>MENU</p></span>
+      <div id="menu">
+        <span id="menu_tab"><p>MENU</p></span>
+      </div>
     </div>
   </header>
 
@@ -30,32 +28,39 @@
       <!-- Add introduction video -->
 
     </section>
-    <br /> 
+    <br />
     <section id="web" class="project_container">
-      <article>
-        <h2>Web Development</h2>
-        <br />
-        <img src="images/tool_logos/1200px-HTML5_logo_and_wordmark.svg.png" width="50"/>
-        <img src="images/tool_logos/CSS3_logo_and_wordmark.svg.png" width="36" />
-        <img src="images/tool_logos/Javascript.png" width="40" />
-        <img src="images/tool_logos/php.png" width="70" />
-      </article>
+      <a href="web_development.html">
+        <article>
+          <h2>Web Development</h2>
+          <br />
+          <img src="images/tool_logos/1200px-HTML5_logo_and_wordmark.svg.png" width="50"/>
+          <img src="images/tool_logos/CSS3_logo_and_wordmark.svg.png" width="36" />
+          <img src="images/tool_logos/Javascript.png" width="40" />
+          <img src="images/tool_logos/php.png" width="70" />
+        </article>
+      </a>
     </section>
     <br />
     <section id="games_development" class="project_container">
-      <article>
-        <h2>Game Development and Simulations</h2>
-        <p><strong>Languages: </strong>C#/C/C++/Python</p>
-        <p><strong>Tools/Libraries: </strong>
-          Unity, Unreal Engine, Cryengine, OpenGL, Pygame, Blender, Maya, Gimp
-        </p>
-      </article>
+      <a href="gamedev.html">
+        <article>
+          <h2>Game Development and Simulations</h2>
+          <p><strong>Languages: </strong>C#/C/C++/Python</p>
+          <br />
+          <img src="images/tool_logos/unity.png" width="40">
+          <img src="images/tool_logos/ue4.png" width="35">
+          <img src="images/tool_logos/blender_community_badge_white.png" width="35">
+          <img src="images/tool_logos/opengl.png" width="38" id="opengl_img">
+          <img src="images/tool_logos/maya.png" width="40">
+        </article>
+      </a>
     </section>
     <br />
     <section id="cyber_sec" class="project_container">
       <article>
         <h2>Cyber Security</h2>
-        <p><strong>Languages: </strong>C#/C/C++/Python</p>
+        <p><strong>Languages: </strong>C#/C/C++/Python/Bash</p>
       </article>
     </section>
     <br />

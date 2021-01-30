@@ -7,13 +7,23 @@ h1 {
   color: turquoise;
 }
 
+header {
+  background-color: black;
+}
+
 body {
   margin: 64px;
-  background-color: rgba(140, 140, 140, 0.7);
+}
+
+a {
+  color: black;
+  border-radius: 5px;
+  text-shadow: 2px 1px 0 rgba(40,40,40,1);
 }
 
 .project_container {
-  background-color:rgba(255, 255, 255, 0.172);
+  box-shadow: 2px 2px 0 gray;
+  background-color:rgba(140, 140, 140, 0.172);
   display: inline-flex;
   border: 1px solid black;
   padding: 10px 16px;
@@ -38,8 +48,12 @@ body {
   border-radius: 50%;
 }
 
+.project_container:hover {
+  box-shadow: 5px 5px 0 gray;
+}
+
 #btn1 {
-  background-color: red;  
+  background-color: red;
 }
 
 #btn2 {
@@ -59,3 +73,11 @@ article p {
   font-size: 11px;
 }
 
+#top_nav {
+  background-color: rgba(40, 40, 40, 1);
+  padding: 20px 40px 10px;
+  display: inline-block;
+  box-sizing: content-box;
+  position: fixed;
+  top: 10px;
+}
