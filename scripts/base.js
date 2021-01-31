@@ -5,5 +5,5 @@ const openNew = link => {
 
 //
 $(".project_container").hover(function() {
-  $(this)
+  $(this).css("display: hidden;");
 });
