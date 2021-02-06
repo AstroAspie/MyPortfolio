@@ -4,7 +4,8 @@
   display: inline-block;
   text-align: center;
   margin: 0 auto;
-  float: right;
+  float:left;
+  left: 70px;
   position: relative;
   right: 120px;
 }

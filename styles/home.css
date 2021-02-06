@@ -4,16 +4,28 @@
 }
 
 h1 {
-  color: turquoise;
+  color: red;
 }
 
-header {
-  background-color: black;
+
+.title {
+  text-transform: uppercase;
 }
 
 body {
-  margin: 64px;
+    background-color: rgba(0, 0, 0, 1);
 }
+
+header {
+  background-image: url("../images/space_background.jpg");
+  background-position: center center;
+  background-size: cover;
+  position: relative;
+  margin-top: 120px;
+  height: 240px;
+  z-index: -1;
+}
+
 
 a {
   color: black;
@@ -22,9 +34,9 @@ a {
 }
 
 .project_container {
-  box-shadow: 2px 2px 0 gray;
-  background-color: rgba(140, 140, 140, 0.172);
-  display: inline-flex;
+  box-shadow: 2px 2px 0 red;
+  background-color: rgba(140, 140, 140, 1);
+  display: inline-block;
   border: 1px solid black;
   padding: 10px 16px;
   margin: 14px 26px;
@@ -50,7 +62,7 @@ a {
 }
 
 .project_container:hover {
-  box-shadow: 5px 5px 0 gray;
+  box-shadow: 5px 5px 0 red;
 }
 
 #btn1 {
@@ -72,13 +84,4 @@ button:active {
 
 article p {
   font-size: 11px;
-}
-
-#top_nav {
-  background-color: rgba(40, 40, 40, 1);
-  padding: 20px 40px 10px;
-  display: inline-block;
-  box-sizing: content-box;
-  position: fixed;
-  top: 10px;
 }
