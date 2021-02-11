@@ -10,18 +10,16 @@ h1 {
 #set1 {
   display: inline-flex;
   position: absolute;
-  margin: 560 auto;
-  top: 120px;
-  left: 100px;
+  top: 410px;
+  left: 89px;
   min-width: 350px;
 }
 
 #set2 {
   display: inline-flex;
   position: relative;
-  margin: 560 auto;
-  top: 360px;
-  left: 100px;
+  top: 240px;
+  left: 89px;
   min-width: 350px;
 }
 
@@ -30,7 +28,7 @@ h1 {
   background-color: rgba(140, 140, 140, 1);
   border: 1px solid black;
   padding: 10px 16px;
-  margin-left: 24px;
+  margin-left: 54px;
   margin-bottom: 40px;
   width: 288px;
   height: 184px;

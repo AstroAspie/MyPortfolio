@@ -1,5 +1,7 @@
 #top_nav header {
   position: fixed;
+  top: 0px;
+  margin: 0px auto;
   background-color: #000000;
   border-bottom: 3px solid #FF174F;
   width: 100%;

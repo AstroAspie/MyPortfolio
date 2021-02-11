@@ -1,0 +1,28 @@
+* {
+  margin: 0px;
+  border: 0px;
+}
+
+#banner {
+  position: relative;
+  background-image: url("../images/space_background.jpg");
+  top: 24px;
+  width: 100%;
+  margin: 50px auto;
+  height: 300px;
+}
+
+#banner h1 {
+  color: gold;
+  text-align: center;
+  position: relative;
+  top: 70px;
+  font-size: 124px;
+  font-stretch: expanded;
+  text-transform: uppercase;
+  font-family: 'Big Shoulders Display', cursive;
+}
+
+.dev_tools {
+  visibility: hidden;
+}
