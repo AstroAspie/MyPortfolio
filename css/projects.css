@@ -6,14 +6,16 @@
 #banner {
   position: relative;
   background-image: url("../images/space_background.jpg");
-  top: 24px;
+  top: 21px;
   width: 100%;
   margin: 50px auto;
   height: 300px;
 }
 
 #banner h1 {
-  color: gold;
+  color: lavender;
+  text-shadow: 2px white solid;
+  text-decoration: 6px underline double; 
   text-align: center;
   position: relative;
   top: 70px;
