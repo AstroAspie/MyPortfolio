@@ -7,7 +7,7 @@ h1 {
   color: red;
 }
 
-#set1 {
+.set1 {
   display: inline-flex;
   position: absolute;
   top: 410px;
@@ -15,7 +15,7 @@ h1 {
   min-width: 350px;
 }
 
-#set2 {
+.set2 {
   display: inline-flex;
   position: relative;
   top: 240px;
@@ -54,6 +54,28 @@ h1 {
   color: black;
   text-decoration: none;
   text-align: center;
+}
+
+#banner {
+  position: relative;
+  background-image: url("../images/space_background.jpg");
+  top: 21px;
+  width: 100%;
+  margin: 50px auto;
+  height: 300px;
+}
+
+#banner h1 {
+  color: lavender;
+  text-shadow: 2px white solid;
+  text-decoration: 6px underline double;
+  text-align: center;
+  position: relative;
+  top: 70px;
+  font-size: 124px;
+  font-stretch: expanded;
+  text-transform: uppercase;
+  font-family: 'Big Shoulders Display', cursive;
 }
 
 footer {
