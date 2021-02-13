@@ -4,35 +4,56 @@
 }
 
 h1 {
-  color: red;
+  position: relative;
+  left: 3%;
+  color: lightblue !important;
+}
+
+body {
+  background-color: #242424;
+}
+
+hr {
+  position: relative;
+  color: white;
+  width: 93%;
+  height: 2px;
+  left: 3%;
 }
 
 .set1 {
   display: inline-flex;
-  position: absolute;
-  top: 410px;
-  left: 89px;
-  min-width: 350px;
-}
-
-.set2 {
-  display: inline-flex;
   position: relative;
-  top: 240px;
-  left: 89px;
+  top: 24px;
+  left: 24px;
+  width: 100%;
   min-width: 350px;
 }
 
 .project_container {
-  box-shadow: 2px 2px 0 red;
-  background-color: rgba(140, 140, 140, 1);
-  border: 1px solid black;
-  padding: 10px 16px;
-  margin-left: 54px;
-  margin-bottom: 40px;
-  width: 288px;
-  height: 184px;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  text-align: center;
+  background-color: rgba(1, 1, 1, 0);
+  border: 2px solid red;
+  padding: 17px 34px;
+  margin: 20px;
+  width: 180px;
+  height: 270px;
   z-index: 4;
+}
+
+.project_container img {
+  width: 210px;
+  height: 217px;
+  position: relative;
+  top: -10px;
+}
+
+.project_container h2 {
+  position: relative;
+  margin: 2px 7px;
 }
 
 .project_container article {
@@ -42,7 +63,8 @@ h1 {
 }
 
 .project_container:hover {
-  box-shadow: 4px 4px 0 red;
+  border: 2px solid lightblue;
+  z-index: 6;
 }
 
 .project_container p {
@@ -51,12 +73,11 @@ h1 {
 }
 
 .project_container a {
-  color: black;
+  color: white;
   text-decoration: none;
-  text-align: center;
 }
 
-#banner {
+.banner {
   position: relative;
   background-image: url("../images/space_background.jpg");
   top: 21px;
@@ -65,17 +86,70 @@ h1 {
   height: 300px;
 }
 
-#banner h1 {
+.banner h1 {
   color: lavender;
   text-shadow: 2px white solid;
   text-decoration: 6px underline double;
   text-align: center;
   position: relative;
-  top: 70px;
+  top: 28px;
+  left: 0px !important;
   font-size: 124px;
   font-stretch: expanded;
   text-transform: uppercase;
   font-family: 'Big Shoulders Display', cursive;
+}
+
+.banner ul, li {
+  color: white;
+  text-align: center;
+  position: relative;
+  top: 17%;
+  list-style-type: none;
+}
+
+#project_localnav {
+  position: relative;
+  top: 10%;
+}
+
+#project_localnav ul {
+  text-align: center;
+}
+
+#project_localnav li {
+  display: inline;
+  padding: 0px 10px;
+  color: white !important;
+  text-decoration: none;
+}
+
+.welcome {
+  display: block;
+  position: relative;
+  color: white;
+  background-color: rgba(1, 1, 1, 0);
+  border: 2px solid red;
+  padding: 20px;
+  width: 93%;
+  left: 2%;
+  top: 20px;
+  margin-top: 24px
+}
+
+.welcome h1 {
+  text-align: center;
+  font-size: 3em;
+  left: -3px;
+  text-decoration: underline;
+  margin-bottom: 15px;
+}
+
+.welcome_end {
+  text-align: center;
+  text-decoration: underline;
+  font-style: italic;
+  font-size: 1.5em;
 }
 
 footer {

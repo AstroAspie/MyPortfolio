@@ -1,102 +1,100 @@
 <!DOCTYPE html>
 
-<html lang='en'>
+<html lang="en" dir="ltr">
 
-<head>
-  <meta charset=utf-8 />
-  <title>Alex Smith | Projects</title>
-  <link rel="stylesheet" href="css/home.css" type="text/css" />
-  <link rel="stylesheet" href="css/projects.css" type="text/css" />
-  <link rel="stylesheet" href="css/nav.css" type="text/css" />
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@300&display=swap" rel="stylesheet">
-  <script src="scripts/projects.js"></script>
-</head>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="css/home.css" type="text/css" />
+    <link rel="stylesheet" href="css/nav.css" type="text/css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@300&display=swap" rel="stylesheet">
+  </head>
 
-<body>
-  <div id="top_nav">
-    <header>
+  <body>
+
+    <div id="top_nav">
+      <header>
+        <nav>
+          <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="Academics.html">Academics</a></li>
+            <li><a href="Projects_home.html">Projects</a></li>
+            <li><a href="Contact_Me.html">Contact Me</a></li>
+          </ul>
+        </nav>
+      </header>
+    </div>
+
+    <div class="banner">
+      <h1>Projects</h1>
+    </div>
+    <div id="project_localnav">
       <nav>
         <ul>
-          <li><a href="home.html">Home</a></li>
-          <li><a href="Academics.html">Academics</a></li>
-          <li><a href="Projects.html">Projects</a></li>
-          <li><a href="Contact_Me.html">Contact Me</a></li>
+          <li><a href="#web_dev">// Web-Dev</a></li>
+          <li><a href="#game_dev">// Game-Dev</a></li>
         </ul>
       </nav>
-    </header>
-  </div>
+    </div>
 
-  <div id="banner">
-    <h1>Projects</h1>
-  </div>
+    <div class="welcome">
+      <h1>Brief</h1>
+      <p>
+        From building intricate web applications and video games to the mundane
+        tasks of drawing wireframes, I love everything code! Quite honestly, I code
+        in my spare time simply to keep my brain active and keep learning, failing
+        and building on my skills as a coder.
+        <br />
+        This page hosts absolutely all of my projects - past - present - future.
+        Each project page contains feature overviews, current progress, collaborators,
+        the odd wireframe and occasionaly some algorithms.
+        <br />
+        I truly hope you find these displays of my skill sets engaging and appealing.
+        <br />
+        <br />
+        <span class="welcome_end">Happy Browsing!</span>
+      </p>
+    </div>
 
-  <main>
-    <div id="set1">
-      <section id="web" class="project_container">
-        <a href="webdev_home.html">
-          <article>
-            <h2>Web Development</h2>
-            <div class="dev_tools">
-              <img src="images/tool_logos/1200px-HTML5_logo_and_wordmark.svg.png" width="50" />
-              <img src="images/tool_logos/CSS3_logo_and_wordmark.svg.png" width="36" />
-              <img src="images/tool_logos/Javascript.png" width="40" />
-              <img src="images/tool_logos/php.png" width="70" />
-            </div>
-          </article>
-        </a>
+    <main>
+      <div id="web_dev" class="banner">
+        <h1>Web Developer</h1>
+      </div>
+      <h1>Browser Games</h1>
+      <hr noshade>
+      <section id="browser_games" class="set1">
+        <div id="business_bob" class="project_container">
+          <a href="code_demos/codecademy_projects/browser_games/business_bob/index.html">
+            <article>
+              <a href="code_demos/codecademy_projects/browser_games/business_bob/index.html">
+                <img src="images/business_bob.png" width="70"/>
+              <h2>Business Bob</h2>
+            </article>
+          </a>
+        </div>
+        <div id="treasure_hunt" class="project_container">
+          <a href="code_demos/web_dev/browser_game/treasure_hunter/index.html">
+            <article>
+              <a href="code_demos/web_dev/browser_game/treasure_hunter/index.html">
+                <img src="images/treasure_hunter.png" width="70"/>
+              <h2>Treasure Hunter</h2>
+            </article>
+          </a>
+        </div>
+        <div id="mole_hunt" class="project_container">
+          <a href="code_demos/web_dev/browser_game/mole_hunt/index.html">
+            <article>
+              <a href="code_demos/web_dev/browser_game/mole_hunt/index.html">
+                <img src="images/mole_hunt.png" width="70"/>
+              <h2>Mole Unearther</h2>
+            </article>
+          </a>
+        </div>
       </section>
-    <br />
-    <div>
-      <div id="games_development" class="project_container">
-        <a href="gamedev_home.html">
-          <article>
-            <h2>Game Development and Simulations</h2>
-            <p><strong>Languages: </strong>C#/C/C++</p>
-            <br />
-            <img src="images/tool_logos/unity.png" width="40">
-            <img src="images/tool_logos/ue4.png" width="35">
-            <img src="images/tool_logos/blender_community_badge_white.png" width="35">
-            <img src="images/tool_logos/opengl.png" width="38" id="opengl_img">
-            <img src="images/tool_logos/maya.png" width="40">
-          </article>
-        </a>
-      </div>
-    </div>
-      <br />
-      <div id="cyber_sec" class="project_container">
-        <article>
-          <h2>Cyber Security</h2>
-          <p><strong>Languages: </strong>C#/C/C++/Python/Bash</p>
-        </article>
-      </div>
-    </div>
-    <div id="set2">
-      <div id="codecademy" class="project_container">
-        <article>
-          <h2>Codecademy</h2>
-        </article>
-      </div>
-      <br />
-      <div id="freecodecamp" class="project_container">
-        <article>
-          <h2>FreeCodeCamp</h2>
-        </article>
-      </div>
-      <br />
-      <div id="misc" class="project_container">
-        <article>
-          <h2>Miscellaneous Projects</h2>
-        </article>
-      </div>
-    </div>
-  </main>
-  <footer>
-    <!-- Add social media links & copyright (include codecademy chapter & leader badge)-->
-    <ul>
+    </main>
 
-    </ul>
-  </footer>
-</body>
+  </body>
 
 </html>
