@@ -22,16 +22,18 @@ hr {
 }
 
 .set1 {
-  display: inline-flex;
+  display: flex;
+  justify-content: center;
   position: relative;
   top: 24px;
   left: 24px;
+  flex-wrap: wrap;
   width: 100%;
   min-width: 350px;
 }
 
 .project_container {
-  display: flex;
+  display: inline-block;
   position: relative;
   justify-content: center;
   text-align: center;
@@ -49,6 +51,7 @@ hr {
   height: 217px;
   position: relative;
   top: -10px;
+  right: 26px
 }
 
 .project_container h2 {
