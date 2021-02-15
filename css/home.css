@@ -21,6 +21,10 @@ hr {
   left: 3%;
 }
 
+#main {
+  overflow-x: hidden;
+}
+
 .set1 {
   display: flex;
   justify-content: center;
@@ -34,7 +38,6 @@ hr {
 }
 
 .container {
-  display: inline-block;
   background-color: rgba(1, 1, 1, 0);
   border: 2px solid red;
 }
