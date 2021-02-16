@@ -32,7 +32,6 @@ hr {
   top: 24px;
   left: 24px;
   flex-wrap: wrap;
-  width: 100%;
   min-width: 350px;
   margin-bottom: 100px;
 }
@@ -105,9 +104,15 @@ hr {
   position: relative;
   background-image: url("../images/space_background.jpg");
   top: 21px;
-  width: 100%;
   margin: 50px auto;
   height: 300px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .banner h1 {
