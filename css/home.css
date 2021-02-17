@@ -102,7 +102,6 @@ hr {
 
 .banner {
   position: relative;
-  background-image: url("../images/space_background.jpg");
   top: 21px;
   margin: 50px auto;
   height: 300px;
@@ -113,6 +112,10 @@ hr {
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+
+.backdrop {
+  background-image: url("../images/space_background.jpg");
 }
 
 .banner h1 {
@@ -130,11 +133,12 @@ hr {
 }
 
 .banner ul, li {
-  color: white;
-  text-align: center;
+  color: lavender;
+  text-align: inherit;
   position: relative;
   top: 17%;
   list-style-type: none;
+  opacity: 1;
 }
 
 #project_localnav {
@@ -194,6 +198,15 @@ hr {
   width: 100%;
   margin: 0px auto;
   min-height: 2.5rem;
+}
+
+.social_links {
+  padding: 4px;
+  float: right;
+}
+
+.fa {
+  color: white;
 }
 
 .footer img {
