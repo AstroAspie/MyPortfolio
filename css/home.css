@@ -6,7 +6,7 @@
 h1 {
   position: relative;
   left: 3%;
-  color: lightblue !important;
+  color: lightblue;
 }
 
 body {
@@ -21,27 +21,40 @@ hr {
   left: 3%;
 }
 
-#main {
+.main {
   overflow-x: hidden;
 }
 
-.set1 {
+.container {
   display: flex;
   justify-content: center;
   position: relative;
-  top: 24px;
+  top: 50px;
   left: 24px;
   flex-wrap: wrap;
   min-width: 350px;
   margin-bottom: 100px;
 }
 
-.container {
-  background-color: rgba(1, 1, 1, 0);
-  border: 2px solid red;
+.container h1 {
+  font-size: 2.4rem;
+  position: relative;
+  color: blueviolet;
+  left: -40%;
 }
 
+.container hr {
+  position: relative;
+  color: white;
+  width: 93%;
+  height: 2px;
+  left: -2%;
+}
+
+
 .project {
+  background-color: rgba(1, 1, 1, 0);
+  border: 2px solid red;
   justify-content: center;
   text-align: center;
   padding: 17px 34px;
@@ -102,9 +115,9 @@ hr {
 
 .banner {
   position: relative;
-  top: 21px;
-  margin: 50px auto;
-  height: 300px;
+  top: 71px;
+  margin-bottom: 50px;
+  height: 334px;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -189,14 +202,12 @@ hr {
 /* footer styles */
 
 .footer {
-  position: relative;
   display: inline-block;
   background-color: black;
   border-top: 1px solid red;
   bottom: 0;
   margin-top: 400px;
   width: 100%;
-  margin: 0px auto;
   min-height: 2.5rem;
 }
 
