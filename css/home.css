@@ -1,3 +1,5 @@
+/* Universal styles */
+
 * {
   margin: 0px;
   border: 0px;
@@ -23,10 +25,83 @@ section {
   left: 10%;
 }
 
+
+/* Banner and welcome styles */
+
+.banner {
+  position: relative;
+  top: 71px;
+  margin-bottom: 50px;
+  height: 334px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.backdrop {
+  background-image: url("../images/space_background.jpg");
+}
+
+.banner h1 {
+  color: lavender;
+  text-shadow: 2px white solid;
+  text-decoration: 6px underline double;
+  text-align: center;
+  position: relative;
+  top: 28px;
+  left: 0px !important;
+  font-size: 124px;
+  font-stretch: expanded;
+  text-transform: uppercase;
+  font-family: 'Big Shoulders Display', cursive;
+}
+
+.banner ul, li {
+  color: lavender;
+  text-align: inherit;
+  position: relative;
+  top: 17%;
+  list-style-type: none;
+  opacity: 1;
+}
+
+
+.welcome {
+  display: block;
+  position: relative;
+  color: white;
+  background-color: rgba(1, 1, 1, 0);
+  border: 2px solid red;
+  padding: 20px;
+  top: 60px;
+  margin-top: 24px;
+  margin-bottom: 40px;
+}
+
+.welcome h1 {
+  text-align: center;
+  font-size: 3em;
+  left: -3px;
+  text-decoration: underline;
+  margin-bottom: 15px;
+}
+
+.welcome_end {
+  text-align: center;
+  text-decoration: underline;
+  font-style: italic;
+  font-size: 1.5em;
+}
+
+/* Flex-box containers */
+
 .container {
   display: flex;
   justify-content: center;
-  position: relative;
   top: 50px;
   flex-wrap: wrap;
   min-width: 350px;
@@ -48,6 +123,7 @@ section {
   height: 2px;
 }
 
+/* Project related styles and flexbox items */
 
 .project {
   background-color: rgba(1, 1, 1, 0);
@@ -95,62 +171,6 @@ section {
   text-decoration: none;
 }
 
-.service {
-  text-align: center;
-  align-content: center;
-  justify-content: space-around;
-  margin: 80px 30px 0px 30px;
-  padding: 17px 34px;
-  width: 200px;
-  height: 100px;
-  color: #FFF;
-}
-
-.service h3 {
-  margin: 15px;
-}
-
-.banner {
-  position: relative;
-  top: 71px;
-  margin-bottom: 50px;
-  height: 334px;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.backdrop {
-  background-image: url("../images/space_background.jpg");
-}
-
-.banner h1 {
-  color: lavender;
-  text-shadow: 2px white solid;
-  text-decoration: 6px underline double;
-  text-align: center;
-  position: relative;
-  top: 28px;
-  left: 0px !important;
-  font-size: 124px;
-  font-stretch: expanded;
-  text-transform: uppercase;
-  font-family: 'Big Shoulders Display', cursive;
-}
-
-.banner ul, li {
-  color: lavender;
-  text-align: inherit;
-  position: relative;
-  top: 17%;
-  list-style-type: none;
-  opacity: 1;
-}
-
 #project_localnav {
   position: relative;
   top: 10%;
@@ -167,32 +187,32 @@ section {
   text-decoration: none;
 }
 
-.welcome {
-  display: block;
+.institute {
+  position: absolute;
+  top: 180px;
+}
+
+.certificate {
   position: relative;
-  color: white;
+}
+
+
+.service {
   background-color: rgba(1, 1, 1, 0);
   border: 2px solid red;
-  padding: 20px;
-  top: 60px;
-  margin-top: 24px;
-  margin-bottom: 40px;
+  text-align: center;
+  align-content: center;
+  margin: 140px 100px 255px 100px;
+  padding: 17px 34px;
+  width: 200px;
+  height: 100px;
+  color: #FFF;
 }
 
-.welcome h1 {
-  text-align: center;
-  font-size: 3em;
-  left: -3px;
-  text-decoration: underline;
-  margin-bottom: 15px;
+.service h3 {
+  margin: 15px;
 }
 
-.welcome_end {
-  text-align: center;
-  text-decoration: underline;
-  font-style: italic;
-  font-size: 1.5em;
-}
 
 /* footer styles */
 
@@ -200,7 +220,17 @@ section {
   display: inline-block;
   background-color: black;
   border-top: 1px solid red;
-  bottom: 0;
+  bottom: 0px;
+  width: 100%;
+  min-height: 2.5rem;
+}
+
+.alt-footer {
+  position: absolute;
+  display: inline-block;
+  background-color: black;
+  border-top: 1px solid red;
+  bottom: 0px;
   width: 100%;
   min-height: 2.5rem;
 }
@@ -214,8 +244,15 @@ section {
   color: white;
 }
 
-.footer img {
-  float: right;
-  max-width: 40px;
-  max-height: 40px;
+@media only screen and (orientation: portrait) {
+  .service {
+    margin: 210px 90px 64px 75px;;
+    
+  }
+
+  .footer {
+    height: 300px;
+    display: inline-block;
+    margin-top: 17%
+  }
 }
