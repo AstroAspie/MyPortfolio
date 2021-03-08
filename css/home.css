@@ -213,7 +213,9 @@ section {
   margin: 15px;
 }
 
-
+.bio {
+  border: none;
+}
 /* footer styles */
 
 .footer {
@@ -247,7 +249,7 @@ section {
 @media only screen and (orientation: portrait) {
   .service {
     margin: 210px 90px 64px 75px;;
-    
+
   }
 
   .footer {
