@@ -1,0 +1,43 @@
+<style>
+  body {
+    background-color: black;
+  }
+  .rgb-box {
+    width: 40%;
+    height: 30%;
+  }
+  .heart {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: purple;
+    height: 50px;
+    width: 50px;
+    transform: rotate(-45deg);
+    z-index: 2;
+  }
+  .heart::after {
+    background-color: purple;
+    content: "";
+    border-radius: 50%;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 0px;
+    left: 25px;
+  }
+  .heart::before {
+    content: "";
+    background-color: purple;
+    border-radius: 50%;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: -25px;
+    left: 0px;
+  }
+</style>
+<div class="heart"></div>
