@@ -1,63 +1,54 @@
 <!DOCTYPE html>
-
-<html lang='en'>
-
+<html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8" />
-    <title>Alex Smith Portfolio | Home</title>
-    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/home.css" />
-    <link rel="stylesheet" type="text/css" href="css/nav.css" />
-    <script src="js/main.js"></script>
+    <meta charset="utf-8">
+    <title>TekHeart Productions | HOME</title>
+    		<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/new-home.css" type="text/css"/>
   </head>
-
-  <body onload="maintenanceAlert()">
-
-    <header id="top_nav">
-      <nav>
-        <ul>
-          <li><a href="home.html">Home</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="Academics.html">Academics</a></li>
-          <li><a href="Projects_home.html">Projects</a></li>
-          <li><a href="Contact_Me.html">Contact Me</a></li>
-        </ul>
-      </nav>
-    </header>
-
-    <div class="banner backdrop">
-      <h1>Alex Smith</h1>
-      <ul>
-        <li><h3>Fullstack Development</h3></li>
-        <li><h3>Games Developement & Programming</h3></li>
-        <li><h3>Ethical hacking / Penetration Testing Enthusiast</h3></li>
+  <body>
+    <nav id="navbar" class="nav">
+      <div class="dropdown">
+        <button class="dropbtn">
+          <i class="fa fa-ellipsis-h fa-3x"></i>
+        </button>
+      </div>
+      <div class="dropdown-content">
+        <a href="#">Test</a>
+        <a href="#">Test</a>
+        <a href="#">Test</a>
+        <a href="#">Test</a>
+        <a href="#">Test</a>
+        <a href="#">Test</a>
+      </div>
+      <img id="thp-logo" src="images/thp-nav-dark.png" alt=""/>
+      <ul class="nav-list">
+        <li>
+          <a href="#welcome-section">About</a>
+        </li>
+        <li>
+          <a href="#projects">Projects</a>
+        </li>
+        <li>
+          <a href="#contact">Contact</a>
+        </li>
       </ul>
-    </div>
+    </nav>
 
-    <div class="welcome">
-      <h1>Welcome</h1>
-      <p>
-        This website hosts my projects in all entirety. I have a deep appreciation
-        and passion towards all things programming, however, my deepest passions
-        are directed towards Fullstack Development and Games Programming, in particular
-        game play and in game AI. I have been coding for roughly four years, amongst
-        this time I have completed multiple courses online and through various institutes
-        and have began attending Murdoch University for Computer Science and Games Technology.
-        <br />
-        I truly hope you find these displays of my projects and services engaging and appealing.
-        <br />
-        <br />
-        <span class="welcome_end">Happy Browsing!</span>
-      </p>
-    </div>
+    <section id="welcome-section" class="welcome-section">
+      <h1>Hello There, I'm Alex</h1>
+      <p>Fullstack Developer and Ethical Hacker</p>
+    </section>
 
-    <main class="main">
-      <section id="intro_vid">
-        <!-- Add introduction video -->
-      </section>
-    </main>
+    <section id="projects">
+      <div class="project-tile">
+        <a href="">Project 1</a>
+      </div>
+    </section>
+
+    <section id="contact">
+      <a id="profile-link" href="www.astroaspie.github.io/MyPortfolio/home" target="_blank">GitHub</a>
+    </section>
 
     <footer class="home footer">
       <div>
@@ -66,7 +57,5 @@
       <a href="https://github.com/AstroAspie"><i class="social_links fa fa-github fa-2x"></i></a>
       <a href="https://www.linkedin.com/in/alex-smith-13a249151/"><i class="social_links fa fa-linkedin fa-2x"></i></a>
     </footer>
-
   </body>
-
 </html>
