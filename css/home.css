@@ -29,17 +29,12 @@ section {
 /* Banner and welcome styles */
 
 .banner {
-  position: relative;
-  top: 71px;
-  margin-bottom: 50px;
-  height: 334px;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+  width: 100%;
+  height: 50vh;
 }
 
 .backdrop {
