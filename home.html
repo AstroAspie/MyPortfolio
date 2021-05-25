@@ -1,78 +1,124 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>TekHeart Productions | HOME</title>
-    		<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="css/new-home.css" type="text/css"/>
-  </head>
-  <body>
-    <nav id="navbar" class="nav">
-      <div class="dropdown">
-        <button class="dropbtn">
-          <i class="fa fa-ellipsis-h fa-3x"></i>
-        </button>
-      </div>
-      <div class="dropdown-content">
-        <a href="#">Cyber-Security</a>
-        <a href="#">Web Development</a>
-        <a href="#">Games Development</a>
-        <a href="#">Graphics Programming</a>
-        <a href="#">Coming Soon...</a>
-        <a href="#">Coming Soon...</a>
-      </div>
-      <img id="thp-logo" src="images/thp-nav-dark.png" alt=""/>
-      <ul class="nav-list">
-        <li>
-          <a href="#welcome-section">About</a>
-        </li>
-        <li>
-          <a href="#projects">Projects</a>
-        </li>
-        <li>
-          <a href="#contact">Contact</a>
-        </li>
-      </ul>
-    </nav>
 
+<head>
+  <meta charset="utf-8">
+  <title>TekHeart Productions | HOME</title>
+  <link rel="stylesheet" type="text/css"
+    href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="css/new-home.css" type="text/css" />
+</head>
+
+<body>
+  <nav id="navbar" class="nav">
+    <div class="dropdown">
+      <button class="dropbtn">
+        <i class="fa fa-ellipsis-h fa-3x"></i>
+      </button>
+    </div>
+    <div class="dropdown-content">
+      <a href="#">Cyber-Security</a>
+      <a href="#">Web Development</a>
+      <a href="#">Games Development</a>
+      <a href="#">Graphics Programming</a>
+      <a href="#">Coming Soon...</a>
+      <a href="#">Coming Soon...</a>
+    </div>
+    <img id="thp-logo" src="images/thp-nav-dark.png" alt="" />
+    <ul class="nav-list">
+      <li>
+        <a href="#welcome-section">About</a>
+      </li>
+      <li>
+        <a href="#projects">Projects</a>
+      </li>
+      <li>
+        <a href="#contact">Contact</a>
+      </li>
+    </ul>
+  </nav>
+
+  <main>
+    <img class="home-backdrop" src="images/Black-And-Red-Wallpapers.jpg" alt="" />
     <section id="welcome-section" class="welcome-section">
       <h1>Hello There, I'm Alex</h1>
       <p>Fullstack Developer and Ethical Hacker</p>
     </section>
 
-    <div class="banner">
+    <div class="banner banner-image">
       <h2>Projects</h2>
     </div>
 
     <section id="projects">
-      <div class="project-tile">
-        <!-- Refine Project Display -->
-        <div>
-          <select>
-            <option type=checkbox value="web" class="refine-search">Web</option>
-            <option type=checkbox value="games" class="refine-search">Games</option>
-            <option type=checkbox value="sim" class="refine-search">Simulations</option>
-            <option type=checkbox value="cyber" class="refine-search">Cyber-Security</option>
-            <option class="refine-search"></option>
-            <option class="refine-search"></option>
-          </select>
-        </div>
-        <a href="">Project 1</a>
-      </div>
-      <button action="www.astroaspie.github.io/MyPortfolio/projects/">View All</button>
-    </section>
-
-    <section id="contact">
-      <a id="profile-link" href="www.astroaspie.github.io/MyPortfolio/home" target="_blank">GitHub</a>
-    </section>
-
-    <footer class="home footer">
-      <div>&copy Tekheart Productions 2021</div>
       <div>
-        <a href="alexsmith@tekheartproductions.com">alexsmith@tekheartproductions</a>
+        <!-- Refine Project Display -->
+        <select>
+          <option type="checkbox" value="All" class="refine-search">All</option>
+          <option type=checkbox value="web" class="refine-search">Web</option>
+          <option type=checkbox value="games" class="refine-search">Games</option>
+          <option type=checkbox value="sim" class="refine-search">Simulations</option>
+          <option type=checkbox value="cyber" class="refine-search">Cyber-Security</option>
+          <option class="refine-search">Coming Soon...</option>
+          <option class="refine-search">Coming Soon...</option>
+        </select>
       </div>
-      <a href="https://github.com/AstroAspie"><i class="social_links fa fa-github fa-2x"></i></a>
-      <a href="https://www.linkedin.com/in/alex-smith-13a249151/"><i class="social_links fa fa-linkedin fa-2x"></i></a>
-    </footer>
-  </body>
+      <div class=projects-container>
+        <figure class="project project-tile">
+          <a href="code_demos/web_dev/browser_games/business_bob/index.html">
+            <img src="images/business_bob.png" alt="">
+          </a>
+          <figcaption>
+            Business Bob
+          </figcaption>
+        </figure>
+        <figure class="project project-tile">
+          <a href="code_demos/game_dev/unity/cube_challenge/index.html">
+            <img src="images/cube_challenge.png" alt="">
+          </a>
+          <figcaption>
+            Cube Challenge
+          </figcaption>
+        </figure>
+        <figure class="project project-tile">
+          <a href="code_demos/game_dev/unity/unity_learn_challenge1/index.html">
+            <img src="images/unity_challenge1.png" alt="">
+          </a>
+          <figcaption>
+            UNITY Learn Challenge 1
+          </figcaption>
+        </figure>
+        <figure class="project project-tile">
+          <a href="code_demos/game_dev/unity/unity_learn_challenge2/index.html">
+            <img src="images/unity_challenge2.png" alt="">
+          </a>
+          <figcaption>
+            UNITY Learn Challenge 2
+          </figcaption>
+        </figure>
+      </div>
+      <a href="www.astroaspie.github.io/MyPortfolio/projects/">
+        <button>View All</button>
+      </a>
+    </section>
+
+    <div class="banner banner-image">
+      <h2>Contact</h2>
+    </div>
+    
+    <section id="contact">
+      <a id="profile-link" href="www.astroaspie.github.io/MyPortfolio/home" target="_blank">Portfolio</a>
+      <a id="email-link" email="alexsmith@tekheartproductions.com" target="_blank">Email</a>
+    </section>
+  </main>
+
+  <footer class="home footer">
+    <div>&copy Tekheart Productions 2021</div>
+    <div>
+      <a href="alexsmith@tekheartproductions.com">alexsmith@tekheartproductions</a>
+    </div>
+    <a href="https://github.com/AstroAspie"><i class="social_links fa fa-github fa-2x"></i></a>
+    <a href="https://www.linkedin.com/in/alex-smith-13a249151/"><i class="social_links fa fa-linkedin fa-2x"></i></a>
+  </footer>
+</body>
+
 </html>
