@@ -26,17 +26,17 @@
   </nav>
 
   <main>
-    <img class="home-backdrop" src="images/Black-And-Red-Wallpapers.jpg" alt="" />
+    <img class="backdrop" src="images/Black-And-Red-Wallpapers.jpg" alt="" />
     <section id="welcome-section" class="welcome-section">
       <h1>Hello There, I'm Alex</h1>
       <p>Fullstack Developer and Ethical Hacker</p>
     </section>
 
-    <div class="banner banner-image">
+    <div class="projects-section-header">
       <h2>Projects</h2>
     </div>
 
-    <section id="projects">
+    <section id="projects-section">
       <div>
         <!-- Refine Project Display -->
         <select>
@@ -49,7 +49,7 @@
           <option class="refine-search">Coming Soon...</option>
         </select>
       </div>
-      <div class=projects-container>
+      <div class=projects-grid>
         <figure class="project project-tile">
           <a href="code_demos/web_dev/browser_games/business_bob/index.html">
             <img src="images/business_bob.png" alt="">
@@ -63,7 +63,7 @@
             <img src="images/cube_challenge.png" alt="">
           </a>
           <figcaption>
-            Cube Challenge
+            UNITY Cube Challenge
           </figcaption>
         </figure>
         <figure class="project project-tile">
@@ -92,19 +92,22 @@
       <h2>Contact</h2>
     </div>
     
-    <section id="contact">
-      <a id="profile-link" href="www.astroaspie.github.io/MyPortfolio/home" target="_blank">Portfolio</a>
-      <a id="email-link" email="alexsmith@tekheartproductions.com" target="_blank">Email</a>
+    <section class="contact-section">
+      <div class="contact-section-header">
+        <h2>Let's Collaborate and Create Something Awesome!</h2>
+        <p>How do you like your coffee?</p>
+      </div>
+      <div class="contact-links">
+        <a class="contact-details" id="profile-link" href="www.astroaspie.github.io/MyPortfolio/home" target="_blank">Portfolio</a>
+        <a class="contact-details" id="email-link" email="alexsmith@tekheartproductions.com" target="_blank">Email</a>
+        <a class="contact-details" href="https://github.com/AstroAspie"><i class="social_links fa fa-github fa-2x"></i></a>
+        <a class="contact-details" href="https://www.linkedin.com/in/alex-smith-13a249151/"><i class="social_links fa fa-linkedin fa-2x"></i></a>
+      </div>
     </section>
   </main>
 
-  <footer class="home footer">
+  <footer class="footer">
     <div>&copy Tekheart Productions 2021</div>
-    <div>
-      <a href="alexsmith@tekheartproductions.com">alexsmith@tekheartproductions</a>
-    </div>
-    <a href="https://github.com/AstroAspie"><i class="social_links fa fa-github fa-2x"></i></a>
-    <a href="https://www.linkedin.com/in/alex-smith-13a249151/"><i class="social_links fa fa-linkedin fa-2x"></i></a>
   </footer>
 </body>
 
