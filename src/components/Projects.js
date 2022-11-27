@@ -1,4 +1,5 @@
 import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
+import { PhaserContainer } from "./PhaserContainer";
 import { ProjectCard } from "./ProjectCard";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
@@ -17,8 +18,8 @@ export const Projects = () => {
   const featuredProjects = [
     {
       title: "Space Invaders",
-      description: "Web Development",
-      imgUrl: businessBob // Replace with spaceInvadersClone
+      description: "Web Development | Phaser.js",
+      iframeUrl: "../assets/game/space-invaders-clone/index.html"
     }
   ]
 
@@ -80,20 +81,20 @@ export const Projects = () => {
                   <Tab.Content id="slideInUp" className={isVisible ? "animate__animated animate__slideInUp" : ""}>
                     <Tab.Pane eventKey="first">
                       <Row>
-                        {
-                          featuredProjects.map((project, index) => {
-                            return (
-                              <ProjectCard
-                                key={index}
-                                {...project}
-                                />
-                            )
-                          })
-                        }
+                        <PhaserContainer {...featuredProjects[0]}/>
                       </Row>
                     </Tab.Pane>
                     <Tab.Pane eventKey="section">
                       <p></p>
+                      {projects.map((project, index) => {
+                        return (
+                          <ProjectCard
+                            key={index}
+                            {...project}
+                            />
+                            )
+                          })
+                        }
                     </Tab.Pane>
                     <Tab.Pane eventKey="third">
                       <p>Building my own security tools is a new experience, albeit exhilarating.</p>
