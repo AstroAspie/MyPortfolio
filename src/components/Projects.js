@@ -19,7 +19,7 @@ export const Projects = () => {
     {
       title: "Space Invaders",
       description: "Web Development | Phaser.js",
-      iframeUrl: "../assets/game/space-invaders-clone/index.html"
+      iframeUrl: "/games/space-invaders-clone/index.html"
     }
   ]
 
