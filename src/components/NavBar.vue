@@ -2,9 +2,15 @@
   <nav>
     <div class="container">
       <div class="nav-links">
-        <router-link to="/">Home</router-link>
-        <router-link to="/about">About</router-link>
-        <router-link to="/contact">Contact</router-link>
+        <router-link
+          v-for="link in links"
+          :key="link.name"
+          :to="link.path"
+          exact
+          active-class="active"
+        >
+          {{ link.name }}
+        </router-link>
       </div>
     </div>
   </nav>
@@ -14,7 +20,13 @@
 export default {
   name: "NavBar",
   data() {
-    return {};
+    return {
+      links: [
+        { name: "Home", path: "/" },
+        { name: "About", path: "/about" },
+        { name: "Contact", path: "/contact" },
+      ],
+    };
   },
 };
 </script>
