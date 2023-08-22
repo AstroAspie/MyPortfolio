@@ -2,8 +2,14 @@
 
 #app {
   font-weight: normal;
+  width: 100%;
+    height: 100%;
 }
 
+.container {
+  align-items: center;
+  /* margin: 0 auto; */
+}
 a,
 .green {
   text-decoration: none;

@@ -1,7 +1,5 @@
 <template>
-  <main>
     <AstroBanner />
-  </main>
 </template>
 
 <script>
@@ -14,8 +12,5 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-main {
-  margin: 0 auto;
-}
+<style>
 </style>

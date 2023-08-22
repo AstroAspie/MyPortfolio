@@ -1,34 +1,23 @@
 <template>
-  <div class="color-changing-box" :style="rgbLastReplaced(test_bag)"></div>
+  <div class="color-changing-circle" :style="rgbLastReplaced()"></div>
 </template>
 
 <script>
 export default {
   data() {
     return {
-      test_bag: {
-        row: 1,
-        col: 1,
-        time: "2021-05-01T00:00:00.000Z",
-      },
-
-      test_bag2: {
-        row: 1,
-        col: 2,
-        time: "2021-05-01T00:00:00.000Z",
-      },
-
-      test_bag3: {
-        row: 1,
-        col: 3,
-        time: "2021-05-01T00:00:00.000Z",
-      },
-
-      test_bag4: {
-        row: 1,
-        col: 4,
-        time: "2021-05-01T00:00:00.000Z",
-      },
+      test_data: [
+        {
+          col: 3,
+          row: 5,
+          time: new Date("2020-08-21T14:45:00"),
+        },
+        {
+          col: 1,
+          row: 8,
+          time: new Date("2021-08-21T18:15:00"),
+        },
+      ],
     };
   },
   created() {
@@ -42,12 +31,11 @@ export default {
       }
       return time?.split("T")[0] ?? "";
     },
-    defaultTime() {
-      baseTime = new Date();
-      baseTime.setDate(baseTime.getDate() - 14);
-      return trimTime(baseTime);
+    defaultLastReplaced() {
+      let baseTime = new Date();
+      return baseTime.setDate(baseTime.getDate() - 14);
     },
-    rgbLastReplaced(bag) {
+    rgbLastReplaced() {
       const rgb = [0, 255, 0];
       const today = new Date();
 
@@ -57,13 +45,18 @@ export default {
         };
       }
 
-      let lastReplaced = this.inspection_data.find(
-        (item) => item.row === bag.row && item.col === bag.col
+      let inspection_data = JSON.parse(JSON.stringify(this.test_data));
+      console.log(inspection_data);
+
+      // find if a bag is in the inspection data
+      const lastReplaced = inspection_data.find(
+        (bag) => bag.col === bag.col && bag.row === bag.row
       );
 
+      console.log(lastReplaced);
       let inspection_diff = 0;
-      if (!lastReplaced.time) {
-        lastReplaced = this.defaultLastReplaced;
+      if (!lastReplaced?.time) {
+        lastReplaced = this.defaultLastReplaced();
         inspection_diff = today - lastReplaced;
       } else {
         inspection_diff = today - lastReplaced.time;
@@ -89,10 +82,12 @@ export default {
 </script>
 
 <style scoped>
-.color-changing-box {
-  margin: 0 auto;
-  width: 100%;
-  height: 100%;
+.color-changing-circle {
+  top: 300px;
+  left: 600px;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
   border: 1px solid black;
 }
 </style>

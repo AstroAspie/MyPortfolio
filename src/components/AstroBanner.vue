@@ -1,12 +1,5 @@
 <template>
-  <div class="welcome">
-    <h1>{{ welcome_msg }}</h1>
-    <v-buutton
-      color="primary"
-      class="mx-auto"
-      @click="$router.push({ name: 'About' })"
-    ></v-buutton>
-  </div>
+  <div class="container">{{ welcome_msg }}</div>
 </template>
 
 <script>
@@ -28,22 +21,12 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.welcome {
+<style scoped>
+.container {
+  color: white;
+  display: flex;
   position: relative;
-  top: 0;
-  width: 100%;
-  height: 80px;
-  z-index: 1;
-  background: var(--color-background);
-  border-bottom: 1px solid var(--color-border);
-
-  h1 {
-    font-weight: 500;
-    font-size: 2.6rem;
-    position: relative;
-    margin: 0 auto;
-    top: 65%;
-  }
+  justify-content: center;
+  min-height: auto;
 }
 </style>
