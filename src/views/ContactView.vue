@@ -1,8 +1,6 @@
 <template>
-  <HomeLayout>
-    <template #primary>
-      <h1>Alex (Astro) Smith</h1>
-      <h2>Full Stack Web Developer</h2>
+  <div class="contact">
+    <div class="socials">
       <v-icon
           class="icon"
           large
@@ -19,25 +17,34 @@
       >
         mdi-linkedin
       </v-icon>
-    </template>
-    <template #secondary>
-      <h1>Testing secondary</h1>
-    </template>
-    <template #contact>
-      
-    </template>
-  </HomeLayout>
+    </div>
+    <v-icon
+      class="icon"
+      large
+      color="white"
+      @click="window.open('mailto:astro.cybersmith@gmail.com', '_blank')"
+    >
+      mdi-email
+    </v-icon>
+  </div>
 </template>
 
 <script>
-import HomeLayout from "@/layouts/HomeLayout.vue";
-import ProjectsBanner from "@/components/ProjectsBanner.vue";
 
-export default {
-  components: {HomeLayout, ProjectsBanner},
-  name: "HomeView",
-}
 </script>
 
 <style scoped>
+.contact {
+  background-color: #35abbb;
+  margin: 10px;
+  overflow-x: hidden;
+}
+
+.socials {
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  align-items: center;
+  height: 4rem;
+}
 </style>

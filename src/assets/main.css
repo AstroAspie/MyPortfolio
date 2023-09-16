@@ -3,7 +3,17 @@
 #app {
   font-weight: normal;
   width: 100%;
-    height: 100%;
+  height: 100%;
+}
+
+.banner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .container {

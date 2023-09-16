@@ -35,16 +35,18 @@ export default {
 nav {
   position: fixed;
   top: 0;
-  width: 100%;
-  height: 80px;
   z-index: 1;
+  width: 100%;
   background: var(--color-background);
   border-bottom: 1px solid var(--color-border);
+  margin-bottom: 2rem;
 }
 
 .nav-links {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  text-align: center;
   align-items: center;
+  height: 4rem;
 }
 </style>
