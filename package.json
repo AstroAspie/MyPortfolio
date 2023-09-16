@@ -13,6 +13,8 @@
     "@fortawesome/free-regular-svg-icons": "^6.4.2",
     "@fortawesome/free-solid-svg-icons": "^6.4.2",
     "@fortawesome/vue-fontawesome": "^3.0.3",
+    "@mdi/font": "^7.2.96",
+    "material-design-icons-iconfont": "^6.7.0",
     "mdi-vue": "^3.0.13",
     "pinia": "^2.1.4",
     "scss": "^0.2.4",

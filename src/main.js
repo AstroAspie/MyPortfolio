@@ -3,6 +3,8 @@ import './assets/main.css'
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 
+// import vueSmoothScroll from 'vue3-smooth-scroll'
+
 import App from './App.vue'
 import router from './router'
 
@@ -22,6 +24,5 @@ const vuetify = createVuetify({
 app.use(createPinia())
 app.use(router)
 
-app.component('FontAwesomeIcon', FontAwesomeIcon)
 app.use(vuetify)
 app.mount('#app')

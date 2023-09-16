@@ -3,22 +3,8 @@
     <template #primary>
       <h1>Alex (Astro) Smith</h1>
       <h2>Full Stack Web Developer</h2>
-      <v-icon
-          class="icon"
-          large
-          color="white"
-          @click="window.open('github.com/astroaspie', '_blank')"
-      >
-        mdi-github
-      </v-icon>
-      <v-icon
-          class="icon"
-          large
-          color="white"
-          @click="window.open('https://www.linkedin.com/in/alex-smith-astroaspie/', '_blank')"
-      >
-        mdi-linkedin
-      </v-icon>
+      <img src="../assets/github-mark/github-mark.png" class="icon" alt="github logo" />
+      <img src="../assets/linkedin-logo.png" class="icon" alt="linkedin logo" />
     </template>
     <template #secondary>
       <h1>Testing secondary</h1>
@@ -34,10 +20,17 @@ import HomeLayout from "@/layouts/HomeLayout.vue";
 import ProjectsBanner from "@/components/ProjectsBanner.vue";
 
 export default {
-  components: {HomeLayout, ProjectsBanner},
+  components: { HomeLayout, ProjectsBanner },
   name: "HomeView",
 }
 </script>
 
 <style scoped>
+.icon {
+  margin: 10px;
+  width: 50px;
+  height: 50px;
+  color: white;
+  z-index: 1;
+}
 </style>
