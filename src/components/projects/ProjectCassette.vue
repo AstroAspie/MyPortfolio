@@ -1,10 +1,17 @@
 <template>
-  <div class="project-cassette">
-    <h3>{{ project.title }}</h3>
-    <p>{{ project.description }}</p>
-    <img :src="project.image" alt="project image" />
-    <a :href="project.link" target="_blank">View Project</a>
-  </div>
+  <v-card class="project-cassette">
+    <v-img :src="project.image" class="project-image"></v-img>
+    <v-card-title class="project-title">{{ project.title }}</v-card-title>
+    <v-card-text class="project-desc">{{ project.description }}</v-card-text>
+    <v-card-actions>
+      <div class="project-link-btn-container">
+        <v-btn :href="project.link" class="project-link-btn" target="_blank">View Project</v-btn>
+        <v-btn @click="likeProject(project)" class="project-link-btn">
+          <v-icon icon="mdi-heart" color="white"></v-icon>
+        </v-btn>
+      </div>
+    </v-card-actions>
+  </v-card>
 </template>
 
 <script>
@@ -25,9 +32,35 @@ export default {
 <style lang="scss" scoped>
 .project-cassette {
   display: flex;
+  flex-direction: column;
   justify-content: space-evenly;
-  text-align: center;
+  height: 24rem;
+}
+
+.project-image {
+  margin-top: 3px;
+  height: 10rem;
+}
+
+.project-title {
+  font-size: 1.5rem;
+}
+
+.project-desc {
+  font-size: 1rem;
+}
+
+.project-link-btn-container {
+  display: flex;
+  justify-content: center;
   align-items: center;
-  height: 4rem;
+  align-content: center;
+}
+
+.project-link-btn {
+  background: var(--color-background);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  border-radius: 0;
 }
 </style>

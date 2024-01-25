@@ -29,9 +29,6 @@ export default {
   width: 99vw;
   height: 98vh;
   margin: 0 auto;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
 }
 
 .top {
@@ -41,6 +38,8 @@ export default {
 }
 
 .middle {
+  display: flex;
+  flex-direction: row;
   background-color: #35abbb;
   padding: 20px;
   margin: 10px;

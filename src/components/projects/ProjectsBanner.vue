@@ -1,19 +1,21 @@
 <template>
-  <div class="projects">
-    <div class="project-cassette">
-      <ProjectCassette
-        v-for="project in projects"
-        :key="project.title"
-        :project="project"
-      />
-    </div>
+  <div class="projects-container">
+    <ProjectCassette
+      v-for="project in projects"
+      :key="project.title"
+      :project="project"
+    />
   </div>
 </template>
 
 
 <script>
+import ProjectCassette from "./ProjectCassette.vue";
 export default {
   name: "ProjectsBanner",
+  components: {
+    ProjectCassette,
+  },
   data() {
     return {
       projects: [
@@ -86,4 +88,12 @@ export default {
 </script>
 
 <style scoped>
+.projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  text-align: center;
+  align-items: center;
+  gap: 5px;
+}
 </style>
