@@ -1,5 +1,9 @@
 <template>
-  <div class="container">{{ welcome_msg }}</div>
+  <div>
+    <div class="container">{{ welcome_msg }}</div>
+    <div class=""
+    <img src="@/assets/circuit-image.jpg" alt="circuit board" />
+  </div>
 </template>
 
 <script>

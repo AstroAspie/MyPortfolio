@@ -17,7 +17,7 @@
 
 <script>
 export default {
-  name: "BannerSlot",
+  name: "HomeLayout",
 };
 </script>
 
@@ -35,7 +35,6 @@ export default {
 }
 
 .top {
-  background-color: #086788ff;
   padding: 20px;
   margin: 30px 10px 10px;
   overflow-x: hidden;

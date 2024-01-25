@@ -1,31 +1,23 @@
 <template>
   <div class="contact">
     <div class="socials">
-      <v-icon
+      <img 
+          src="../assets/github-mark/github-mark.png" 
+          class="icon" 
+          id="github"
+          alt="github logo"
+          @mouseover="onhover('#github')"
+          @mouseout="offhover('#github')"
+      />
+      <img
+          src="../assets/linkedin-logo.png" 
           class="icon"
-          large
-          color="white"
-          @click="window.open('github.com/astroaspie', '_blank')"
-      >
-        mdi-github
-      </v-icon>
-      <v-icon
-          class="icon"
-          large
-          color="white"
-          @click="window.open('https://www.linkedin.com/in/alex-smith-astroaspie/', '_blank')"
-      >
-        mdi-linkedin
-      </v-icon>
+          id="linkedin"
+          alt="linkedin logo" 
+          @mouseover="onhover('#linkedin')"
+          @mouseout="offhover('#linkedin')"
+      />
     </div>
-    <v-icon
-      class="icon"
-      large
-      color="white"
-      @click="window.open('mailto:astro.cybersmith@gmail.com', '_blank')"
-    >
-      mdi-email
-    </v-icon>
   </div>
 </template>
 
@@ -36,8 +28,9 @@
 <style scoped>
 .contact {
   background-color: #35abbb;
-  margin: 10px;
+  margin: 0 auto;
   overflow-x: hidden;
+  height: 100vh;
 }
 
 .socials {
