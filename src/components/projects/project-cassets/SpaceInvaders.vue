@@ -1,25 +1,15 @@
 <template>
   <div>
+    <h1>Space Invaders</h1>
     <canvas id="canvas" width="800" height="600"></canvas>
   </div>
 </template>
 
 <script>
 export default {
-  name: "GameContainer",
-  props: {
-    game: {
-      title: String,
-      required: true,
-    },
-  },
+  name: "SpaceInvaders",
   data() {
     return {};
-  },
-  methods: {
-    startGame() {
-      console.log("Game Started");
-    },
   },
 };
 </script>

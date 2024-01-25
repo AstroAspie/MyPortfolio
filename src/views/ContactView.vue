@@ -38,6 +38,9 @@
   justify-content: space-evenly;
   text-align: center;
   align-items: center;
-  height: 4rem;
+  height: 8rem;
+  width: 8rem;
 }
+
+
 </style>

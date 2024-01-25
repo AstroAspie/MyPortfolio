@@ -5,7 +5,7 @@
       <div class="top-banner-items">
         <h1>Alex (Astro) Smith</h1>
         <h2>Full Stack Web Developer</h2>
-        <div class="socials">
+        <div class="header-socials">
           <img 
               src="../assets/github-mark/github-mark.png" 
               class="icon" 
@@ -36,12 +36,12 @@
 
 <script>
 import HomeLayout from "@/layouts/HomeLayout.vue";
-import ProjectsBanner from "@/components/ProjectsBanner.vue";
+import ProjectsBanner from "@/components/projects/ProjectsBanner.vue";
 import ContactBanner from "@/components/ContactBanner.vue";
 
 
 export default {
-  components: { HomeLayout, ProjectsBanner },
+  components: {ContactBanner, HomeLayout, ProjectsBanner },
   name: "HomeView",
   data() {
     return {
@@ -112,5 +112,26 @@ export default {
   z-index: 1;
   width: 100%;
   height: 100%;
+}
+
+.header-socials {
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  align-items: center;
+  height: 8rem;
+  width: 8rem;
+}
+
+.header-socials h1 {
+  color: white;
+  font-size: 25px;
+  margin: 0;
+}
+
+.header-socials h2 {
+  color: white;
+  font-size: 4rem;
+  margin: 0;
 }
 </style>
