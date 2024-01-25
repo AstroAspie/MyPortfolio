@@ -51,5 +51,11 @@ export default {
 </script>
 
 <style scoped>
-
+.icon {
+  margin: 10px;
+  width: 50px;
+  height: 50px;
+  color: white;
+  z-index: 1;
+}
 </style>

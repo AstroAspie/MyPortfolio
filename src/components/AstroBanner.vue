@@ -1,8 +1,7 @@
 <template>
   <div>
-    <div class="container">{{ welcome_msg }}</div>
-    <div class=""
-    <img src="../assets/circuit-image.jpg" alt="circuit board" />
+    <h1>Alex <span class="nickname">(Astro)</span> Smith</h1>
+    <h2>{{ welcome_msg }}</h2>
   </div>
 </template>
 
@@ -11,7 +10,11 @@ export default {
   name: "AstroBanner",
   data() {
     return {
-      welcome_msg_array: ["Howdy", "Hello, There", "Welcome"],
+      welcome_msg_array: [
+          "Welcome aboard!",
+          "Full Stack Web Developer",
+          "Welcome to my portfolio!",
+      ],
       welcome_msg: "",
     };
   },

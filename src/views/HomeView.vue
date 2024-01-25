@@ -3,8 +3,7 @@
     <template #primary>
       <div class="top-banner-img"></div>
       <div class="top-banner-items">
-        <h1>Alex (Astro) Smith</h1>
-        <h2>Full Stack Web Developer</h2>
+        <AstroBanner />
         <div class="header-socials">
           <SocialsBar />
         </div>
@@ -24,28 +23,20 @@ import HomeLayout from "@/layouts/HomeLayout.vue";
 import ProjectsBanner from "@/components/projects/ProjectsBanner.vue";
 import ContactBanner from "@/components/ContactBanner.vue";
 import SocialsBar from "@/components/global/SocialsBar.vue";
+import AstroBanner from "@/components/AstroBanner.vue";
 
 
 export default {
-  components: {ContactBanner, HomeLayout, ProjectsBanner, SocialsBar },
+  components: {AstroBanner, ContactBanner, HomeLayout, ProjectsBanner, SocialsBar },
   name: "HomeView",
   data() {
-    return {
-    };
+    return {};
   },
   methods: {},
 }
 </script>
 
 <style scoped>
-.icon {
-  margin: 10px;
-  width: 50px;
-  height: 50px;
-  color: white;
-  z-index: 1;
-}
-
 .image-cloak {
   display: flex;
   position: absolute;
