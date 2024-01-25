@@ -12,7 +12,6 @@
 </template>
 
 <script>
-import skillsBanner from "./SkillsBanner.vue";
 
 export default {
   name: "SkillCassette",
