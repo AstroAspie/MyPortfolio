@@ -6,22 +6,7 @@
         <h1>Alex (Astro) Smith</h1>
         <h2>Full Stack Web Developer</h2>
         <div class="header-socials">
-          <img 
-              src="../assets/github-mark/github-mark.png" 
-              class="icon" 
-              id="github"
-              alt="github logo"
-              @mouseover="onHover('github')"
-              @mouseout="offHover('github')"
-          />
-          <img
-              src="../assets/linkedin-logo.png" 
-              class="icon"
-              id="linkedin"
-              alt="linkedin logo" 
-              @mouseover="onHover('linkedin')"
-              @mouseout="offHover('linkedin')"
-          />
+          <SocialsBar />
         </div>
       </div>
     </template>
@@ -38,34 +23,17 @@
 import HomeLayout from "@/layouts/HomeLayout.vue";
 import ProjectsBanner from "@/components/projects/ProjectsBanner.vue";
 import ContactBanner from "@/components/ContactBanner.vue";
+import SocialsBar from "@/components/global/SocialsBar.vue";
 
 
 export default {
-  components: {ContactBanner, HomeLayout, ProjectsBanner },
+  components: {ContactBanner, HomeLayout, ProjectsBanner, SocialsBar },
   name: "HomeView",
   data() {
     return {
     };
   },
-  methods: {
-    // Icon interactions
-    onHover(item) {
-      // grow the size of the icon being hovered over
-      const itemSelector = `#${item}`;
-      const icon = this.$el.querySelector(itemSelector);
-      
-      // smoothly transition the icon to a larger size
-      icon.style.transition = "width 0.5s, height 0.5s";
-      this.$el.querySelector(itemSelector).style.width = "60px";
-      this.$el.querySelector(itemSelector).style.height = "60px";
-    },
-    offHover(item) {
-      const itemSelector = `#${item}`;
-      // shrink the size of the icon being hovered over
-      this.$el.querySelector(itemSelector).style.width = "50px";
-      this.$el.querySelector(itemSelector).style.height = "50px";
-    },
-  },
+  methods: {},
 }
 </script>
 
