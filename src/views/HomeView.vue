@@ -13,7 +13,7 @@
       <ProjectsBanner />
     </template>
     <template #contact>
-      <ContactBanner />
+      <SkillsBanner />
     </template>
   </HomeLayout>
 </template>
@@ -24,10 +24,11 @@ import ProjectsBanner from "@/components/projects/ProjectsBanner.vue";
 import ContactBanner from "@/components/ContactBanner.vue";
 import SocialsBar from "@/components/global/SocialsBar.vue";
 import AstroBanner from "@/components/AstroBanner.vue";
+import SkillsBanner from "@/components/skills/SkillsBanner.vue";
 
 
 export default {
-  components: {AstroBanner, ContactBanner, HomeLayout, ProjectsBanner, SocialsBar },
+  components: { SkillsBanner, AstroBanner, ContactBanner, HomeLayout, ProjectsBanner, SocialsBar },
   name: "HomeView",
   data() {
     return {};

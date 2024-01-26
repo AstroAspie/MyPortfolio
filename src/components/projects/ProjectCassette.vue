@@ -26,6 +26,11 @@ export default {
   data() {
     return {};
   },
+  methods: {
+    likeProject(project) {
+      console.log("Liked Project: ", project.title);
+    }
+  },
 };
 </script>
 
@@ -58,6 +63,17 @@ export default {
 }
 
 .project-link-btn {
+  background: var(--color-background);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  border-radius: 0;
+}
+
+.project-cassette:hover {
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5);
+}
+
+.project-link-btn:hover {
   background: var(--color-background);
   color: var(--color-text);
   border: 1px solid var(--color-border);

@@ -5,8 +5,11 @@
     outlined
     tile
   >
+    <v-card-title>
+      <span class="skill-title">{{ skill.name }}</span>
+    </v-card-title>
     <v-card-text>
-      {{ skill_score }}
+      {{ skill.score }}
     </v-card-text>
   </v-card>
 </template>
@@ -16,8 +19,8 @@
 export default {
   name: "SkillCassette",
   props: {
-    skill_score: {
-      type: Number,
+    skill: {
+      type: Object,
       required: true,
     },
   },
@@ -28,4 +31,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.skill-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100px;
+  border-radius: 50px;
+  border: solid 5px var(--color-border);
+}
+
+.skill-title {
+  font-size: 80%;
+  font-weight: bold;
+}
 </style>
