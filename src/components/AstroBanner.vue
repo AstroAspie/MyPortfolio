@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>Alex <span class="nickname">(Astro)</span> Smith</h1>
-    <h2>{{ welcome_msg }}</h2>
+    <h2 @mouseenter="nextMessage">{{ welcome_msg }}</h2>
   </div>
 </template>
 
@@ -18,7 +18,14 @@ export default {
       welcome_msg: "",
     };
   },
-  methods() {},
+  methods: {
+    nextMessage() {
+      this.welcome_msg =
+        this.welcome_msg_array[
+          Math.floor(Math.random() * this.welcome_msg_array.length)
+        ];
+    },
+  },
   mounted() {
     this.welcome_msg =
       this.welcome_msg_array[
