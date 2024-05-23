@@ -1,13 +1,10 @@
 <template>
   <nav>
     <div class="container">
-      <div class="nav-links">
+      <div class="nav-links" v-for="link in links" :key="link.name">
         <router-link
-          v-for="link in links"
-          :key="link.name"
           :to="link.path"
-          :style="hoverLink(link)"
-        >
+          >
           {{ link.name }}
         </router-link>
       </div>
@@ -23,7 +20,7 @@ export default {
       links: [
         { name: "Home", path: "/" },
         { name: "About", path: "/about" },
-        { name: "Projects", path: "/projects" },
+        { name: "Projects", path: "#projects" },
         { name: "Contact", path: "/contact" },
       ],
     };
@@ -49,12 +46,20 @@ nav {
   margin-bottom: 2rem;
 }
 
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
 .nav-links {
   display: flex;
   justify-content: space-evenly;
   text-align: center;
   align-items: center;
   height: 4rem;
+  width: 2rem;
 }
 
 .nav-links a {
@@ -65,8 +70,8 @@ nav {
   transition: all 0.3s ease 0s;
 }
 
-.nav-links a:hover {
-  color: var(--color-accent);
+.nav-links:hover {
+  background-color: var(--color-accent);
   cursor: pointer;
 }
 
