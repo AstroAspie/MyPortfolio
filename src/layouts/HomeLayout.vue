@@ -1,7 +1,6 @@
 <template>
   <div>
     <div class="top banner">
-      <div class="image"></div>
       <slot name="primary">
       </slot>
     </div>
@@ -24,7 +23,6 @@ export default {
 
 <style scoped>
 .image {
-  background-image: url(/circuit-image.jpg);
   background-size: cover;
   background-position: center;
   width: 100%;

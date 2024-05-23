@@ -22,7 +22,7 @@ export default {
         {
           title: "Crypto Currency Tracker",
           description: "This is a crypto currency tracker using Nuxt.js and the CoinGecko API.",
-          image: "/images/Crypto-Watcher-Screenshot.png",
+          image: "@/assets/images/Crypto-Watcher-Screenshot.png",
           link: "https://github.com/AstroAspie/crypto-watcher",
           language: "JavaScript",
           type: "Web",
@@ -47,7 +47,7 @@ export default {
         {
           title: "2048 in Python",
           description: "2048 mathematical tile game made using PyGame.",
-          image: "/images/2048_Pygame-screenshot.png",
+          image: "/assets/images/2048-Pygame-Screenshot.png",
           link: "https://github.com/AstroAspie/2048_pygame",
           language: "Python",
           type: "Game",
@@ -55,7 +55,7 @@ export default {
         {
           title: "William's Water Sport Rentals",
           description: "Client Website for William's Water Sport Rentals. Built using Vue.js and Vuetify.",
-          image: "/images/Williams-Water-Sport-Rentals-Screenshot.png",
+          image: "/assets/images/Williams-Water-Sport-Rentals-Screenshot.png",
           inProgress: true,
         }
       ],

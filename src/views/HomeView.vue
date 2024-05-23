@@ -1,10 +1,15 @@
 <template>
   <HomeLayout>
     <template #primary>
-      <div class="top-banner-items">
-        <AstroBanner />
-        <div class="header-socials">
-          <SocialsBar />
+      <div id="myLogo">
+        <img src="/src/assets/images/mylogo.png" class="myLogo"/>
+      </div>
+      <div id="intro">
+        <div class="top-banner-items">
+          <AstroBanner />
+          <div class="header-socials">
+            <SocialsBar />
+          </div>
         </div>
       </div>
     </template>
@@ -20,13 +25,12 @@
 <script>
 import HomeLayout from "@/layouts/HomeLayout.vue";
 import ProjectsBanner from "@/components/projects/ProjectsBanner.vue";
-import ContactBanner from "@/components/ContactBanner.vue";
 import SocialsBar from "@/components/global/SocialsBar.vue";
 import AstroBanner from "@/components/AstroBanner.vue";
 import SkillsBanner from "@/components/skills/SkillsBanner.vue";
 
 export default {
-  components: { SkillsBanner, AstroBanner, ContactBanner, HomeLayout, ProjectsBanner, SocialsBar },
+  components: { SkillsBanner, AstroBanner, HomeLayout, ProjectsBanner, SocialsBar },
   name: "HomeView",
   data() {
     return {
@@ -47,14 +51,20 @@ export default {
 </script>
 
 <style scoped>
-.image-cloak {
-  display: flex;
+.myLogo {
   position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: black;
-  opacity: 0.5;
-  z-index: -1;
+  top: 10%;
+  left: 0;
+  width: 65%;
+  height: 80%;
+}
+
+#intro {
+  position: absolute;
+  top: 10;
+  left: calc(100% - 650px);
+  width: 500px;
+  font-size: 1.5rem;
 }
 
 .image {
