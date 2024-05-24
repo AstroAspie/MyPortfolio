@@ -3,12 +3,13 @@
     <img
         v-for="social in socials"
         :key="social"
-        :src="social.img" 
+        :src="social.source"
         class="icon" 
         :id="social.name"
         :alt="social.name + ' logo'"
         @mouseover="onHover(social.name)"
         @mouseout="offHover(social.name)"
+        @click="openLink(social.link)"
     />
   </div>
 </template>
@@ -21,11 +22,13 @@ export default {
       socials: [
         {
           name: "Github",
-          img: "/src/assets/github-mark/github-mark.png"
+          source: "/github-mark.png",
+          link: "https://github.com/astroaspie"
         },
         {
           name: "LinkedIn",
-          img: "/src/assets/linkedin-logo.png"
+          source: "/linkedin-logo.png",
+          link: "https://www.linkedin.com/in/alex-astro-smith/"
         }
       ]
     }
@@ -47,6 +50,9 @@ export default {
       this.$el.querySelector(itemSelector).style.width = "50px";
       this.$el.querySelector(itemSelector).style.height = "50px";
     },
+    openLink(link) {
+      window.open(link, "_blank");
+    }
   }
 }
 </script>
@@ -57,6 +63,7 @@ export default {
   width: 50px;
   height: 50px;
   color: white;
+  font-size: 6px;
   z-index: 1;
 }
 </style>
