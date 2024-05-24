@@ -47,7 +47,7 @@ export default {
         {
           title: "2048 in Python",
           description: "2048 mathematical tile game made using PyGame.",
-          image: "/2048_Pygame-Screenshot.png",
+          image: "/2048_Pygame-screenshot.png",
           link: "https://github.com/AstroAspie/2048_pygame",
           language: "Python",
           type: "Game",

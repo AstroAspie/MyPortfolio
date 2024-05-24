@@ -1,23 +1,5 @@
 <template>
   <div class="contact">
-    <div class="socials">
-      <img 
-          src="../assets/github-mark/github-mark.png" 
-          class="icon" 
-          id="github"
-          alt="github logo"
-          @mouseover="onhover('#github')"
-          @mouseout="offhover('#github')"
-      />
-      <img
-          src="../assets/linkedin-logo.png" 
-          class="icon"
-          id="linkedin"
-          alt="linkedin logo" 
-          @mouseover="onhover('#linkedin')"
-          @mouseout="offhover('#linkedin')"
-      />
-    </div>
   </div>
 </template>
 

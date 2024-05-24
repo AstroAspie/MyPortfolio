@@ -1,6 +1,6 @@
 <template>
   <v-card class="cassette-card project-cassette">
-    <v-img :src="project.image" class="project-image"></v-img>
+    <v-img :src="`/MyPortfolio/${project.image}`" class="project-image"></v-img>
     <v-card-title class="project-title">{{ project.title }}</v-card-title>
     <v-card-text class="project-desc">{{ project.description }}</v-card-text>
     <v-card-actions>

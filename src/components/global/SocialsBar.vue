@@ -22,12 +22,12 @@ export default {
       socials: [
         {
           name: "Github",
-          source: "/github-mark.png",
+          source: "/MyPortfolio/github-mark.png",
           link: "https://github.com/astroaspie"
         },
         {
           name: "LinkedIn",
-          source: "/linkedin-logo.png",
+          source: "/MyPortfolio/linkedin-logo.png",
           link: "https://www.linkedin.com/in/alex-astro-smith/"
         }
       ]

@@ -25,7 +25,7 @@ export default {
         { name: "Home", path: "/" },
         { name: "About", path: "/about" },
         { name: "Projects", path: `#${this.projectsBanner}` },
-        { name: "Contact", path: "/contact" },
+        // { name: "Contact", path: "/contact" },
       ],
       activeLink: null,
     };
@@ -69,9 +69,9 @@ nav {
 
 .nav-links {
   display: flex;
-  justify-content: space-evenly;
-  text-align: center;
-  align-items: center;
+  justify-content: flex-end;
+  text-align: right;
+  align-items: flex-end;
   height: 4rem;
   width: 100%;
 }
@@ -85,13 +85,18 @@ nav {
 }
 
 .link-container {
-  width: 70%;
+  margin: 0 auto;
+  width: 60%;
   height: 70%;
-  text-align: center;
+  text-align: right;
   display: flex;
 }
 
-.link {
+.link-container:hover {
+  cursor: pointer;
+}
 
+.link {
+  margin: 0 auto;
 }
 </style>
