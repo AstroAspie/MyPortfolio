@@ -2,7 +2,7 @@
   <nav>
     <div class="container">
       <div class="nav-links" v-for="link in links" :key="link.name">
-        <div :id="link.name" class="link-container" @mouseover="hoverLink(link.name)" @mouseout="mouseoutLink(link.name)">
+        <div :id="link.name" class="link-container" @mouseover="hoverLink(link.name)" @mouseout="mouseoutLink(link.name)" @click="openLink(link.path)">
           <router-link
             class="link"
             :to="link.path"
@@ -36,11 +36,14 @@ export default {
   methods: {
     hoverLink(linkName) {
       let link = document.getElementById(linkName);
-      link.style.backgroundColor = "green";
+      link.style.border = "solid 1px green";
     },
     mouseoutLink(linkName) {
       let link = document.getElementById(linkName);
-      link.style.backgroundColor = "";
+      link.style.border = "";
+    },
+    openLink(link) {
+      window.open(link);
     }
   },
 };
