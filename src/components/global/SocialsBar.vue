@@ -1,7 +1,8 @@
 <template>
   <div class="header-socials">
-    <img 
+    <img
         v-for="social in socials"
+        :key="social"
         :src="social.img" 
         class="icon" 
         :id="social.name"
@@ -20,11 +21,11 @@ export default {
       socials: [
         {
           name: "Github",
-          img: "src/assets/github-mark/github-mark.png"
+          img: "/src/assets/github-mark/github-mark.png"
         },
         {
           name: "LinkedIn",
-          img: "src/assets/linkedin-logo.png"
+          img: "/src/assets/linkedin-logo.png"
         }
       ]
     }

@@ -14,7 +14,7 @@
       </div>
     </template>
     <template #secondary>
-      <ProjectsBanner />
+      <ProjectsBanner ref="projects-banner"/>
     </template>
     <template #contact>
       <SkillsBanner />
