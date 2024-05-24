@@ -4,7 +4,7 @@
       <div id="myLogo">
         <img src="/src/assets/images/mylogo.png" class="myLogo"/>
       </div>
-      <div id="intro">
+      <div class="intro">
         <div class="top-banner-items">
           <AstroBanner />
           <div class="header-socials">
@@ -14,7 +14,7 @@
       </div>
     </template>
     <template #secondary>
-      <ProjectsBanner />
+      <ProjectsBanner ref="projects-banner"/>
     </template>
     <template #contact>
       <SkillsBanner />
@@ -59,7 +59,7 @@ export default {
   height: 80%;
 }
 
-#intro {
+.intro {
   position: absolute;
   top: 10;
   left: calc(100% - 650px);
@@ -112,5 +112,14 @@ export default {
   color: white;
   font-size: 4rem;
   margin: 0;
+}
+
+@media (max-width: 480px) {
+  #myLogo {
+    display: none;
+  }
+  .intro {
+    left: 0;
+  }
 }
 </style>

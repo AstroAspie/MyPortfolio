@@ -20,14 +20,18 @@ export default {
   name: "NavBar",
   data() {
     return {
+      projectsBanner: "",
       links: [
         { name: "Home", path: "/" },
         { name: "About", path: "/about" },
-        { name: "Projects", path: "#projects" },
+        { name: "Projects", path: `#${this.projectsBanner}` },
         { name: "Contact", path: "/contact" },
       ],
       activeLink: null,
     };
+  },
+  mounted() {
+    this.projectsBanner = this.$refs["projects-banner"]
   },
   methods: {
     hoverLink(linkName) {
