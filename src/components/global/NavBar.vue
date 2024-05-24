@@ -2,11 +2,14 @@
   <nav>
     <div class="container">
       <div class="nav-links" v-for="link in links" :key="link.name">
-        <router-link
-          :to="link.path"
-          >
-          {{ link.name }}
-        </router-link>
+        <div :id="link.name" class="link-container" @mouseover="hoverLink(link.name)" @mouseout="mouseoutLink(link.name)">
+          <router-link
+            class="link"
+            :to="link.path"
+            >
+            {{ link.name }}
+          </router-link>
+        </div>
       </div>
     </div>
   </nav>
@@ -23,14 +26,18 @@ export default {
         { name: "Projects", path: "#projects" },
         { name: "Contact", path: "/contact" },
       ],
+      activeLink: null,
     };
   },
   methods: {
-    hoverLink(link) {
-      return this.$router.path === link.path
-        ? { color: "var(--color-accent)" }
-        : {};
+    hoverLink(linkName) {
+      let link = document.getElementById(linkName);
+      link.style.backgroundColor = "green";
     },
+    mouseoutLink(linkName) {
+      let link = document.getElementById(linkName);
+      link.style.backgroundColor = "";
+    }
   },
 };
 </script>
@@ -59,7 +66,7 @@ nav {
   text-align: center;
   align-items: center;
   height: 4rem;
-  width: 2rem;
+  width: 100%;
 }
 
 .nav-links a {
@@ -70,13 +77,14 @@ nav {
   transition: all 0.3s ease 0s;
 }
 
-.nav-links:hover {
-  background-color: var(--color-accent);
-  cursor: pointer;
+.link-container {
+  width: 70%;
+  height: 70%;
+  text-align: center;
+  display: flex;
 }
 
-.active-link {
-  color: var(--color-accent);
-  cursor: pointer;
+.link {
+
 }
 </style>
