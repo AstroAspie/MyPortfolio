@@ -43,7 +43,7 @@ export default {
       link.style.border = "";
     },
     openLink(link) {
-      window.open(link);
+      this.$router.push(link);
     }
   },
 };
