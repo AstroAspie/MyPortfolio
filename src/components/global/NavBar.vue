@@ -2,7 +2,7 @@
   <nav>
     <div class="container">
       <div class="nav-links" v-for="link in links" :key="link.name">
-        <div :id="link.name" class="link-container" @mouseover="hoverLink(link.name)" @mouseout="mouseoutLink(link.name)" @click="openLink(link)">
+        <div :id="link.name" class="link-container" @mouseover="hoverLink(link.name)" @mouseout="mouseoutLink(link.name)">
           <router-link
             class="link"
             :to="link.path"
@@ -20,19 +20,14 @@ export default {
   name: "NavBar",
   data() {
     return {
-      projectsBanner: "",
       links: [
         { name: "Home", path: "/" },
         { name: "About", path: "/about" },
-        { name: "Projects", path: "Projects" },
+        { name: "Projects", path: "/projects" },
         // { name: "Contact", path: "/contact" },
       ],
       activeLink: null,
     };
-  },
-  mounted() {
-    this.projectsBanner = this.$refs["projects-banner"];
-    this.links[2].path = this.projectsBanner;
   },
   methods: {
     hoverLink(linkName) {

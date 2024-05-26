@@ -1,19 +1,14 @@
 <template>
   <div>
-    <h1>Projects</h1>
-    <ul>
-      <li v-for="project in projects" :key="project.id">
-        <router-link :to="{ name: 'ProjectDetails', params: { id: project.id } }">
-          {{ project.name }}
-        </router-link>
-      </li>
-    </ul>
+    <ProjectsBanner />
   </div>
 </template>
 
 <script>
+import ProjectsBanner from '@/components/projects/ProjectsBanner.vue';
 export default {
-  name: 'Projects',
+  name: 'Projects-View',
+  components: {ProjectsBanner},
   data () {
     return {
       projects: [
