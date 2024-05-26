@@ -24,7 +24,7 @@ export default {
       links: [
         { name: "Home", path: "/" },
         { name: "About", path: "/about" },
-        { name: "Projects", path: "" },
+        { name: "Projects", path: "Projects" },
         // { name: "Contact", path: "/contact" },
       ],
       activeLink: null,
