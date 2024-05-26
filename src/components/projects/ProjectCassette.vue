@@ -3,12 +3,12 @@
     <v-img :src="`/MyPortfolio/${project.image}`" class="project-image"></v-img>
     <v-card-title class="project-title">{{ project.title }}</v-card-title>
     <v-card-text class="project-desc">{{ project.description }}</v-card-text>
-    <v-card-actions>
-      <div class="project-link-btn-container">
+    <v-card-actions class="project-link-btn-container">
+      <div>
         <v-btn :href="project.link" class="project-link-btn" target="_blank">View Project</v-btn>
-        <v-btn @click="likeProject(project)" class="project-link-btn">
-          <v-icon icon="mdi-heart" color="white"></v-icon>
-        </v-btn>
+      </div>
+      <div v-if="project.demo">
+        <v-btn :href="project?.demo" class="project-link-btn" target="_blank">View Demo</v-btn>
       </div>
     </v-card-actions>
   </v-card>
@@ -72,7 +72,7 @@ export default {
 
 .project-link-btn-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   align-content: center;
 }

@@ -2,7 +2,7 @@
   <nav>
     <div class="container">
       <div class="nav-links" v-for="link in links" :key="link.name">
-        <div :id="link.name" class="link-container" @mouseover="hoverLink(link.name)" @mouseout="mouseoutLink(link.name)" @click="openLink(link.path)">
+        <div :id="link.name" class="link-container" @mouseover="hoverLink(link.name)" @mouseout="mouseoutLink(link.name)" @click="openLink(link)">
           <router-link
             class="link"
             :to="link.path"
@@ -24,14 +24,15 @@ export default {
       links: [
         { name: "Home", path: "/" },
         { name: "About", path: "/about" },
-        { name: "Projects", path: `#${this.projectsBanner}` },
+        { name: "Projects", path: "" },
         // { name: "Contact", path: "/contact" },
       ],
       activeLink: null,
     };
   },
   mounted() {
-    this.projectsBanner = this.$refs["projects-banner"]
+    this.projectsBanner = this.$refs["projects-banner"];
+    this.links[2].path = this.projectsBanner;
   },
   methods: {
     hoverLink(linkName) {
@@ -43,7 +44,12 @@ export default {
       link.style.border = "";
     },
     openLink(link) {
-      this.$router.push(link);
+      if (link.name === "Projects") {
+        console.log("Projects: ", this.projectsBanner);
+        this.$router.push(`/${this.projectsBanner}`)
+      } else {
+        this.$router.push(link.path);
+      }
     }
   },
 };

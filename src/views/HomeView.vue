@@ -1,17 +1,7 @@
 <template>
   <HomeLayout>
     <template #primary>
-      <div id="myLogo">
-        <img src="/src/assets/images/mylogo.png" class="myLogo"/>
-      </div>
-      <div class="intro">
-        <div class="top-banner-items">
-          <AstroBanner />
-          <div class="header-socials">
-            <SocialsBar />
-          </div>
-        </div>
-      </div>
+        <AstroBanner />
     </template>
     <template #secondary>
       <ProjectsBanner ref="projects-banner"/>
@@ -25,12 +15,11 @@
 <script>
 import HomeLayout from "@/layouts/HomeLayout.vue";
 import ProjectsBanner from "@/components/projects/ProjectsBanner.vue";
-import SocialsBar from "@/components/global/SocialsBar.vue";
 import AstroBanner from "@/components/AstroBanner.vue";
 import SkillsBanner from "@/components/skills/SkillsBanner.vue";
 
 export default {
-  components: { SkillsBanner, AstroBanner, HomeLayout, ProjectsBanner, SocialsBar },
+  components: { SkillsBanner, AstroBanner, HomeLayout, ProjectsBanner},
   name: "HomeView",
   data() {
     return {
@@ -51,21 +40,6 @@ export default {
 </script>
 
 <style scoped>
-.myLogo {
-  position: absolute;
-  top: 10%;
-  left: 0;
-  width: 65%;
-  height: 80%;
-}
-
-.intro {
-  position: absolute;
-  top: 10;
-  left: calc(100% - 650px);
-  width: 500px;
-  font-size: 1.5rem;
-}
 
 .image {
   width: 100%;
@@ -91,27 +65,6 @@ export default {
   z-index: 1;
   width: 100%;
   height: 100%;
-}
-
-.header-socials {
-  display: flex;
-  justify-content: space-evenly;
-  text-align: center;
-  align-items: center;
-  height: 8rem;
-  width: 8rem;
-}
-
-.header-socials h1 {
-  color: white;
-  font-size: 25px;
-  margin: 0;
-}
-
-.header-socials h2 {
-  color: white;
-  font-size: 4rem;
-  margin: 0;
 }
 
 @media (max-width: 480px) {

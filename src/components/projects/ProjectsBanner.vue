@@ -1,5 +1,5 @@
 <template>
-  <div class="projects-container">
+  <div class="projects-container" ref="projects-banner">
     <ProjectCassette
       v-for="project in projects"
       :key="project.title"
@@ -24,6 +24,7 @@ export default {
           description: "This is a crypto currency tracker using Nuxt.js and the CoinGecko API.",
           image: "/Crypto-Watcher-Screenshot.png",
           link: "https://github.com/AstroAspie/crypto-watcher",
+          demo: "https://crypto-watcher-lou8f328b-astroaspies-projects.vercel.app",
           language: "JavaScript",
           type: "Web",
         },
