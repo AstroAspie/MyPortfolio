@@ -2,7 +2,7 @@
   <nav>
     <div class="container">
       <div class="nav-links" v-for="link in links" :key="link.name">
-        <div :id="link.name" class="link-container" @mouseover="hoverLink(link.name)" @mouseout="mouseoutLink(link.name)">
+        <div :id="link.name" class="link-container" @mouseover="hoverLink(link.name)" @mouseout="mouseoutLink(link.name)" @click="openLink(link.path)">
           <router-link
             class="link"
             :to="link.path"
@@ -39,12 +39,7 @@ export default {
       link.style.border = "";
     },
     openLink(link) {
-      if (link.name === "Projects") {
-        console.log("Projects: ", this.projectsBanner);
-        this.$router.push(`/${this.projectsBanner}`)
-      } else {
-        this.$router.push(link.path);
-      }
+      this.$router.push(link);
     }
   },
 };
