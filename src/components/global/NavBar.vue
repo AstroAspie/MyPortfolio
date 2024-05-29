@@ -32,7 +32,7 @@ export default {
   methods: {
     hoverLink(linkName) {
       let link = document.getElementById(linkName);
-      link.style.border = "solid 1px green";
+      link.style.border = "solid 1px cyan";
     },
     mouseoutLink(linkName) {
       let link = document.getElementById(linkName);

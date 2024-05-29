@@ -67,6 +67,7 @@ export default {
     };
   },
   mounted() {
+    this.alignBanner();
   },
   methods: {
     // draw fancy svg background
@@ -88,6 +89,13 @@ export default {
       `;
       document.querySelector("#projects-background").prepend(svg);
     },
+    alignBanner() {
+      if (this.$router.currentRoute == "Projects") {
+        this.$refs["projects-banner"].style = {
+          "margin-top": "12%"
+        };
+      }
+    }
   },
 };
 </script>
