@@ -1,4 +1,5 @@
 <template>
+  <Honeycomb id="projects-background" />
   <div class="projects-container" ref="projects-banner">
     <ProjectCassette
       v-for="project in projects"
@@ -10,11 +11,13 @@
 
 
 <script>
+import Honeycomb from "../global/Honeycomb.vue";
 import ProjectCassette from "./ProjectCassette.vue";
 export default {
   name: "ProjectsBanner",
   components: {
     ProjectCassette,
+    Honeycomb
   },
   data() {
     return {
@@ -64,7 +67,6 @@ export default {
     };
   },
   mounted() {
-    // this.drawBackground();
   },
   methods: {
     // draw fancy svg background
@@ -84,13 +86,20 @@ export default {
         </defs>
         <rect width="100" height="100" fill="url(#pattern)" />
       `;
-      document.querySelector(".projects-container").prepend(svg);
+      document.querySelector("#projects-background").prepend(svg);
     },
   },
 };
 </script>
 
 <style scoped>
+#projects-background {
+  position: absolute;
+  width: 100vw;
+  height: 100%;
+  z-index: -1;
+}
+
 .projects-container {
   display: flex;
   flex-wrap: wrap;
