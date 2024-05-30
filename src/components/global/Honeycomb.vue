@@ -28,7 +28,7 @@ export default {
     },
     hexRadius: {
       type: Number,
-      default: 50,
+      default: 70,
     },
     strokeColor: {
       type: String,

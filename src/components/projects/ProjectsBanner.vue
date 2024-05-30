@@ -105,6 +105,7 @@ export default {
   position: absolute;
   width: 100vw;
   height: 100%;
+  opacity: 0.2;
   z-index: -1;
 }
 
