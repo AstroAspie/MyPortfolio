@@ -22,9 +22,7 @@ export default {
   data() {
     return {
       welcome_msg_array: [
-          "Welcome aboard!",
           "Full Stack Web Developer",
-          "Welcome to my portfolio!",
       ],
       welcome_msg: "",
     };
