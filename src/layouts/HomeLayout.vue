@@ -59,4 +59,11 @@ export default {
   margin: 10px;
   overflow-x: hidden;
 }
+
+@media (max-width: 480px) {
+  .top {
+    margin: auto 0;
+    overflow-x: hidden;
+  }
+}
 </style>

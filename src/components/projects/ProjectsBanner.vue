@@ -70,25 +70,6 @@ export default {
     this.alignBanner();
   },
   methods: {
-    // draw fancy svg background
-    drawBackground() {
-      const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-      svg.setAttribute("width", "100%");
-      svg.setAttribute("height", "100%");
-      svg.setAttribute("viewBox", "0 0 100 100");
-      svg.setAttribute("preserveAspectRatio", "none");
-      svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
-      svg.setAttribute("xmlns:xlink", "http://www.w3.org/1999/xlink");
-      svg.innerHTML = `
-        <defs>
-          <pattern id="pattern" width="1" height="1" patternUnits="objectBoundingBox">
-            <image xlink:href="/images/abstract-background.jpg" width="100" height="100" />
-          </pattern>
-        </defs>
-        <rect width="100" height="100" fill="url(#pattern)" />
-      `;
-      document.querySelector("#projects-background").prepend(svg);
-    },
     alignBanner() {
       if (this.$router.currentRoute == "Projects") {
         this.$refs["projects-banner"].style = {
