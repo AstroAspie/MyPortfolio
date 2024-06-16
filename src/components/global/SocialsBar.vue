@@ -62,8 +62,9 @@ export default {
   margin: 10px;
   width: 50px;
   height: 50px;
-  color: white;
+  background-color: white;
   font-size: 6px;
+  border-radius: 50%;
   z-index: 1;
 }
 </style>

@@ -1,17 +1,8 @@
 <template>
-  <v-card
-    class="skill-container"
-    max-width="344"
-    outlined
-    tile
-  >
-    <v-card-title>
-      <span class="skill-title">{{ skill.name }}</span>
-    </v-card-title>
-    <v-card-text>
-      {{ skill.score }}
-    </v-card-text>
-  </v-card>
+  <div class="score-circle" @mouseenter="hoverCassette">
+    <v-progress-circular :model-value="baseScore" :size="100" :width="12" @mouseenter="animateCircle(skill)">{{ skill.name }}</v-progress-circular>
+    <div class="percentage" ref="skill-score">{{ skill.score }}%</div>
+  </div>
 </template>
 
 <script>
@@ -25,30 +16,49 @@ export default {
     },
   },
   data() {
-    return {};
+    return {
+      baseScore: 1
+    };
   },
-  methods: {},
+  methods: {
+    hoverCassette() {
+      let score = this.$refs['skill-score'];
+      score.style.visibility = 'visible';
+    },
+    mouseout() {
+      let score = this.$refs['skill-score'];
+      score.style.visibility = 'hidden';
+    },
+    animateCircle(skill)
+    {
+      while (this.baseScore <= skill.score) {
+        this.baseScore++;
+      }
+    },
+    isVisible(el) {
+      var rect = el.getBoundingClientRect();
+
+      return (
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) && 
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+      )
+    }
+  },
+  updated() {
+    if (this.isVisible(this.$el)) {
+      this.animateCircle(this.skill);
+    }
+  }
 };
 </script>
 
 <style lang="scss" scoped>
-.skill-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-  text-align: center;
-  width: 100px;
-  border-radius: 50px;
-  border: solid 5px var(--color-border);
+.score-circle {
+  margin-left: 4px;
+  margin-right: 4px;
 }
 
-.skill-title {
-  font-size: 60%;
-  font-weight: bold;
-}
-
-.skill-container:hover {
-  border: solid 5px var(--color-background);
+.percentage {
+  display: none;
 }
 </style>
