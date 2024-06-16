@@ -1,1 +1,0 @@
-import{_ as c,c as t,o as e}from"./index-BOW07dAA.js";const o={},a={class:"contact"};function s(n,_){return e(),t("div",a)}const d=c(o,[["render",s],["__scopeId","data-v-20bfa8c3"]]);export{d as default};
