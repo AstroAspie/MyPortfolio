@@ -1,5 +1,5 @@
 <template>
-  <Honeycomb id="projects-background" />
+  <!-- <Honeycomb id="projects-background" /> -->
   <div class="projects-container" ref="projects-banner">
     <ProjectCassette
       v-for="project in projects"
@@ -17,6 +17,7 @@ export default {
   name: "ProjectsBanner",
   components: {
     ProjectCassette,
+    // eslint-disable-next-line vue/no-unused-components
     Honeycomb
   },
   data() {
@@ -36,7 +37,7 @@ export default {
           description: "Space Invaders clone using HTML, CSS, and JavaScript.",
           image: "/Space-Invaders-Clone-Screenshot.png",
           link: "https://github.com/AstroAspie/space_invaders_clone",
-          demo: "@/demos/space-invaders-clone/index.html",
+          demo: "https://astroaspie.github.io/space_invaders_clone",
           language: "HTML/CSS/JS",
           type: "Game",
         },
