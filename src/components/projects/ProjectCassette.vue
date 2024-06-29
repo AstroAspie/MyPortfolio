@@ -51,15 +51,17 @@ export default {
 .project-cassette {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
   height: 28rem;
   width: 24rem;
   margin-bottom: 12px;
 }
 
 .project-image {
-  margin-top: 3px;
-  height: 10rem;
+  background-color: #2a2a2a;
+  position: relative;
+  max-height: 50%;
+  min-width: 80%;
 }
 
 .project-title {

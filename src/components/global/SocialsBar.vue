@@ -15,22 +15,13 @@
 </template>
 
 <script>
+import json from "@/assets/myStuff.json";
+
 export default {
   name: "SocialsBar",
   data() {
     return {
-      socials: [
-        {
-          name: "Github",
-          source: "/MyPortfolio/github-mark.png",
-          link: "https://github.com/astroaspie"
-        },
-        {
-          name: "LinkedIn",
-          source: "/MyPortfolio/linkedin-logo.png",
-          link: "https://www.linkedin.com/in/alex-astro-smith/"
-        }
-      ]
+      socials: null
     }
   },
   methods: {
@@ -52,6 +43,9 @@ export default {
     },
     openLink(link) {
       window.open(link, "_blank");
+    },
+    loadSocials() {
+      this.socials = json["socials"];
     }
   }
 }

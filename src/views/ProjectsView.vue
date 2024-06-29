@@ -1,23 +1,43 @@
 <template>
-  <div>
-    <ProjectsBanner />
+  <div class="projects-container" ref="projects-banner">
+    <ProjectCassette
+      v-for="project in projects"
+      :key="project.title"
+      :project="project"
+    />
   </div>
 </template>
 
 <script>
-import ProjectsBanner from '@/components/projects/ProjectsBanner.vue';
+import json from "@/assets/myStuff.json";
+import ProjectCassette from '@/components/projects/ProjectCassette.vue';
+
 export default {
   name: 'Projects-View',
-  components: {ProjectsBanner},
+  components: { ProjectCassette},
   data () {
     return {
-      projects: [
-        { id: 1, name: 'Project 1', type: 'Web'  },
-        { id: 2, name: 'Project 2', type: 'Web'  },
-        { id: 3, name: 'Project 3', type: 'Game' },
-        { id: 4, name: 'Project 4', type: 'Game' },
-      ]
+      projects: null
     }
   },
+  methods: {
+    LoadProjects() {
+      this.projects = json["projects"];
+    }
+  },
+  mounted() {
+    this.LoadProjects()
+  }
 }
 </script>
+
+<style scoped>
+.projects-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 30px;
+  width: 90%;
+  margin: 0 auto;
+}
+</style>

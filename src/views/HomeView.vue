@@ -1,7 +1,7 @@
 <template>
   <HomeLayout>
     <template #primary>
-        <AstroBanner />
+      <AstroBanner />
     </template>
     <template #secondary>
       <ProjectsBanner ref="projects-banner"/>
@@ -49,22 +49,11 @@ export default {
   opacity: 0.2;
 }
 
-.top-banner-img {
-  width: 100%;
-  height: 100%;
-  opacity: 0.2;
-  z-index: -1;
-}
-
-.top-banner-items {
+.middle-banner {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  z-index: 1;
-  width: 100%;
-  height: 100%;
+  margin: 0 auto;
+  font-weight: bold;
 }
 
 @media (max-width: 480px) {

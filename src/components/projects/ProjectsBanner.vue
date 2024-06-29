@@ -1,11 +1,17 @@
 <template>
-  <Honeycomb id="projects-background" />
-  <div class="projects-container" ref="projects-banner">
-    <ProjectCassette
-      v-for="project in projects"
-      :key="project.title"
-      :project="project"
-    />
+  <div class="banner-container">
+    <div class="projects-container" ref="projects-banner">
+      <ProjectCassette
+        v-for="project in projects"
+        :key="project.title"
+        :project="project"
+      />
+    </div>
+    <div class="page-link" @mouseenter="hoveringLink = !hoveringLink" @mouseleave="hoveringLink = !hoveringLink">
+      <span v-if="hoveringLink">🚀</span>
+      View All My Projects
+      <span v-if="hoveringLink">🚀</span>
+    </div>
   </div>
 </template>
 
@@ -17,10 +23,12 @@ export default {
   name: "ProjectsBanner",
   components: {
     ProjectCassette,
+    // eslint-disable-next-line vue/no-unused-components
     Honeycomb
   },
   data() {
     return {
+      hoveringLink: false,
       projects: [
         {
           title: "Crypto Currency Tracker",
@@ -82,9 +90,17 @@ export default {
 </script>
 
 <style scoped>
+.banner-container {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  width: 100vw;
+  height: 100%;
+}
+
 #projects-background {
   position: absolute;
-  width: 100vw;
+  width: 100%;
   height: 100%;
   opacity: 0.2;
   z-index: -1;
@@ -97,5 +113,12 @@ export default {
   text-align: center;
   align-items: center;
   gap: 20px;
+}
+
+.page-link {
+  position: relative;
+  margin: 0 auto;
+  font-size: 24px;
+  cursor: pointer;
 }
 </style>
