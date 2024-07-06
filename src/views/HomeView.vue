@@ -17,9 +17,11 @@ import HomeLayout from "@/layouts/HomeLayout.vue";
 import ProjectsBanner from "@/components/projects/ProjectsBanner.vue";
 import AstroBanner from "@/components/AstroBanner.vue";
 import SkillsBanner from "@/components/skills/SkillsBanner.vue";
+import BasicScene from "@/components/scenes/BasicScene.vue";
 
 export default {
-  components: { SkillsBanner, AstroBanner, HomeLayout, ProjectsBanner},
+  // eslint-disable-next-line vue/no-unused-components
+  components: { SkillsBanner, AstroBanner, HomeLayout, ProjectsBanner, BasicScene},
   name: "HomeView",
   data() {
     return {

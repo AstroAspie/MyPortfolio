@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'Projects',
+  name: 'Projects-Layout',
   data () {
     return {
       projects: []

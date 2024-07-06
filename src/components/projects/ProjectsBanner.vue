@@ -44,7 +44,7 @@ export default {
           description: "Space Invaders clone using HTML, CSS, and JavaScript.",
           image: "/Space-Invaders-Clone-Screenshot.png",
           link: "https://github.com/AstroAspie/space_invaders_clone",
-          demo: "@/demos/space-invaders-clone/index.html",
+          demo: "https://astroaspie.github.io/space_invaders_clone",
           language: "HTML/CSS/JS",
           type: "Game",
         },
@@ -92,10 +92,11 @@ export default {
 <style scoped>
 .banner-container {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   flex-direction: column;
-  width: 100vw;
+  width: 100%;
   height: 100%;
+  overflow-y: hidden;
 }
 
 #projects-background {
