@@ -1,5 +1,5 @@
 <template>
-  <v-card class="cassette-card project-cassette">
+  <v-card class="cassette-card project-cassette" @mouseenter="mouseOver" @mouseleave="mouseOver" :style="hoverStyle()">
     <v-img :src="`/MyPortfolio/${project.image}`" class="project-image"></v-img>
     <v-card-title class="project-title">{{ project.title }}</v-card-title>
     <v-card-text class="project-desc">{{ project.description }}</v-card-text>
@@ -24,27 +24,35 @@ export default {
     }
   },
   data() {
-    return {};
+    return {
+      hovering: false
+    };
   },
   methods: {
     likeProject(project) {
       console.log("Liked Project: ", project.title);
+    },
+    mouseOver() {
+      this.hovering = !this.hovering;
+    },
+    hoverStyle() {
+      if (this.hovering) {
+        return {
+          "box-shadow": "10px 10px lightblue"
+        }
+      }
     }
   },
 };
 </script>
 
 <style lang="scss" scoped>
-.cassette-card:hover {
-  box-shadow: 60px -16px white;
-}
-
 .project-cassette {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 40%;
-  width: 33%;
+  height: 100%;
+  width: 100%;
   margin-bottom: 12px;
   border-radius: 10px;
   flex-shrink: 1;
@@ -80,7 +88,7 @@ export default {
 }
 
 .project-cassette:hover {
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 20px 0 rgba(0, 0, 255, 0.5);
 }
 
 .project-link-btn:hover {

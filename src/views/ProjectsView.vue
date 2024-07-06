@@ -1,10 +1,10 @@
 <template>
   <div class="projects-container" ref="projects-banner">
-    <ProjectCassette
-      v-for="project in projects"
-      :key="project.title"
-      :project="project"
-    />
+    <div v-for="project in projects" :key="project.title" class="cassette">
+      <ProjectCassette
+        :project="project"
+      />
+    </div>
   </div>
 </template>
 
@@ -35,9 +35,16 @@ export default {
 .projects-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  gap: 30px;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
   width: 90%;
-  margin: 0 auto;
+  margin: 120px auto;
+}
+
+.cassette {
+  width: 400px;
+  height: 500px;
+  margin-bottom: 40px;
 }
 </style>

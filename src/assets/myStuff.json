@@ -30,6 +30,7 @@
       "title": "William's Water Sport Rentals",
       "description": "Client Website for William's Water Sport Rentals. Built using Vue.js and Vuetify.",
       "image": "/Williams-Water-Sport-Rentals-Screenshot.png",
+      "language": [".NET", "Vue", "Postgres", "Docker"],
       "complete": false
     },
     {
@@ -37,14 +38,14 @@
       "description": "Simple Todo App using ASP.NET, Vue3 and Postgres",
       "image": "",
       "type": "Web",
-      "language": [".NET", "Vue", "Postgres"]
+      "language": [".NET", "Vue", "Postgres", "Docker"]
     },
     {
       "title": "Smart Shopper App",
       "description": "Shopping Assistant that scrapes and manages local shopping catalog data to plot shopping trips for the cheapest bargains",
       "image": "/smartshopper_demo_pic.png",
       "type": ["Web", "Mobile", "Chrome Extension"],
-      "language": [".NET", "Vue", "Postgres", "Python"]
+      "language": [".NET", "Vue", "Postgres", "Python", "Docker"]
     }
   ],
   "socials": [
@@ -58,5 +59,15 @@
       "source": "/MyPortfolio/linkedin-logo.png",
       "link": "https://www.linkedin.com/in/alex-astro-smith/"
     }
+  ],
+  "logos": [
+    { "python": "/python_logo.png" },
+    { "vue": "/vue_logo.png" },
+    { "docker": "/docker_logo.png" },
+    { "postgres": "/postgres_logo.png" },
+    { "dotnet": "/dotnet_logo.png" },
+    { "html": "/html_logo.png" },
+    { "css": "/css_logo.png" },
+    { "javascript": "js_logo.png" }
   ]
 }
