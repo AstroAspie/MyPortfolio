@@ -38,6 +38,13 @@
       "image": "",
       "type": "Web",
       "language": [".NET", "Vue", "Postgres"]
+    },
+    {
+      "title": "Smart Shopper App",
+      "description": "Shopping Assistant that scrapes and manages local shopping catalog data to plot shopping trips for the cheapest bargains",
+      "image": "/smartshopper_demo_pic.png",
+      "type": ["Web", "Mobile", "Chrome Extension"],
+      "language": [".NET", "Vue", "Postgres", "Python"]
     }
   ],
   "socials": [
