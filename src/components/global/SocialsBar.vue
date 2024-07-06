@@ -11,6 +11,14 @@
         @mouseout="offHover(social.name)"
         @click="openLink(social.link)"
     />
+    <div>
+      <v-btn
+            color="primary"
+            prepend-icon="mdi-file-download"
+            class="download-resume-btn"
+            @click.prevent="downloadResume"
+          >download my resume</v-btn>
+    </div>
   </div>
 </template>
 
@@ -46,7 +54,31 @@ export default {
     },
     loadSocials() {
       this.socials = json["socials"];
+    },
+    downloadResume() {
+      this.loading = true;
+      setTimeout(() => {
+        this.loading = false;
+      }, 2000);
+      
+      const localString = '/resume/My_Resume.pdf';
+      fetch(localString)
+        .then((response) => response.blob())
+        .then((blob) => {
+          const url = window.URL.createObjectURL(new Blob([blob]));
+          const link = document.createElement('a');
+          link.href = url;
+          link.setAttribute('download', 'Alex_Smith_FullStack_Dev-Resume.pdf');
+          document.body.appendChild(link);
+          link.click();
+        })
+        .catch((error) => {
+          console.error(error);
+        });
     }
+  },
+  mounted() {
+    this.loadSocials();
   }
 }
 </script>
@@ -60,5 +92,11 @@ export default {
   font-size: 6px;
   border-radius: 50%;
   z-index: 1;
+}
+
+.download-resume-btn {
+  text-align: center;
+  padding-right: 40px;
+  margin-left: 10px;
 }
 </style>
