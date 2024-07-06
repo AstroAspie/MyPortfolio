@@ -1,1 +1,0 @@
-import{_ as c,c as e,F as n,b as a,o as t}from"./index-QvA-0H4r.js";const o={data(){return{gridItems:600}}},i={class:"grid-container"};function d(_,p,l,m,r,u){return t(),e("div",i,[(t(!0),e(n,null,a(r.gridItems,s=>(t(),e("div",{key:s,class:"grid-item"}))),128))])}const g=c(o,[["render",d],["__scopeId","data-v-51e8ebc4"]]);export{g as default};
