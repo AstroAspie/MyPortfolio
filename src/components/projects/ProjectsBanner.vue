@@ -1,11 +1,11 @@
 <template>
   <div class="banner-container">
     <div class="projects-container" ref="projects-banner">
-      <ProjectCassette
-        v-for="project in projects"
-        :key="project.title"
-        :project="project"
-      />
+      <div v-for="project in projects" :key="project.title" class="cassette">
+        <ProjectCassette
+          :project="project"
+        />
+      </div>
     </div>
     <div class="page-link" @mouseenter="hoveringLink = !hoveringLink" @mouseleave="hoveringLink = !hoveringLink">
       <span v-if="hoveringLink">🚀</span>
@@ -112,14 +112,20 @@ export default {
   flex-wrap: wrap;
   justify-content: space-evenly;
   text-align: center;
-  align-items: center;
+  margin-top: 2%;
+  height: 70%;
   gap: 20px;
 }
 
 .page-link {
   position: relative;
-  margin: 0 auto;
-  font-size: 24px;
+  margin: 0 auto 10% auto;
+  font-size: 36px;
   cursor: pointer;
+}
+
+.cassette {
+  width: 300px;
+  height: 400px;
 }
 </style>
