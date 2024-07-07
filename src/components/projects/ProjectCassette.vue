@@ -62,6 +62,7 @@ export default {
   background-color: #2a2a2a;
   position: relative;
   max-height: 50%;
+  min-height: 50%;
   min-width: 80%;
 }
 
