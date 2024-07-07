@@ -7,7 +7,7 @@
         />
       </div>
     </div>
-    <div class="page-link" @mouseenter="hoveringLink = !hoveringLink" @mouseleave="hoveringLink = !hoveringLink">
+    <div class="page-link" @mouseenter="hoveringLink = !hoveringLink" @mouseleave="hoveringLink = !hoveringLink" @click="goToProjects()">
       <span v-if="hoveringLink">🚀</span>
       View All My Projects
       <span v-if="hoveringLink">🚀</span>
@@ -84,6 +84,9 @@ export default {
           "margin-top": "12%"
         };
       }
+    },
+    goToProjects() {
+      this.$router.push("/projects");
     }
   },
 };
