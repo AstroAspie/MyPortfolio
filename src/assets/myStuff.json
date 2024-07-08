@@ -46,6 +46,13 @@
       "image": "/smartshopper_demo_pic.png",
       "type": ["Web", "Mobile", "Chrome Extension"],
       "language": [".NET", "Vue", "Postgres", "Python", "Docker"]
+    },
+    {
+      "title": "Text to Speech API",
+      "description": "Simple RestAPI using FastAPI to return mp3 files converted from a given text string",
+      "image": "",
+      "type": ["API"],
+      "language": ["Python", "FastAPI"]
     }
   ],
   "socials": [
