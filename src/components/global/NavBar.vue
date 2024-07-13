@@ -7,7 +7,9 @@
             class="link"
             :to="link.path"
             >
-            {{ link.name }}
+              <img v-if="link.name == 'Home' && hoverHome" src="@/assets/images/home-cyan.png" class="home-link" />
+              <img v-if="link.name == 'Home' && !hoverHome" src="@/assets/images/home-white.png" class="home-link" />
+              <span v-if="link.name != 'Home'"> {{ link.name }}</span>
           </router-link>
         </div>
       </div>
@@ -20,9 +22,9 @@ export default {
   name: "NavBar",
   data() {
     return {
+      hoverHome: false,
       links: [
         { name: "Home", path: "/" },
-        { name: "About", path: "/about" },
         { name: "Projects", path: "/projects" },
         // { name: "Contact", path: "/contact" },
       ],
@@ -31,15 +33,26 @@ export default {
   },
   methods: {
     hoverLink(linkName) {
-      let link = document.getElementById(linkName);
-      link.style.border = "solid 1px cyan";
+      if (linkName != "Home") {
+        let link = document.getElementById(linkName);
+        link.style.border = "solid 1px cyan";
+      } else {
+        this.hoverHome = true;
+      }
     },
     mouseoutLink(linkName) {
       let link = document.getElementById(linkName);
       link.style.border = "";
+      this.hoverHome = false;
     },
     openLink(link) {
       this.$router.push(link);
+    },
+    loadHomeIcons() {
+      let white = '@/assets/images/home-white.png';
+      this.homeImages.push(white);
+      let cyan = '@/assets/images/home-cyan.png';
+      this.homeImages.push(cyan);
     }
   },
 };
@@ -56,20 +69,23 @@ nav {
   margin-bottom: 2rem;
 }
 
+.home-link {
+  max-width: 2rem;
+}
+
 .container {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
+  margin-left: 1%;
 }
 
 .nav-links {
   display: flex;
-  justify-content: flex-end;
   text-align: right;
   align-items: flex-end;
   height: 4rem;
-  width: 100%;
+  width: 100px;
+
 }
 
 .nav-links a {
@@ -81,8 +97,7 @@ nav {
 }
 
 .link-container {
-  margin: 0 auto;
-  width: 60%;
+  width: 90%;
   height: 70%;
   text-align: right;
   display: flex;

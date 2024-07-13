@@ -1,7 +1,8 @@
 <template>
   <div class="astro">
-    <div id="myLogo">
-      <img src="/mylogo.png" class="myLogo"/>
+    <div class="bio-container">
+      <MyBio class="bio"/>
+      <img src="/mylogo.png" class="myLogo" />
     </div>
     <div class="intro">
       <h1>Alex <span class="nickname">(Astro)</span> Smith</h1>
@@ -14,11 +15,12 @@
 </template>
 
 <script>
+import MyBio from './global/MyBio.vue';
 import SocialsBar from './global/SocialsBar.vue';
 
 export default {
   name: "AstroBanner",
-  components: {SocialsBar},
+  components: {MyBio, SocialsBar},
   data() {
     return {
       welcome_msg_array: [
@@ -45,6 +47,34 @@ export default {
 </script>
 
 <style scoped>
+.bio-container {
+  position: relative;
+  display: flex;
+  top: 20%;
+  max-height: 90%;
+  align-content: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.bio {
+  position: relative;
+  top: 20%;
+  left: 2%;
+  z-index: 10;
+}
+
+.myLogo {
+  position: relative;
+  width: 100%;
+  height: 80%;
+  z-index: -1;
+  opacity: 0.04;
+  bottom: 34%;
+}
+
+
 .astro {
   color: white;
   display: flex;
@@ -57,15 +87,10 @@ export default {
   position: relative;
   top: 30%;
   min-width: 500px;
+  margin: 0 5%;
   font-size: 1.5rem;
 }
 
-.myLogo {
-  position: relative;
-  top: 10%;
-  width: 100%;
-  height: 80%;
-}
 
 .header-socials {
   display: flex;
