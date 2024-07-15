@@ -59,16 +59,17 @@ export default {
       this.loading = true;
       setTimeout(() => {
         this.loading = false;
-      }, 2000);
+      }, 1000);
       
-      const localString = '/resume/My_Resume.pdf';
+      const localString = "src/assets/Alex-Smith_Resume.pdf";
+
       fetch(localString)
         .then((response) => response.blob())
         .then((blob) => {
           const url = window.URL.createObjectURL(new Blob([blob]));
           const link = document.createElement('a');
           link.href = url;
-          link.setAttribute('download', 'Alex_Smith_FullStack_Dev-Resume.pdf');
+          link.setAttribute('download', 'Alex-Smith_Resume.pdf');
           document.body.appendChild(link);
           link.click();
         })
