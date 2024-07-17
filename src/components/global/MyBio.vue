@@ -10,9 +10,7 @@
     <br />
     <!-- Current Work -->
     <p class="current-work">
-      Currently, I work a 9-5 as a FullStack Developer at Enco Group ltd
-      I am currently working as both a freelance developer and a "day-job" as a
-      Full-Stack Developer at ENCO Group ltd.
+      Currently, I work a 9-5 as a FullStack Developer at Enco Group ltd and freelance developer in my leisure/free time.
     </p>
     <br />
     <p>
