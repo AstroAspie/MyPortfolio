@@ -1,6 +1,16 @@
 <template>
-  <div class="score-circle" @mouseenter="hoverCassette">
-    <v-progress-circular :model-value="baseScore" :size="100" :width="12" @mouseenter="animateCircle(skill)">{{ skill.name }}</v-progress-circular>
+  <div 
+    class="score-circle"
+  >
+    <v-progress-circular 
+      :model-value="baseScore" 
+      :size="size" 
+      :width="width"
+      @mouseenter="animateCircle(skill, true)"
+      @mouseout="animateCircle(skill, false)"
+    >
+      {{ skill.name }}
+    </v-progress-circular>
     <div class="percentage" ref="skill-score">{{ skill.score }}%</div>
   </div>
 </template>
@@ -17,6 +27,8 @@ export default {
   },
   data() {
     return {
+      size: 100,
+      width: 12,
       baseScore: 1
     };
   },
@@ -29,10 +41,30 @@ export default {
       let score = this.$refs['skill-score'];
       score.style.visibility = 'hidden';
     },
-    animateCircle(skill)
+    animateCircle(skill, fill)
     {
-      while (this.baseScore <= skill.score) {
-        this.baseScore++;
+      if (fill === true)
+      {
+        while (this.baseScore <= skill.score) {
+          this.baseScore++;
+          if (this.size <= 140)
+            this.size++;
+          if (this.width <= 18)
+            this.width++;
+        }
+      }
+      else if (fill === false)
+      {
+        setInterval(() => {
+          while (this.baseScore > 1)
+          {
+            this.baseScore--;
+            if (this.size >= 100)
+              this.size--;
+            if (this.width >= 12)
+              this.width--;
+          }
+        }, 5000)
       }
     },
     isVisible(el) {

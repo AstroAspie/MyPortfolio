@@ -1,12 +1,25 @@
 <template>
-  <div class="banner-container">
+  <div class="container">
     <h1 class="banner-title">Skills</h1>
-    <div class="skills-container">
-      <SkillCassette
-        v-for="skill in skills_list"
-        :key="skill.name"
-        :skill="skill"
-      />
+    <div class="sort-container">
+      <span class="sort-subtext">Sort:</span>
+      <div class="sort-option">
+        <button @click="sortByScore('score')">skill level</button>
+        <div class="ascending" @click="ascending = !ascending">
+          <span v-if="!ascending">⬇️</span>
+          <span v-else>⬆️</span>
+        </div>
+      </div>
+    </div>
+    <div class="banner-container">
+      <div class="skills-container">
+        <SkillCassette
+          v-for="skill in sorted"
+          :key="skill.name"
+          :skill="skill"
+          class="skill-item"
+        />
+      </div>
     </div>
   </div>
 </template>
@@ -25,8 +38,12 @@ export default {
         infrastructure: 'INF', 
         database: 'DB',
         IoT: 'IoT',
-        midc: 'misc'
+        misc: 'misc'
       }],
+      ascending: false,
+      sorted: [],
+      sortSelect: null,
+      sortParams: ['skill', 'type', ''],
       skills_list: [
         { name: 'HTML', score: 100, type: 'FE'},
         { name: 'CSS', score: 95, type: 'FE' },
@@ -65,11 +82,79 @@ export default {
       ]
     }
   },
-  methods: {},
+  watch: {
+    ascending() {
+      this.sortByScore();
+    }
+  },
+  methods: {
+    sortByScore() {
+      if (!this.ascending) {
+        this.sorted = this.skills_list.slice().sort(function(a, b){
+          return (a.score < b.score) ? 1 : -1;
+        });
+      } else {
+        this.sorted = this.skills_list.slice().sort(function(a, b){
+          return (a.score > b.score) ? 1 : -1;
+        });
+      }
+    },
+    sortByTag() {},
+  },
+  created() {
+    if (this.sorted.length == 0)
+      this.sorted = this.skills_list;
+  }
 };
 </script>
 
 <style lang="scss" scoped>
+hr {
+  rotate: 90deg;
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+}
+
+
+.banner-title {
+  position: relative;
+  font-size: 2rem;
+  font-weight: bold;
+  // margin: 10px 20px 20px 10px;
+  margin: 10px 47%;
+}
+
+.sort-container {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin-top: 0;
+  margin-bottom: 5%;
+  margin-left: 4%;
+  margin-right: 4%;
+}
+
+.sort-option {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  color: white;
+  font-size: 14px;
+  border: solid 1px white;
+  border-radius: 10px;
+  padding: 5px;
+  width: 10%;
+}
+
+.ascending {
+  display: inline;
+  padding-left: 4px;
+  cursor: pointer;
+}
+
 .banner-container {
   display: flex;
   flex-direction: column;
@@ -77,12 +162,6 @@ export default {
   justify-content: space-evenly;
   flex-wrap: wrap;
   width: 100%;
-}
-
-.banner-title {
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 10px;
 }
 
 .skills-container {
