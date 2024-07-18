@@ -110,4 +110,9 @@ export default {
   color: white;
   font-size: 4rem;
 }
+
+.nickname {
+  font-style: italic;
+  text-decoration: underline;
+}
 </style>
