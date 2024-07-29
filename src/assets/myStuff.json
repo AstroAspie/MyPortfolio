@@ -53,6 +53,20 @@
       "image": "",
       "type": ["API"],
       "language": ["Python", "FastAPI"]
+    },
+    {
+      "title": "Watch Party APP",
+      "description": "A web application for downloading, sharing and watching movies with friends around the globe.",
+      "image": "",
+      "type": ["Web", "Streaming"],
+      "language": ["Python", "Django", "React", ".NET"]
+    },
+    {
+      "title": "Dev Blog",
+      "description": "Developer blog site built using Django and React",
+      "image": "",
+      "type": ["Web"],
+      "language": ["Python", "Django", "Javascript", "React"]
     }
   ],
   "socials": [
@@ -75,6 +89,6 @@
     { "dotnet": "/dotnet_logo.png" },
     { "html": "/html_logo.png" },
     { "css": "/css_logo.png" },
-    { "javascript": "js_logo.png" }
+    { "javascript": "/js_logo.png" }
   ]
 }
