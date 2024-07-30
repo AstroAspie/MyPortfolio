@@ -89,6 +89,7 @@ export default {
   min-width: 500px;
   margin: 0 5%;
   font-size: 1.5rem;
+  color: teal;
 }
 
 

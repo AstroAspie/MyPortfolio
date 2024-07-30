@@ -6,6 +6,7 @@
       :model-value="baseScore" 
       :size="size" 
       :width="width"
+      :color="teal"
       @mouseenter="animateCircle(skill, true)"
       @mouseout="animateCircle(skill, false)"
     >
@@ -88,6 +89,7 @@ export default {
 .score-circle {
   margin-left: 4px;
   margin-right: 4px;
+  color: teal;
 }
 
 .percentage {
