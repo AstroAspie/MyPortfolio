@@ -10,7 +10,7 @@
     <br />
     <!-- Current Work -->
     <p class="current-work">
-      Currently, I work a 9-5 as a FullStack Developer at Enco Group ltd and freelance developer in my leisure/free time.
+      Currently, I work full time as a freelance developer with 2 on-going clients and developing internal tools for my small team @ Tekheart Productions such as; a Business Tracker to manage invoices and team tasks for each client.
     </p>
     <br />
     <p>
