@@ -48,14 +48,6 @@ export default {
           language: "HTML/CSS/JS",
           type: "Game",
         },
-        // {
-        //   title: "Weather App",
-        //   description: "This is a description of project 3",
-        //   image: "https://via.placeholder.com/150",
-        //   link: "https://www.google.com",
-        //   language: "JavaScript",
-        //   type: "Web",
-        // },
         {
           title: "2048 in Python",
           description: "2048 mathematical tile game made using PyGame.",
@@ -65,10 +57,11 @@ export default {
           type: "Game",
         },
         {
-          title: "William's Water Sport Rentals",
-          description: "Client Website for William's Water Sport Rentals. Built using Vue.js and Vuetify.",
-          image: "/Williams-Water-Sport-Rentals-Screenshot.png",
-          inProgress: true,
+          title: "Text to Speech API",
+          description: "Simple RestAPI using FastAPI to return mp3 files converted from a given text string",
+          image: "",
+          type: ["API"],
+          language: ["Python", "FastAPI"]
         }
       ],
       selected_project: null,

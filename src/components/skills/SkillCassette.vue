@@ -89,7 +89,6 @@ export default {
 .score-circle {
   margin-left: 4px;
   margin-right: 4px;
-  color: teal;
 }
 
 .percentage {

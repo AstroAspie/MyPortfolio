@@ -2,7 +2,7 @@
   <div class="my-bio">
     <!-- General -->
     <p>
-      I am a mostly self-taught full-stack developer with over <u><b><i>five</i></b></u> years experience and a passion for all things technology, 
+      I am a mostly self-taught full-stack developer with over <span class="years-experience">five</span> years experience and a passion for all things technology, 
       programming and cybersecurity. I have quite a broad range of experience ranging from web based projects with ReactJS, Vue and Angular
       with varying backend technologies including FastAPI, Express, Asp.Net, Django, and more. My cybersecurity experience is more niche based in 
       offensive security although I am well versed in architecturual security and defensive techniques.
@@ -10,7 +10,7 @@
     <br />
     <!-- Current Work -->
     <p class="current-work">
-      Currently, I work full time as a freelance developer with 2 on-going clients and developing internal tools for my small team @ Tekheart Productions such as; a Business Tracker to manage invoices and team tasks for each client.
+      Currently, I work full time as a freelance developer with 2 on-going clients whilst developing internal tools for my small team @ Tekheart Productions such as; a Business Tracker to manage invoices and team tasks for each client.
     </p>
     <br />
     <p>
@@ -30,9 +30,7 @@
 export default {
   name: "MyBio",
   data() {
-    return {
-
-    }
+    return {}
   }
 }
 </script>
@@ -44,5 +42,10 @@ export default {
   opacity: 1;
   text-decoration: solid;
   font-size: larger;
+}
+
+.years-experience { 
+  font-weight: bold;
+  text-decoration: underline;
 }
 </style>

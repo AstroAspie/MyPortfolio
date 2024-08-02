@@ -38,7 +38,7 @@ export default {
     hoverStyle() {
       if (this.hovering) {
         return {
-          "box-shadow": "10px 10px lightblue"
+          "box-shadow": "10px 10px #7c7c7c"
         }
       }
     }
