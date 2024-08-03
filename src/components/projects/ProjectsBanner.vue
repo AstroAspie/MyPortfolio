@@ -126,4 +126,90 @@ export default {
   max-width: 300px;
   max-height: 400px;
 }
+
+.banner-container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  overflow-y: hidden;
+}
+
+#projects-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0.2;
+  z-index: -1;
+}
+
+.projects-container {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  text-align: center;
+  margin-top: 2%;
+  height: 90%;
+  gap: 20px;
+}
+
+.page-link {
+  position: relative;
+  margin: 2rem auto;
+  font-size: 36px;
+  cursor: pointer;
+}
+
+.cassette {
+  display: flex;
+  max-width: 300px;
+  max-height: 400px;
+}
+
+/* Tablet devices */
+@media (max-width: 768px) {
+  .banner-container {
+    overflow-y: scroll;
+  }
+  .projects-container {
+    flex-direction: column;
+    justify-content: center;
+    height: auto;
+    margin-top: 5%;
+  }
+
+  .page-link {
+    font-size: 28px;
+  }
+
+  .cassette {
+    max-width: 100%;
+    max-height: 300px;
+  }
+}
+
+/* Mobile devices */
+@media (max-width: 480px) {
+  .banner-container {
+    overflow-y: scroll;
+  }
+  .projects-container {
+    flex-direction: column;
+    justify-content: center;
+    height: auto;
+    margin-top: 5%;
+  }
+
+  .page-link {
+    font-size: 24px;
+  }
+
+  .cassette {
+    max-width: 100%;
+    max-height: 250px;
+  }
+}
+
 </style>

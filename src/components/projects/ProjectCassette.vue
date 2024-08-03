@@ -99,4 +99,6 @@ export default {
   border-radius: 0;
 }
 
+/* mobile & tablet styling */
+
 </style>

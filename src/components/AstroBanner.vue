@@ -116,4 +116,82 @@ export default {
   font-style: italic;
   text-decoration: underline;
 }
+
+/* Tablet devices */
+@media (max-width: 768px) {
+  .bio-container {
+    flex-direction: column;
+    top: 10%;
+    max-height: auto;
+  }
+
+  .bio {
+    top: 10%;
+    left: 0;
+    display: none;
+  }
+
+  .myLogo {
+    height: 60%;
+    bottom: 20%;
+  }
+
+  .intro {
+    top: 20%;
+    min-width: 100%;
+    margin: 0 2%;
+    font-size: 1.2rem;
+  }
+
+  .header-socials {
+    display: none;
+  }
+
+  .header-socials h1 {
+    font-size: 20px;
+  }
+
+  .header-socials h2 {
+    font-size: 3rem;
+  }
+}
+
+/* Mobile devices */
+@media (max-width: 480px) {
+  .bio-container {
+    flex-direction: column;
+    top: 5%;
+    max-height: auto;
+    display: none;
+  }
+
+  .bio {
+    top: 5%;
+    left: 0;
+  }
+
+  .myLogo {
+    height: 50%;
+    bottom: 10%;
+  }
+
+  .intro {
+    top: 10%;
+    min-width: 100%;
+    margin: 0 1%;
+    font-size: 1rem;
+  }
+
+  .header-socials {
+    display: none;
+  }
+
+  .header-socials h1 {
+    font-size: 18px;
+  }
+
+  .header-socials h2 {
+    font-size: 2.5rem;
+  }
+}
 </style>
