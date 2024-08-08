@@ -65,8 +65,8 @@ export default {
 .project-image {
   background-color: #2a2a2a;
   position: relative;
-  max-height: 50%;
-  min-height: 50%;
+  max-height: 12rem;
+  min-height: 12rem;
   min-width: 80%;
 }
 

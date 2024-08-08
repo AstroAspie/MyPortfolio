@@ -3,14 +3,9 @@
     <div class="container">
       <div class="nav-links" v-for="link in links" :key="link.name">
         <div :id="link.name" class="link-container" @mouseover="hoverLink(link.name)" @mouseout="mouseoutLink(link.name)" @click="openLink(link.path)">
-          <router-link
-            class="link"
-            :to="link.path"
-            >
-              <img v-if="link.name == 'Home' && hoverHome" src="@/assets/images/home-cyan.png" class="home-link" />
-              <img v-if="link.name == 'Home' && !hoverHome" src="@/assets/images/home-white.png" class="home-link" />
-              <span v-if="link.name != 'Home'"> {{ link.name }}</span>
-          </router-link>
+          <img v-if="link.name == 'Home' && hoverHome" src="@/assets/images/home-cyan.png" class="home-link" />
+          <img v-if="link.name == 'Home' && !hoverHome" src="@/assets/images/home-white.png" class="home-link" />
+          <span v-if="link.name != 'Home'"> {{ link.name }}</span>
         </div>
       </div>
     </div>
@@ -24,8 +19,9 @@ export default {
     return {
       hoverHome: false,
       links: [
-        { name: "Home", path: "/" },
-        { name: "Projects", path: "/projects" },
+        { name: "Home", path: "home" },
+        { name: "Projects", path: "projects" },
+        { name: "Skills", path: "skills" }
         // { name: "Contact", path: "/contact" },
       ],
       activeLink: null,
@@ -46,7 +42,10 @@ export default {
       this.hoverHome = false;
     },
     openLink(link) {
-      this.$router.push(link);
+      // this.$emit("nav", {NavTo: link})
+      console.log(`Link: ${link}`)
+      focus(this.$refs[link])
+      // this.$router.push(link)
     },
     loadHomeIcons() {
       let white = '@/assets/images/home-white.png';

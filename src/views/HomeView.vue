@@ -1,13 +1,13 @@
 <template>
   <HomeLayout>
     <template #primary>
-      <AstroBanner />
+      <AstroBanner name="bio" />
     </template>
     <template #secondary>
-      <ProjectsBanner ref="projects-banner"/>
+      <ProjectsBanner ref="projects" />
     </template>
     <template #contact>
-      <SkillsBanner />
+      <SkillsBanner ref="skills" />
     </template>
   </HomeLayout>
 </template>
@@ -29,7 +29,6 @@ export default {
     };
   },
   methods: {},
-  
   computed: {
     ScreenDimensions() {
       return {
@@ -37,6 +36,12 @@ export default {
         height: window.innerHeight,
       };
     },
+  },
+  mounted() {
+    document.addEventListener("nav", e => {
+      console.log(`Event ${e.NavTo}`)
+      this.$refs[e.NavTo].focus()
+    })
   }
 }
 </script>

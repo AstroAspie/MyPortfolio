@@ -18,6 +18,12 @@
 <script>
 export default {
   name: "HomeLayout",
+  data() {
+    return {}
+  },
+  methods: {
+
+  },
 };
 </script>
 
