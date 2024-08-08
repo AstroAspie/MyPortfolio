@@ -6,7 +6,7 @@
       :model-value="baseScore" 
       :size="size" 
       :width="width"
-      :color="teal"
+      :color="circleColour"
       @mouseenter="animateCircle(skill, true)"
       @mouseout="animateCircle(skill, false)"
     >
@@ -30,7 +30,8 @@ export default {
     return {
       size: 100,
       width: 12,
-      baseScore: 1
+      baseScore: 1,
+      circleColour: "#008080"
     };
   },
   methods: {

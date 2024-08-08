@@ -1,69 +1,26 @@
 <template>
   <div class="banner-container">
+    <h1 class="banner-title">Projects</h1>
+    <img id="projects-background" src="/projects-backdrop.png" alt="project-background" />
+    <div class="projects-bio"></div>
     <div class="projects-container">
-      <div v-for="project in projects" :key="project.title" class="cassette">
-        <ProjectCassette
-          :project="project"
-        />
-      </div>
-    </div>
-    <div class="page-link" @mouseenter="hoveringLink = !hoveringLink" @mouseleave="hoveringLink = !hoveringLink" @click="goToProjects()">
-      <span v-if="hoveringLink">🚀</span>
-      View All My Projects
-      <span v-if="hoveringLink">🚀</span>
+      <ProjectCarousel />
     </div>
   </div>
 </template>
 
 
 <script>
-import Honeycomb from "../global/Honeycomb.vue";
-import ProjectCassette from "./ProjectCassette.vue";
+import ProjectCarousel from './ProjectCarousel.vue';
+
 export default {
   name: "ProjectsBanner",
   components: {
-    ProjectCassette,
-    // eslint-disable-next-line vue/no-unused-components
-    Honeycomb
+    ProjectCarousel,
   },
   data() {
     return {
       hoveringLink: false,
-      projects: [
-        {
-          title: "Crypto Currency Tracker",
-          description: "This is a crypto currency tracker using Nuxt.js and the CoinGecko API.",
-          image: "/Crypto-Watcher-Screenshot.png",
-          link: "https://github.com/AstroAspie/crypto-watcher",
-          demo: "https://crypto-watcher-lou8f328b-astroaspies-projects.vercel.app",
-          language: "JavaScript",
-          type: "Web",
-        },
-        {
-          title: "Space Invaders Clone",
-          description: "Space Invaders clone using HTML, CSS, and JavaScript.",
-          image: "/Space-Invaders-Clone-Screenshot.png",
-          link: "https://github.com/AstroAspie/space_invaders_clone",
-          demo: "https://astroaspie.github.io/space_invaders_clone",
-          language: "HTML/CSS/JS",
-          type: "Game",
-        },
-        {
-          title: "2048 in Python",
-          description: "2048 mathematical tile game made using PyGame.",
-          image: "/2048_Pygame-screenshot.png",
-          link: "https://github.com/AstroAspie/2048_pygame",
-          language: "Python",
-          type: "Game",
-        },
-        {
-          title: "Text to Speech API",
-          description: "Simple RestAPI using FastAPI to return mp3 files converted from a given text string",
-          image: "",
-          type: ["API"],
-          language: ["Python", "FastAPI"]
-        }
-      ],
       selected_project: null,
     };
   },
@@ -87,12 +44,20 @@ export default {
 
 <style scoped>
 .banner-container {
+  position: relative;
+  top: 0;
   display: flex;
-  justify-content: space-between;
-  flex-direction: column;
+  overflow-y: hidden;
   width: 100%;
   height: 100%;
-  overflow-y: hidden;
+}
+
+.banner-title {
+  font-style: italic;
+  font-weight: bold;
+  position: relative;
+  margin: 0 auto;
+  font-size: 3rem;
 }
 
 #projects-background {
@@ -105,13 +70,7 @@ export default {
 
 .projects-container {
   position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  text-align: center;
-  margin-top: 2%;
-  height: 90%;
-  gap: 20px;
+  z-index: 10;
 }
 
 .page-link {
@@ -138,6 +97,7 @@ export default {
 
 #projects-background {
   position: absolute;
+  left: 0;
   width: 100%;
   height: 100%;
   opacity: 0.2;

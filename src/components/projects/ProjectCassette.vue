@@ -56,6 +56,10 @@ export default {
   margin-bottom: 12px;
   border-radius: 10px;
   flex-shrink: 1;
+  max-width: 300px;
+  max-height: 400px;
+  min-width: 300px;
+  min-height: 400px;
 }
 
 .project-image {

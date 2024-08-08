@@ -1,19 +1,29 @@
 <template>
-  <div class="carousel">
-    <v-carousel>
-      <v-carousel-item></v-carousel-item>
-    </v-carousel>
-  </div>
+  <SimpleCarousel :projects="projects" />
 </template>
 
 <script>
+import json from "@/assets/myStuff.json";
+// import ProjectCassette from "@/components/projects/ProjectCassette.vue";
+import SimpleCarousel from "../global/SimpleCarousel.vue";
+
 export default {
-  name: "Project-Carousel",
-  components: {},
+  name: 'Project-Carousel',
+  components: {SimpleCarousel},
   data() {
-    return {}
+    return {
+      selectedProject: null,
+      projects: []
+    }
   },
-  methods: {}
+  methods: {
+    LoadProjects() {
+      this.projects = json["projects"];
+    }
+  },
+  mounted() {
+    this.LoadProjects()
+  }
 }
 </script>
 
