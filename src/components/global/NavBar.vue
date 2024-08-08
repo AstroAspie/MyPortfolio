@@ -3,9 +3,11 @@
     <div class="container">
       <div class="nav-links" v-for="link in links" :key="link.name">
         <div :id="link.name" class="link-container" @mouseover="hoverLink(link.name)" @mouseout="mouseoutLink(link.name)" @click="openLink(link.path)">
-          <img v-if="link.name == 'Home' && hoverHome" src="@/assets/images/home-cyan.png" class="home-link" />
-          <img v-if="link.name == 'Home' && !hoverHome" src="@/assets/images/home-white.png" class="home-link" />
-          <span v-if="link.name != 'Home'"> {{ link.name }}</span>
+          <div>
+            <img v-if="link.name == 'Home' && hoverHome" src="@/assets/images/home-cyan.png" class="home-link" />
+            <img v-if="link.name == 'Home' && !hoverHome" src="@/assets/images/home-white.png" class="home-link" />
+            <span v-if="link.name != 'Home'"> {{ link.name }}</span>
+          </div>
         </div>
       </div>
     </div>
