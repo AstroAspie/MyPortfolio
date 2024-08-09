@@ -1,15 +1,23 @@
 <template>
   <div class="container">
-    <h1 class="banner-title">Skills</h1>
-    <div class="sort-container">
-      <span class="sort-subtext">Sort:</span>
-      <div class="sort-option">
-        <button @click="sortByScore('score')">skill level</button>
-        <div class="ascending" @click="ascending = !ascending">
-          <span v-if="!ascending">⬇️</span>
-          <span v-else>⬆️</span>
+    <h1 class="banner-title">Skills Board</h1>
+    <div class="skills-nav">
+      <div class="sort-container">
+          <span class="sort-subtext">Sort:</span>
+          <div class="sort-option">
+            <button @click="sortByScore('score')">skill level</button>
+            <div class="ascending" @click="ascending = !ascending">
+              <span v-if="!ascending">⬇️</span>
+              <span v-else>⬆️</span>
+            </div>
+          </div>
         </div>
-      </div>
+        <div class="nav-bar">
+          <ul>
+            <li v-for="category in categories" :key="category" @click="setCategory(category.tags)">{{ category.name }}</li>
+            <li @click="resetSort">🔃</li>
+          </ul>
+        </div>
     </div>
     <div class="banner-container">
       <div class="skills-container">
@@ -38,12 +46,19 @@ export default {
         infrastructure: 'INF', 
         database: 'DB',
         IoT: 'IoT',
-        misc: 'misc'
+        misc: 'misc',
+        game: "GD",
+        cloud: "C"
       }],
+      categories: [
+        { name: "Web-Dev", tags: ["BE", "FE", "DB"] },
+        { name: "Game-Dev", tags: ["GD"] },
+        { name: "Systems & Arcitecture", tags: ["INF", "IOT"] },
+        { name: "Cloud", tags: ["C"] },
+      ],
       ascending: false,
       sorted: [],
       sortSelect: null,
-      sortParams: ['skill', 'type', ''],
       skills_list: [
         { name: 'HTML', score: 100, type: 'FE'},
         { name: 'CSS', score: 95, type: 'FE' },
@@ -79,6 +94,8 @@ export default {
         { name: 'Arduino', score: 60, type: 'IoT' },
         { name: 'Raspberry Pi', score: 80, type: 'IoT' },
         { name: 'GIMP', score: 75, type: 'misc' },
+        { name: 'AWS', score: 85, type: 'C'},
+        { name: 'Azure', score: 80, type: 'C' }
       ]
     }
   },
@@ -99,7 +116,27 @@ export default {
         });
       }
     },
-    sortByTag() {},
+    setCategory(tags) {
+      console.log(`Testing: ${tags}`)
+      let temp = []
+      for (let skill of this.skills_list) {
+        for (let tag of tags) {
+          console.log(`Skill type: ${skill.type} : Tag: ${tag}`)
+          if (skill.type.toLowerCase() === tag.toLowerCase()) {
+            temp.push(skill)
+          }
+        }
+      }
+      this.sorted = temp;
+      console.log(`Sorted: ${this.sorted.length}`);
+      console.log(`Skills: ${this.skills_list.length}`)
+      // this.sorted = this.skills_list.filter(skill => {
+      //   tags.includes(skill)
+      // })
+    },
+    resetSort() {
+      this.sorted = this.skills_list;
+    }
   },
   created() {
     if (this.sorted.length == 0)
@@ -108,7 +145,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 hr {
   rotate: 90deg;
 }
@@ -123,30 +160,56 @@ hr {
   position: relative;
   font-size: 2rem;
   font-weight: bold;
-  // margin: 10px 20px 20px 10px;
-  margin: 10px 47%;
+  text-wrap: nowrap;
+  margin: 10px 49%;
+}
+
+.skills-nav {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.nav-bar {
+  position: relative;
+  margin: 0 auto;
+}
+
+.nav-bar ul {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.nav-bar li {
+  text-decoration: none;
+  list-style: none;
+}
+
+.nav-bar li:hover {
+  color: green;
 }
 
 .sort-container {
+  position: relative;
+  left: 0;
   display: flex;
   flex-direction: row;
   gap: 10px;
   margin-top: 0;
   margin-bottom: 5%;
-  margin-left: 4%;
-  margin-right: 4%;
 }
 
 .sort-option {
   display: flex;
   align-content: center;
-  justify-content: center;
   color: white;
   font-size: 14px;
   border: solid 1px white;
   border-radius: 10px;
-  padding: 5px;
-  width: 10%;
+  padding: 10px;
+  min-width: 10%;
 }
 
 .ascending {

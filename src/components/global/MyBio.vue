@@ -2,7 +2,7 @@
   <div class="my-bio">
     <!-- General -->
     <p>
-      I am a mostly self-taught full-stack developer with over <span class="years-experience">five</span> years experience and a passion for all things technology, 
+      I am a full-stack developer with over <span class="years-experience">five</span> years experience and a passion for all things technology, 
       programming and cybersecurity. I have quite a broad range of experience ranging from web based projects with ReactJS, Vue and Angular
       with varying backend technologies including FastAPI, Express, Asp.Net, Django, and more. My cybersecurity experience is more niche based in 
       offensive security although I am well versed in architecturual security and defensive techniques.

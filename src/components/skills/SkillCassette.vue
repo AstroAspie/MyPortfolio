@@ -66,7 +66,7 @@ export default {
             if (this.width >= 12)
               this.width--;
           }
-        }, 5000)
+        }, 30000)
       }
     },
     isVisible(el) {
