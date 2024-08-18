@@ -82,48 +82,14 @@ export default {
         }
       }
     },
-    animateCircle()
-    {
-      // if (fill === true)
-      // {
-      //   while (this.baseScore <= skill.score) {
-      //     this.baseScore++;
-      //     if (this.size <= 140)
-      //       this.size++;
-      //     if (this.width <= 18)
-      //       this.width++;
-      //   }
-      // }
-      // else if (fill === false)
-      // {
-      //   setInterval(() => {
-      //     while (this.baseScore > 1)
-      //     {
-      //       this.baseScore--;
-      //       if (this.size >= 100)
-      //         this.size--;
-      //       if (this.width >= 12)
-      //         this.width--;
-      //     }
-      //   }, 30000)
-      // }
-    },
-    // isVisible(el) {
-    //   var rect = el.getBoundingClientRect();
-
-    //   return (
-    //     rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) && 
-    //     rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-    //   )
-    // },
   },
 };
 </script>
 
 <style lang="scss" scoped>
 .score-circle {
-  margin-left: 4px;
-  margin-right: 4px;
+  margin-left: 14px;
+  margin-right: 14px;
 }
 
 .percentage {

@@ -8,10 +8,10 @@
     </div>
     <v-card-actions class="project-link-btn-container">
       <div>
-        <v-btn :href="project.link" class="project-link-btn" target="_blank">View Project</v-btn>
+        <v-btn :href="project.link" class="project-link-btn" target="_blank" rounded="xl">View Project</v-btn>
       </div>
       <div v-if="project.demo">
-        <v-btn :href="project?.demo" class="project-link-btn" target="_blank">View Demo</v-btn>
+        <v-btn :href="project?.demo" class="project-link-btn" target="_blank" rounded="xl">View Demo</v-btn>
       </div>
     </v-card-actions>
   </v-card>
@@ -37,6 +37,8 @@ export default {
         { lang: "javascript", logo: "/MyPortfolio/javascript.svg" },
         { lang: "dotnet", logo: "/MyPortfolio/dotnet.svg" },
         { lang: "java", logo: "/MyPortfolio/java.svg" },
+        { lang: "react", logo: "/MyPortfolio/react.svg" },
+        { lang: "vue", logo: "/MyPortfolio/vue.svg" },
         { lang: "unity", logo: "/MyPortfolio/unity.svg" },
         { lang: "unreal engine", logo: "/MyPortfolio/unreal-engine.svg" },
         { lang: "docker", logo: "/MyPortfolio/docker.svg" },
@@ -49,7 +51,24 @@ export default {
         { lang: "linux", logo: "/MyPortfolio/linux.svg" },
         { lang: "microsoft", logo: "/MyPortfolio/microsoft.svg" },
         { lang: "mac", logo: "/MyPortfolio/mac.svg" }
-      ]
+      ],
+      frameworks: [
+        { name: 'React', score: 90, type: 'FE', lang: 'javascript' },
+        { name: 'Vue', score: 95, type: 'FE', lang: 'javascript' },
+        { name: 'Express', score: 90, type: 'BE', lang: 'javascript' },
+        { name: 'MongoDB', score: 90, type: 'DB', lang: 'NoSQL' },
+        { name: 'React Native', score: 70, type: 'Mobile', lang: 'javascript' },
+        { name: 'Android Studio', score: 100, type: 'Mobile' },
+        { name: 'Bootstrap', score: 90, type: 'FE', lang: 'css' },
+        { name: 'Tailwind', score: 90, type: 'FE', lang: 'css' },
+        { name: 'jQuery', score: 90, type: 'FE', lang: 'javascript' },
+        { name: 'Django', score: 90, type: 'BE', lang: 'python' },
+        { name: 'FastAPI', score: 90, type: 'BE', lang: 'python' },
+        { name: 'PyGame', score: 80, type: 'GD', lang: 'python' }, 
+        { name: 'Blazor', score: 90, type: 'FE', lang: '.NET' },
+        { name: 'Electron', score: 60, type: 'FE', lang: 'javascript' },
+        { name: 'GitHub', score: 100, type: 'INF', lang: 'git' },
+      ],
     };
   },
   computed: {
@@ -75,7 +94,7 @@ export default {
     hoverStyle() {
       if (this.hovering) {
         return {
-          "box-shadow": "10px 10px #7c7c7c"
+          "box-shadow": "10px 10px #2c3c4c"
         }
       }
     },
@@ -136,8 +155,8 @@ export default {
 }
 
 .project-link-btn {
-  background: var(--color-background);
-  color: var(--color-text);
+  background: transparent;
+  color: black;
   border: 1px solid var(--color-border);
   border-radius: 0;
 }
@@ -147,7 +166,7 @@ export default {
 }
 
 .project-link-btn:hover {
-  background: var(--color-background);
+  background: #2a3a4a;
   color: var(--color-text);
   border: 1px solid var(--color-border);
   border-radius: 0;
