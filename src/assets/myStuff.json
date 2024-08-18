@@ -82,13 +82,17 @@
     }
   ],
   "logos": [
-    { "python": "/python_logo.png" },
-    { "vue": "/vue_logo.png" },
-    { "docker": "/docker_logo.png" },
-    { "postgres": "/postgres_logo.png" },
-    { "dotnet": "/dotnet_logo.png" },
-    { "html": "/html_logo.png" },
-    { "css": "/css_logo.png" },
-    { "javascript": "/js_logo.png" }
+    { "lang": "python", "logo": "/python.svg" },
+    { "vue": "/vue.svg" },
+    { "docker": "/docker.svg" },
+    { "postgres": "/postgres.svg" },
+    { "dotnet": "/dotnet.svg" },
+    { "html": "/html-5.svg" },
+    { "css": "/css-3.svg" },
+    { "javascript": "/javascript.svg" },
+    { "java": "/java.svg" },
+    { "react": "/react.svg" },
+    { "aws": "/aws.svg" },
+    { "raspberry-pi": "/raspberry-pi-svgrepo-com.svg" }
   ]
 }

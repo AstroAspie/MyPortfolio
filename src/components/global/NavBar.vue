@@ -63,7 +63,7 @@ export default {
 nav {
   position: fixed;
   top: 0;
-  z-index: 1;
+  z-index: 100;
   width: 100%;
   background: var(--color-background);
   border-bottom: 1px solid var(--color-border);
