@@ -228,4 +228,28 @@ hr {
   margin-top: 2%;
   flex-wrap: wrap;
 }
+
+/* Mobile devices */
+@media (max-width: 600px) {
+  .banner-title {
+    font-size: 2.2rem;
+    font-weight: bold;
+    text-wrap: nowrap;
+    margin: 10px 30%;
+  }
+
+  .skills-container {
+    display: flex;
+    max-width: 65%;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 2%;
+    flex-wrap: wrap;
+  }
+}
+
+/* Tablet devices */
+@media (max-width: 768px) {
+
+}
 </style>

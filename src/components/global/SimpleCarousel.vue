@@ -4,7 +4,7 @@
     <div class="slider">
       <div
         class="slider-track"
-        :style="{ transform: `translateX(-${currentIndex * 100 / projectsToShow}%)` }"
+        :style="{ transform: `translateX(-${currentIndex * 11}%)` }"
       >
         <div class="slide" v-for="(project, index) in projects" :key="index">
           <div class="card">
@@ -41,16 +41,19 @@ export default {
     prevSlide() {
       if (this.currentIndex > 0) {
         this.currentIndex--;
-      } else {
-        this.currentIndex = this.projects.length - this.projectsToShow;
       }
     },
     nextSlide() {
-      if (this.currentIndex < this.projects.length - this.projectsToShow) {
-        this.currentIndex++;
-      } else {
+      console.log(this.projectsToShow)
+      this.currentIndex += this.projectsToShow;
+      if (this.currentIndex > this.projects.length) {
         this.currentIndex = 0;
       }
+      // if (this.currentIndex < this.projects.length - this.projectsToShow) {
+      //   this.currentIndex++;
+      // } else {
+      //   this.currentIndex = 0;
+      // }
     }
   }
 };

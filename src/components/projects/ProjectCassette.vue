@@ -186,6 +186,28 @@ export default {
   margin: 5px;
 }
 
-/* mobile & tablet styling */
+/* Mobile devices */
+@media (max-width: 480px) {
+  .project-cassette {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-height: 200px;
+    width: 180px;
+    margin-bottom: 12px;
+    border-radius: 10px;
+    flex-shrink: 1;
+    max-width: 300px;
+    max-height: 600px;
+    min-width: 300px;
+    min-height: 450px;
+  }
+
+}
+
+/* Tablet devices */
+@media (max-width: 768px) {
+
+}
 
 </style>

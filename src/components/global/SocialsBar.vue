@@ -1,19 +1,20 @@
 <template>
   <div class="header-socials">
-    <img
-        v-for="social in socials"
-        :key="social"
-        :src="social.source"
-        class="icon" 
-        :id="social.name"
-        :alt="social.name + ' logo'"
-        @mouseover="onHover(social.name)"
-        @mouseout="offHover(social.name)"
-        @click="openLink(social.link)"
-    />
+    <div class="social-icons">
+      <img
+          v-for="social in socials"
+          :key="social"
+          :src="social.source"
+          class="icon" 
+          :id="social.name"
+          :alt="social.name + ' logo'"
+          @mouseover="onHover(social.name)"
+          @mouseout="offHover(social.name)"
+          @click="openLink(social.link)"
+      />
+    </div>
     <div class="box-container">
-      <div id="box">
-      </div>
+      <div id="box"></div>
     </div>
   </div>
 </template>
@@ -76,12 +77,6 @@ export default {
         });
     },
     loadThree() {
-      // import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-      // import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
-
-      // const controls = new OrbitControls( camera, renderer.domElement );
-      // const loader = new GLTFLoader();
-
       const scene = new THREE.Scene();
       
       const appHeight = 200;
@@ -146,6 +141,11 @@ export default {
   background-color: transparent;
 }
 
+.social-icons {
+  display: flex;
+  flex-direction: row;
+}
+
 .icon {
   margin: 10px;
   width: 50px;
@@ -161,5 +161,18 @@ export default {
   text-align: center;
   padding-right: 40px;
   margin-left: 10px;
+}
+
+@media (max-width: 600px) {
+  .icon {
+    margin: 0 40px;
+  }
+
+  .box-container {
+    position: absolute;
+    top: 5%;
+    left: 20px;
+    height: 100%;
+  }
 }
 </style>

@@ -128,4 +128,29 @@ link {
 .link {
   margin-right: 10px;
 }
+
+@media (max-width: 600px) {
+  .nav-links {
+    display: absolute;
+    left: 0;
+    height: 4rem;
+    min-width: 4%;
+    max-width: 23%;
+  }
+
+  .link-container {
+    height: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+.link-container:hover {
+    cursor: pointer;
+  }
+
+.link {
+    margin-right: 5px;
+  }
+}
 </style>

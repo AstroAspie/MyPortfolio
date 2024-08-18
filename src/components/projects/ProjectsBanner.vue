@@ -131,8 +131,14 @@ export default {
 /* Tablet devices */
 @media (max-width: 768px) {
   .banner-container {
-    overflow-y: scroll;
+    position: relative;
+    top: 0;
+    display: flex;
+    overflow-y: hidden;
+    width: 100%;
+    height: 80%;
   }
+
   .projects-container {
     flex-direction: column;
     justify-content: center;
@@ -151,10 +157,16 @@ export default {
 }
 
 /* Mobile devices */
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .banner-container {
-    overflow-y: scroll;
+    position: relative;
+    top: 0;
+    display: flex;
+    overflow-y: hidden;
+    width: 100%;
+    height: 80%;
   }
+  
   .projects-container {
     flex-direction: column;
     justify-content: center;

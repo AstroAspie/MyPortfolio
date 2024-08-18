@@ -1,5 +1,5 @@
 <template>
-  <SimpleCarousel :projects="projects" />
+  <SimpleCarousel :projects="projects" :projectsToShow="displayCount"/>
 </template>
 
 <script>
@@ -14,11 +14,16 @@ export default {
     return {
       selectedProject: null,
       projects: [],
+      displayCount: 4,
     }
   },
   methods: {
     LoadProjects() {
       this.projects = json["projects"];
+      console.log(window.innerWidth)
+      if (window.innerWidth <= 610) {
+        this.displayCount = 1;
+      }
     }
   },
   mounted() {

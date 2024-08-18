@@ -143,10 +143,6 @@ export default {
     font-size: 1.2rem;
   }
 
-  .header-socials {
-    display: none;
-  }
-
   .header-socials h1 {
     font-size: 20px;
   }
@@ -157,7 +153,7 @@ export default {
 }
 
 /* Mobile devices */
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .bio-container {
     flex-direction: column;
     top: 5%;
@@ -183,7 +179,7 @@ export default {
   }
 
   .header-socials {
-    display: none;
+    display: relative;
   }
 
   .header-socials h1 {
