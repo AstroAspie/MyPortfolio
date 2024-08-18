@@ -23,7 +23,8 @@ export default {
       links: [
         { name: "Home", path: "home" },
         { name: "Projects", path: "projects" },
-        { name: "Skills", path: "skills" }
+        { name: "Skills", path: "skills" },
+        { name: "Resume", path: "resume", }
         // { name: "Contact", path: "/contact" },
       ],
       activeLink: null,
@@ -44,14 +45,22 @@ export default {
       this.hoverHome = false;
     },
     openLink(link) {
-      if (link == "projects") {
-        scrollTo(0, 910)
-      } else if (link == "skills") {
-        scrollTo(0, 10000)
-      } else {
-        scrollTo(0, 0)
+      switch (link) {
+        case "projects":
+          scrollTo(0, 910)
+          break;
+        case "skills":
+          scrollTo(0, 10000)
+          break;
+        case "resume":
+          this.$nextTick(() => {
+            this.$router.push('alex-smith-resume.pdf')
+          })
+          break;
+        default:
+          scrollTo(0, 0)
+          break;
       }
-      // this.$router.push(link)
     },
     loadHomeIcons() {
       let white = '@/assets/images/home-white.png';

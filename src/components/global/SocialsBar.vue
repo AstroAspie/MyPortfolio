@@ -11,14 +11,14 @@
         @mouseout="offHover(social.name)"
         @click="openLink(social.link)"
     />
-    <div>
+    <!-- <div>
       <v-btn
             color="primary"
             prepend-icon="mdi-file-download"
             class="download-resume-btn"
             @click.prevent="downloadResume"
           >download my resume</v-btn>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -91,6 +91,7 @@ export default {
   height: 50px;
   background-color: white;
   font-size: 6px;
+  border: 1px solid white;
   border-radius: 50%;
   z-index: 1;
 }
