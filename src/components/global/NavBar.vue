@@ -118,7 +118,7 @@ link {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 16px 4px;
+  margin: 16px 14px;
 }
 
 .link-container:hover {

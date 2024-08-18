@@ -13,7 +13,7 @@ export default {
   data() {
     return {
       selectedProject: null,
-      projects: []
+      projects: [],
     }
   },
   methods: {

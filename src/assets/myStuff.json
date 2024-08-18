@@ -15,7 +15,7 @@
       "image": "/Space-Invaders-Clone-Screenshot.png",
       "link": "https://github.com/AstroAspie/space_invaders_clone",
       "demo": "@/demos/space-invaders-clone/index.html",
-      "language": ["HTML", "CSS", "JS"],
+      "language": ["HTML", "CSS", "JavaScript"],
       "type": "Game"
     },
     {
@@ -30,7 +30,7 @@
       "title": "William's Water Sport Rentals",
       "description": "Client Website for William's Water Sport Rentals. Built using Vue.js and Vuetify.",
       "image": "/Williams-Water-Sport-Rentals-Screenshot.png",
-      "language": [".NET", "Vue", "Postgres", "Docker"],
+      "language": ["Dotnet", "Vue", "Postgres", "Docker"],
       "complete": false
     },
     {
@@ -38,7 +38,7 @@
       "description": "Simple Todo App using ASP.NET, Vue3 and Postgres",
       "image": "",
       "type": "Web",
-      "language": [".NET", "Vue", "Postgres", "Docker"]
+      "language": ["Dotnet", "Vue", "Postgres", "Docker"]
     },
     {
       "title": "Smart Shopper App",
@@ -59,7 +59,7 @@
       "description": "A web application for downloading, sharing and watching movies with friends around the globe.",
       "image": "",
       "type": ["Web", "Streaming"],
-      "language": ["Python", "Django", "React", ".NET"]
+      "language": ["Python", "Django", "React", "Dotnet"]
     },
     {
       "title": "Dev Blog",
