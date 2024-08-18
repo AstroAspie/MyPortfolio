@@ -11,19 +11,17 @@
         @mouseout="offHover(social.name)"
         @click="openLink(social.link)"
     />
-    <!-- <div>
-      <v-btn
-            color="primary"
-            prepend-icon="mdi-file-download"
-            class="download-resume-btn"
-            @click.prevent="downloadResume"
-          >download my resume</v-btn>
-    </div> -->
+    <div class="box-container">
+      <div id="box">
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 import json from "@/assets/myStuff.json";
+import * as THREE from 'three';
+// import BasicScene from "../scenes/BasicScene.vue";
 
 export default {
   name: "SocialsBar",
@@ -76,15 +74,78 @@ export default {
         .catch((error) => {
           console.error(error);
         });
+    },
+    loadThree() {
+      // import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+      // import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+
+      // const controls = new OrbitControls( camera, renderer.domElement );
+      // const loader = new GLTFLoader();
+
+      const scene = new THREE.Scene();
+      
+      const appHeight = 200;
+      const appWidth = 200;
+
+      // Camera 
+      const fov = 75;
+      const near = 0.1;
+      const far = 1000;
+      const camera = new THREE.PerspectiveCamera( fov, appWidth / appHeight, near, far );
+
+
+      const renderer = new THREE.WebGLRenderer();
+      renderer.setClearColor(0, 0, 0, 0.5)
+      renderer.setSize( appWidth, appHeight );
+      renderer.setAnimationLoop( animate );
+      const container = document.getElementById('box')
+      renderer.domElement.style.backgroundColor = "transparent"
+      container.appendChild( renderer.domElement );
+
+      // Set cube geometry
+      const geometry = new THREE.BoxGeometry( 3.4, 3.4, 3.4 );
+      const wireGeometry = new THREE.WireframeGeometry(geometry);
+      const material = new THREE.MeshBasicMaterial( { color: 0x0000ff } );
+
+      const line = new THREE.LineSegments(wireGeometry, material);
+      line.material.depthTest = true;
+      line.material.opacity = 0.5;
+      line.material.transparent = false;
+      // const cube = new THREE.Mesh( geometry, material );
+      // scene.add( cube );
+      scene.add( line );
+
+      camera.position.z = 5;
+
+
+      function animate() {
+        renderer.render( scene, camera );
+        line.rotation.x += 0.01;
+        line.rotation.y += 0.01;
+      }
     }
   },
   mounted() {
     this.loadSocials();
+    this.loadThree();
   }
 }
 </script>
 
 <style scoped>
+.box-container {
+  position: absolute;
+  left: 170px;
+  top: 140px;
+}
+
+
+#box {
+  display: relative;
+  border-radius: 50%;
+  background-color: transparent;
+}
+
 .icon {
   margin: 10px;
   width: 50px;
