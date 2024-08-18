@@ -190,4 +190,42 @@ export default {
     font-size: 2.5rem;
   }
 }
+
+@media (max-width: 486px) {
+  .bio-container {
+    flex-direction: column;
+    top: 5%;
+    max-height: auto;
+    display: none;
+  }
+
+  .bio {
+    top: 5%;
+    left: 0;
+  }
+
+  .myLogo {
+    height: 50%;
+    bottom: 10%;
+  }
+
+  .intro {
+    top: 10%;
+    min-width: 100%;
+    margin: 0 1%;
+    font-size: 1rem;
+  }
+
+  .header-socials {
+    display: relative;
+  }
+
+  .header-socials h1 {
+    font-size: 18px;
+  }
+
+  .header-socials h2 {
+    font-size: 2.5rem;
+  }
+}
 </style>

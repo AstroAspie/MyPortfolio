@@ -248,6 +248,19 @@ hr {
   }
 }
 
+@media (max-width: 400px) {
+  .banner-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-wrap: nowrap;
+    margin: 10px 30%;
+  }
+
+  .skills-nav {
+    font-size: 12px;
+  }
+}
+
 /* Tablet devices */
 @media (max-width: 768px) {
 
