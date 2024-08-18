@@ -1,14 +1,15 @@
 <template>
   <div>
-    <div class="top banner">
+    <NavBar />
+    <div class="top banner" ref="home">
       <slot name="primary">
       </slot>
     </div>
-    <div class="middle banner">
+    <div class="middle banner" ref="projects">
       <slot name="secondary">
       </slot>
     </div>
-    <div class="bottom banner">
+    <div class="bottom banner" ref="skills">
       <slot name="contact">
       </slot>
     </div>
@@ -16,14 +17,25 @@
 </template>
 
 <script>
+import NavBar from "@/components/global/NavBar.vue";
 export default {
   name: "HomeLayout",
+  components: { NavBar },
   data() {
     return {}
   },
   methods: {
-
+    navEvent(e) {
+      console.log(e)
+      this.$nextTick(() => {
+        scrollTo(e.NavTo)
+      })
+      scrollTo(0, 1000);
+    }
   },
+  created() {
+    document.addEventListener("nav", this.navEvent)
+  }
 };
 </script>
 

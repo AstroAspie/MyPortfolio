@@ -44,9 +44,13 @@ export default {
       this.hoverHome = false;
     },
     openLink(link) {
-      // this.$emit("nav", {NavTo: link})
-      console.log(`Link: ${link}`)
-      focus(this.$refs[link])
+      if (link == "projects") {
+        scrollTo(0, 910)
+      } else if (link == "skills") {
+        scrollTo(0, 10000)
+      } else {
+        scrollTo(0, 0)
+      }
       // this.$router.push(link)
     },
     loadHomeIcons() {
