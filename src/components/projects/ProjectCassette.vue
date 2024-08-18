@@ -40,6 +40,8 @@ export default {
         { lang: "react", logo: "/MyPortfolio/react.svg" },
         { lang: "vue", logo: "/MyPortfolio/vue.svg" },
         { lang: "django", logo: "/MyPortfolio/django.svg" },
+        { lang: "postgresql", logo: "/MyPortfolio/postgresql.svg" },
+        { lang: "sqlite", logo: "/MyPortfolio/sqlite.svg" },
         { lang: "unity", logo: "/MyPortfolio/unity.svg" },
         { lang: "unreal engine", logo: "/MyPortfolio/unreal-engine.svg" },
         { lang: "docker", logo: "/MyPortfolio/docker.svg" },

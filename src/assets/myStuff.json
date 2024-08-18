@@ -6,7 +6,7 @@
       "image": "/Crypto-Watcher-Screenshot.png",
       "link": "https://github.com/AstroAspie/crypto-watcher",
       "demo": "https://crypto-watcher-lou8f328b-astroaspies-projects.vercel.app",
-      "language": ["JavaScript"],
+      "language": ["JavaScript", "Nuxt"],
       "type": "Web"
     },
     {
@@ -30,22 +30,22 @@
       "title": "William's Water Sport Rentals",
       "description": "Client Website for William's Water Sport Rentals. Built using Vue.js and Vuetify.",
       "image": "/Williams-Water-Sport-Rentals-Screenshot.png",
-      "language": ["Dotnet", "Vue", "Postgres", "Docker"],
+      "language": ["Dotnet", "Vue", "Postgresql", "Docker"],
       "complete": false
     },
     {
       "title": "Todo App",
-      "description": "Simple Todo App using ASP.NET, Vue3 and Postgres",
+      "description": "Simple Todo App using ASP.NET, Vue3 and Postgresql",
       "image": "",
       "type": "Web",
-      "language": ["Dotnet", "Vue", "Postgres", "Docker"]
+      "language": ["Dotnet", "Vue", "Postgresql", "Docker"]
     },
     {
       "title": "Smart Shopper App",
       "description": "Shopping Assistant that scrapes and manages local shopping catalog data to plot shopping trips for the cheapest bargains",
       "image": "/smartshopper_demo_pic.png",
       "type": ["Web", "Mobile", "Chrome Extension"],
-      "language": [".NET", "Vue", "Postgres", "Python", "Docker"]
+      "language": [".NET", "Vue", "Nuxt", "Postgresql", "Python", "Docker"]
     },
     {
       "title": "Text to Speech API",
@@ -59,14 +59,14 @@
       "description": "A web application for downloading, sharing and watching movies with friends around the globe.",
       "image": "",
       "type": ["Web", "Streaming"],
-      "language": ["Python", "Django", "React", "Dotnet"]
+      "language": ["Python", "Django", "React", "Next", "Dotnet", "Postgresql"]
     },
     {
       "title": "Dev Blog",
       "description": "Developer blog site built using Django and React",
       "image": "",
       "type": ["Web"],
-      "language": ["Python", "Django", "Javascript", "React"]
+      "language": ["Python", "Django", "Javascript", "React", "Sqlite"]
     }
   ],
   "socials": [
@@ -85,7 +85,7 @@
     { "lang": "python", "logo": "/python.svg" },
     { "vue": "/vue.svg" },
     { "docker": "/docker.svg" },
-    { "postgres": "/postgres.svg" },
+    { "Postgresql": "/Postgresql.svg" },
     { "dotnet": "/dotnet.svg" },
     { "html": "/html-5.svg" },
     { "css": "/css-3.svg" },
