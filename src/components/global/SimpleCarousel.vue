@@ -28,7 +28,7 @@ export default {
     },
     projectsToShow: {
       type: Number,
-      default: 3
+      default: 4
     }
   },
   components: { ProjectCassette },
