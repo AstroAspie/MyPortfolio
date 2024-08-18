@@ -3,11 +3,9 @@
     <div class="container">
       <div class="nav-links" v-for="link in links" :key="link.name">
         <div :id="link.name" class="link-container" @mouseover="hoverLink(link.name)" @mouseout="mouseoutLink(link.name)" @click="openLink(link.path)">
-          <div>
             <img v-if="link.name == 'Home' && hoverHome" src="@/assets/images/home-cyan.png" class="home-link" />
             <img v-if="link.name == 'Home' && !hoverHome" src="@/assets/images/home-white.png" class="home-link" />
-            <span v-if="link.name != 'Home'"> {{ link.name }}</span>
-          </div>
+            <span v-if="link.name != 'Home'" class="link">{{ link.name }}</span>
         </div>
       </div>
     </div>
@@ -84,7 +82,8 @@ nav {
 }
 
 .home-link {
-  max-width: 2rem;
+  max-width: 2.5rem;
+  min-height: 30px;
 }
 
 .container {
@@ -94,12 +93,15 @@ nav {
 }
 
 .nav-links {
-  display: flex;
-  text-align: right;
-  align-items: flex-end;
+  display: absolute;
+  left: 0;
   height: 4rem;
-  width: 100px;
+  min-width: 4%;
+  max-width: 6%;
+}
 
+link {
+  text-align: center;
 }
 
 .nav-links a {
@@ -111,10 +113,12 @@ nav {
 }
 
 .link-container {
-  width: 90%;
-  height: 70%;
-  text-align: right;
+  min-width: 100px;
+  height: 60%;
   display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 16px 4px;
 }
 
 .link-container:hover {
@@ -122,6 +126,6 @@ nav {
 }
 
 .link {
-  margin: 0 auto;
+  margin-right: 10px;
 }
 </style>
