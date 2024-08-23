@@ -10,7 +10,7 @@
     <br />
     <!-- Current Work -->
     <p class="current-work">
-      Currently, I work full time as a freelance developer with 2 on-going clients whilst developing internal tools for my small team @ Tekheart Productions such as; a Business Tracker to manage invoices and team tasks for each client.
+      Currently, I work full time as a freelance developer with a small number of on-going clients whilst developing internal tools for my small team @ Tekheart Productions such as; a Business Tracker to manage invoices and team tasks for each client.
     </p>
     <br />
     <p>
