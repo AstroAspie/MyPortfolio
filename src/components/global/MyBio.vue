@@ -37,11 +37,14 @@ export default {
 
 <style scoped>
 .my-bio {
+  max-height: 500px;
+  min-height: 45%;
   max-width: 80%;
   color: #fcfeff;
   opacity: 1;
   text-decoration: solid;
   font-size: larger;
+  margin: 40% 0;
 }
 
 .years-experience { 

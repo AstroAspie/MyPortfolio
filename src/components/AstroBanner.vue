@@ -2,7 +2,7 @@
   <div class="astro">
     <div class="bio-container">
       <MyBio class="bio"/>
-      <img src="/mylogo.png" class="myLogo" />
+      <div class="myLogo"></div>
     </div>
     <div class="intro">
       <h1>Alex <span class="nickname">(Astro)</span> Smith</h1>
@@ -48,7 +48,6 @@ export default {
 
 <style scoped>
 .bio-container {
-  position: relative;
   display: flex;
   top: 20%;
   max-height: 90%;
@@ -60,18 +59,21 @@ export default {
 
 .bio {
   position: relative;
-  top: 20%;
+  top: 35%;
   left: 2%;
   z-index: 10;
 }
 
 .myLogo {
   position: relative;
-  width: 100%;
-  height: 80%;
+  max-width: 100%;
+  min-width: 90%;
+  max-height: 70%;
+  min-height: 50%;
   z-index: -1;
   opacity: 0.04;
-  bottom: 34%;
+  bottom: 80%;
+  background-image: url("/  MyPortfolio/myLogo.png")
 }
 
 
