@@ -15,6 +15,7 @@
     "@fortawesome/vue-fontawesome": "^3.0.6",
     "@tresjs/cientos": "^3.9.0",
     "@tresjs/core": "^4.0.2",
+    "myportfolio": "file:",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0",
     "vuetify": "^3.6.5"
