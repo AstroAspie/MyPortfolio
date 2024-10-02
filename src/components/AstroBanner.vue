@@ -24,7 +24,7 @@ export default {
   data() {
     return {
       welcome_msg_array: [
-          "Full Stack Web Developer",
+          "Full Stack Developer",
       ],
       welcome_msg: "",
     };
