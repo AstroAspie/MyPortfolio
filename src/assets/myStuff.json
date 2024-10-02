@@ -51,6 +51,7 @@
       "title": "Text to Speech API",
       "description": "Simple RestAPI using FastAPI to return mp3 files converted from a given text string",
       "image": "",
+      "demo": "/MyPortfolio/Text-To-Speech-Demo.mkv",
       "type": ["API"],
       "language": ["Python", "FastAPI"]
     },
