@@ -3,9 +3,9 @@
     <h1 class="banner-title">Skills Board</h1>
     <div class="skills-nav">
       <div class="nav-bar">
-        <ul>
+        <ul class="skill-items">
           <li v-for="category in categories" :key="category" @click="setCategory(category.tags)">{{ category.name }}</li>
-          <li @click="resetSort">🔃</li>
+          <li v-if="sortSelect" @click="resetSort">🔃</li>
         </ul>
       </div>
     </div>
@@ -30,6 +30,9 @@ export default {
   components: { SkillCassette },
   data() {
     return {
+      ascending: false,
+      sorted: [],
+      sortSelect: false,
       tags: [{
         backend: 'BE',
         frontend: 'FE',
@@ -46,9 +49,6 @@ export default {
         { name: "Systems & Arcitecture", tags: ["INF", "IOT"] },
         { name: "Cloud", tags: ["C"] },
       ],
-      ascending: false,
-      sorted: [],
-      sortSelect: null,
       skills_list: [
         { name: 'HTML', score: 100, type: 'FE'},
         { name: 'CSS', score: 95, type: 'FE' },
@@ -114,20 +114,20 @@ export default {
       }
     },
     setCategory(tags) {
-      console.log(`Testing: ${tags}`)
       let temp = []
       for (let skill of this.skills_list) {
         for (let tag of tags) {
-          console.log(`Skill type: ${skill.type} : Tag: ${tag}`)
           if (skill.type.toLowerCase() === tag.toLowerCase()) {
             temp.push(skill)
           }
         }
       }
+      this.sortSelect = true;
       this.sorted = temp;
     },
     resetSort() {
       this.sorted = this.skills_list;
+      this.sortSelect = false;
     }
   },
   created() {
@@ -145,6 +145,12 @@ hr {
 .container {
   height: 100%;
   width: 100%;
+}
+
+.skill-items, li {
+  cursor: pointer;
+  color: white;
+  font-size: 14px;
 }
 
 
