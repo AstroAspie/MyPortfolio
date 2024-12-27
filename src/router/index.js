@@ -12,11 +12,11 @@ const router = createRouter({
       path: '/projects',
       name: 'projects',
     },
-    // {
-    //   path: '/contact',
-    //   name: 'contact',
-    //   component: () => import('../views/ContactView.vue')
-    // },
+    {
+      path: '/contact',
+      name: 'contact',
+      component: () => import('../views/ContactView.vue')
+    },
     {
       path: '/:pathMatch(.*)*',
       name: 'not-found',
