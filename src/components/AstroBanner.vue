@@ -73,7 +73,6 @@ export default {
   z-index: -1;
   opacity: 0.04;
   bottom: 80%;
-  background-image: url("/  MyPortfolio/myLogo.png")
 }
 
 

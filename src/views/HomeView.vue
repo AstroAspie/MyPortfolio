@@ -17,15 +17,15 @@ import HomeLayout from "@/layouts/HomeLayout.vue";
 import ProjectsBanner from "@/components/projects/ProjectsBanner.vue";
 import AstroBanner from "@/components/AstroBanner.vue";
 import SkillsBanner from "@/components/skills/SkillsBanner.vue";
-import BasicScene from "@/components/scenes/BasicScene.vue";
+// import BasicScene from "@/components/scenes/BasicScene.vue";
 
 export default {
   // eslint-disable-next-line vue/no-unused-components
-  components: { SkillsBanner, AstroBanner, HomeLayout, ProjectsBanner, BasicScene},
+  components: { SkillsBanner, AstroBanner, HomeLayout, ProjectsBanner },
   name: "HomeView",
   data() {
     return {
-      image: "./circuit-image.jpg",
+      BasicScene: import("@/components/scenes/BasicScene.vue"),
     };
   },
   methods: {},
@@ -51,7 +51,7 @@ export default {
 .image {
   width: 100%;
   height: 100%;
-  background-image: url("/circuit-image.jpg");
+  /* background-image: url("/circuit-image.jpg"); */
   z-index: -1;
   opacity: 0.2;
 }
