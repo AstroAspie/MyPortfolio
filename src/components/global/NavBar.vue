@@ -2,10 +2,11 @@
   <nav>
     <div class="container">
       <div class="nav-links" v-for="link in links" :key="link.name">
-        <div :id="link.name" class="link-container" @mouseover="hoverLink(link.name)" @mouseout="mouseoutLink(link.name)" @click="openLink(link.path)">
-            <img v-if="link.name == 'Home' && hoverHome" src="@/assets/images/home-cyan.png" class="home-link" />
-            <img v-if="link.name == 'Home' && !hoverHome" src="@/assets/images/home-white.png" class="home-link" />
-            <span v-if="link.name != 'Home'" class="link">{{ link.name }}</span>
+        <div :id="link.name" class="link-container" @mouseover="hoverLink(link.name)"
+          @mouseout="mouseoutLink(link.name)" @click="openLink(link.path)">
+          <img v-if="link.name == 'Home' && hoverHome" src="@/assets/images/home-cyan.png" class="home-link" />
+          <img v-if="link.name == 'Home' && !hoverHome" src="@/assets/images/home-white.png" class="home-link" />
+          <span v-if="link.name != 'Home'" class="link">{{ link.name }}</span>
         </div>
       </div>
     </div>
@@ -22,8 +23,9 @@ export default {
         { name: "Home", path: "home" },
         { name: "Projects", path: "projects" },
         { name: "Skills", path: "skills" },
-        { name: "Resume", path: "resume", }
-        // { name: "Contact", path: "/contact" },
+        { name: "Resume", path: "resume", },
+        { name: "Certificates", path: "/certificates" },
+        { name: "Contact", path: "/contact" },
       ],
       activeLink: null,
     };
@@ -54,6 +56,9 @@ export default {
           this.$nextTick(() => {
             this.$router.push('alex-smith-resume.pdf')
           })
+          break;
+        case "/certificates":
+          this.$router.push('/certificates')
           break;
         default:
           scrollTo(0, 0)
@@ -145,11 +150,11 @@ link {
     justify-content: space-between;
   }
 
-.link-container:hover {
+  .link-container:hover {
     cursor: pointer;
   }
 
-.link {
+  .link {
     margin-right: 5px;
   }
 }

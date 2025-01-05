@@ -2,10 +2,13 @@
   <div class="my-bio">
     <!-- General -->
     <p>
-      I am a full-stack developer with over <span class="years-experience">five</span> years experience and a passion for all things technology, 
-      programming and cybersecurity. I have quite a broad range of experience ranging from web based projects with ReactJS, Vue and Angular
-      with varying backend technologies including FastAPI, Express, Asp.Net, Django, and more. My cybersecurity experience is more niche based in 
-      offensive security although I am well versed in architecturual security and defensive techniques.
+      I am a Full-Stack Engineer and Cyber Security Researcher with over <span class="years-experience">five</span> years of experience.
+      I have worked in a variety of industries including Mining and Logistics, Business Management, Gambling and Sporting.
+        <ul class="industry-list">
+          <li>Mining and Logistics; building Train ETA systems, Wear management systems, and other internal tools.</li>
+          <li>Business Management; building and securing business management platforms.</li>
+          <li>Gambling and Sporting; securing networks and applications, as well as containerisation and cloud integration.</li>
+        </ul>
     </p>
     <br />
     <!-- Current Work -->
@@ -18,11 +21,6 @@
       learner and hard worker and am always looking for new and exciting opportunities to spread my 
       wings, learn something interesting and grow in the development world.
     </p>
-    <!-- <p>
-      In my spare time, I mostly enjoy spending time with my twin daughters and
-      my wife. I also enjoy refining my development skills, bug bounty hunting, watching movies, 
-      and reading various genres of books.
-    </p> -->
   </div>
 </template>
 
@@ -50,5 +48,10 @@ export default {
 .years-experience { 
   font-weight: bold;
   text-decoration: underline;
+}
+
+.industry-list {
+  margin-left: 4rem;
+  padding: 0;
 }
 </style>

@@ -6,7 +6,7 @@
       "image": "/Crypto-Watcher-Screenshot.png",
       "link": "https://github.com/AstroAspie/crypto-watcher",
       "demo": "https://crypto-watcher-lou8f328b-astroaspies-projects.vercel.app",
-      "language": ["JavaScript", "Nuxt"],
+      "language": ["JavaScript", "Nuxt", "Vue"],
       "type": "Web"
     },
     {
@@ -31,7 +31,8 @@
       "description": "Client Website for William's Water Sport Rentals. Built using Vue.js and Vuetify.",
       "image": "/Williams-Water-Sport-Rentals-Screenshot.png",
       "language": ["Dotnet", "Vue", "Postgresql", "Docker"],
-      "complete": false
+      "complete": true,
+      "freelance": true
     },
     {
       "title": "Todo App",
@@ -43,7 +44,7 @@
     {
       "title": "Smart Shopper App",
       "description": "Shopping Assistant that scrapes and manages local shopping catalog data to plot shopping trips for the cheapest bargains",
-      "image": "/smartshopper_demo_pic.png",
+      "image": "",
       "type": ["Web", "Mobile", "Chrome Extension"],
       "language": [".NET", "Vue", "Nuxt", "Postgresql", "Python", "Docker"]
     },
@@ -60,7 +61,7 @@
       "description": "A web application for downloading, sharing and watching movies with friends around the globe.",
       "image": "",
       "type": ["Web", "Streaming"],
-      "language": ["Python", "Django", "React", "Next", "Dotnet", "Postgresql"]
+      "language": ["React", "Dotnet", "Postgresql", "Docker"]
     },
     {
       "title": "Dev Blog",
@@ -68,6 +69,22 @@
       "image": "",
       "type": ["Web"],
       "language": ["Python", "Django", "Javascript", "React", "Sqlite"]
+    },
+    {
+      "title": "Wheatbelt-Way",
+      "description": "Android App for the Wheatbelt Way tourist trail",
+      "image": "",
+      "type": ["Mobile"],
+      "language": ["Java", "Android"],
+      "freelance": true
+    },
+    {
+      "title": "Business Pulse",
+      "description": "Business Intelligence Dashboard for a local business",
+      "image": "",
+      "type": ["Web"],
+      "language": ["Dotnet", "Vue", "Postgresql", "Docker"],
+      "freelance": true
     }
   ],
   "socials": [
@@ -95,5 +112,142 @@
     { "react": "/react.svg" },
     { "aws": "/aws.svg" },
     { "raspberry-pi": "/raspberry-pi-svgrepo-com.svg" }
+  ],
+  "certificates": [
+    {
+      "title": "codecademy_cpp",
+      "source": "Codecademy",
+      "img": "@/assets/certificates/codecademy_cpp.pdf"
+    },
+    {
+      "title": "codecademy_sql",
+      "source": "Codecademy",
+      "img": "/codecademy_sql.pdf"
+    },
+    {
+      "title": "javascript",
+      "source": "Codecademy",
+      "img": "codecademy_javascript.pdf"
+    },
+    {
+      "title": "responsive_web",
+      "source": "Codecademy",
+      "img": "/codecademy_responsive_web.pdf"
+    },
+    {
+      "title": "Create a Front-end App with React",
+      "source": "Codecademy",
+      "img": "/codecademy_react_skillpath.pdf"
+    },
+    {
+      "title": "build a website",
+      "source": "Programming Hub",
+      "img": "/programminghub_build_website.pdf"
+    },
+    {
+      "title": "C# Programming",
+      "source": "Programming Hub",
+      "img": "/programminghub_csharp.pdf"
+    },
+    {
+      "title": "programminghub_css",
+      "source": "Programming Hub",
+      "img": "/programminghub_css.pdf"
+    },
+    {
+      "title": "programminghub_javascript",
+      "source": "Programming Hub",
+      "img": "/programminghub_javascript.pdf"
+    },
+    {
+      "title": "programminghub_unity",
+      "source": "Programming Hub",
+      "img": "/programminghub_unity.pdf"
+    },
+    {
+      "title": "nodejs",
+      "source": "Programming Hub",
+      "img": "/programminghub_nodejs.pdf"
+    },
+    {
+      "title": "jquery",
+      "source": "SoloLearn",
+      "img": "/sololearn_jquery.jpg"
+    },
+    {
+      "title": "sql",
+      "source": "SoloLearn",
+      "img": "certificates/sololearn_sql.jpg"
+    },
+    {
+      "title": "know the os",
+      "source": "hacker X",
+      "img": "/hackerX_know_the_os.pdf"
+    },
+    {
+      "title": "hack mac",
+      "source": "hacker X",
+      "img": "/hackerX_hacking_mac.pdf"
+    },
+    {
+      "title": "gathering info",
+      "source": "hacker X",
+      "img": "/hackerX_gathering_info.pdf"
+    },
+    {
+      "title": "surfing anonymously",
+      "source": "hacker X",
+      "img": "/hackerX_surfing_anon.pdf"
+    },
+    {
+      "title": "steganography",
+      "source": "hacker X",
+      "img": "/hackerX_steganography.pdf"
+    },
+    {
+      "title": "social media hacking",
+      "source": "hacker X",
+      "img": "/hackerX_social_media_hacking.pdf"
+    },
+    {
+      "title": "Credit card hacking",
+      "source": "hacker X",
+      "img": "/hackerX_credit_card_hacking.pdf"
+    },
+    {
+      "title": "keyboard hacking",
+      "source": "hacker X",
+      "img": "/hackerX_keyboard_hacking.pdf"
+    },
+    {
+      "title": "Wifi WEP Cracking",
+      "source": "hacker X",
+      "img": "/hackerX_wifi_wep_cracking.pdf"
+    },
+    {
+      "title": "Wifi WPA / WPA2 Cracking",
+      "source": "hacker X",
+      "img": "/hackerX_wifi_wpa_wpa2_cracking.pdf"
+    },
+    {
+      "title": "Android hacking",
+      "source": "hacker X",
+      "img": "/hackerX_android_hacking.pdf"
+    },
+    {
+      "title": "network spying",
+      "source": "hacker X",
+      "img": "/hackerX_network_spying.pdf"
+    },
+    {
+      "title": "LearnHacking_intro_to_ethical_hacking",
+      "source": "Learn Ethical Hacking",
+      "img": "/LearnHacking_intro_to_ethical_hacking.png"
+    },
+    {
+      "title": "pre security",
+      "source": "Try Hack Me",
+      "img": "/thm_pre_security.png"
+    }
   ]
 }
