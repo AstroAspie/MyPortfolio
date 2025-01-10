@@ -19,6 +19,16 @@ const router = createRouter({
       component: () => import('../views/CertificatesView.vue')
     },
     {
+      path: '/writeups',
+      name: 'writeups',
+      component: () => import('../views/WriteUpsView.vue')
+    },
+    {
+      path: '/writeup/:id',
+      name: 'writeup',
+      component: () => import('../views/SingleWriteUpView.vue')
+    },
+    {
       path: '/contact',
       name: 'contact',
       component: () => import('../views/ContactView.vue')

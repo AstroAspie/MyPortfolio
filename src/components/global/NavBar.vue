@@ -24,6 +24,7 @@ export default {
         { name: "Projects", path: "projects" },
         { name: "Skills", path: "skills" },
         { name: "Resume", path: "resume", },
+        { name: "Write Ups", path: "/writeups" },
         { name: "Certificates", path: "/certificates" },
         { name: "Contact", path: "/contact" },
       ],

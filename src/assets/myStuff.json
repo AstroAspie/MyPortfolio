@@ -249,5 +249,19 @@
       "source": "Try Hack Me",
       "img": "/thm_pre_security.png"
     }
+  ],
+  "writeups": [
+    {
+      "id": 1,
+      "title": "RTFM Hacker 101",
+      "source": "Hacker 101 CTF",
+      "file": "/writeups/ctf-h101-rtfm.md"
+    },
+    {
+      "id": 2,
+      "title": "Y2FuIHlvdSByZWNvbj8/",
+      "source": "Hacker 101 CTF",
+      "file": "/writeups/ctf-h101-Y2FuIHlvdSByZWNvbj8.md"
+    }
   ]
 }

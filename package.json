@@ -17,6 +17,7 @@
     "@tresjs/core": "^4.0.2",
     "myportfolio": "file:",
     "vue": "^3.4.21",
+    "vue-markdown-render": "^2.2.1",
     "vue-router": "^4.3.0",
     "vuetify": "^3.6.5"
   },
