@@ -270,7 +270,7 @@ and there is our flag 😊
 -- <b>hint</b> --
 <i>Have you read the new version of the API's documentation</i>
 
-For this one I used my version fuzzer which can be found [here](www.github.com/astroaspie/api-version-hunter").
+For this one I used my version fuzzer which can be found [here](www.github.com/astroaspie/api-version-checker").
 
 which returned the following json at <b><i>&lt;target&gt;/api/v2/swagger.json</i></b>
 
@@ -475,7 +475,23 @@ and there is our next flag. This flag was quite easy but pretty fun.
 
 With this information we can infer that there is a feature or endpoint we may be able to leverage with some fuzzing.
 
-ffuf
+Let's fuzz each of the previous urls we were given for flag 0
+
+```sh
+ffuf -u <target>/api/v1/user/FUZZ -w wordlist.txt -H "X-Token: session-token"
+ffuf -u <target>/api/v1/config/FUZZ -w wordlist.txt -H "X-Token: session-token"
+```
+
+GET
+/api/v1/user/posts/1
+
+```json
+{
+  "id": 1,
+  "post": "You got the Post: ^FLAG^$FLAG$",
+  "analytics": "/api/v1/post-analytics/3c8a6664b8203c2e0b2b24972ccf5ce3"
+}
+```
 
 ---
 
