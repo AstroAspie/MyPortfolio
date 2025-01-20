@@ -4,24 +4,25 @@
       <AstroBanner name="bio" />
     </template>
     <template #secondary>
-      <ProjectsBanner ref="projects" />
+      <SkillsBanner ref="skills" />
     </template>
     <template #contact>
-      <SkillsBanner ref="skills" />
+      <div class="contact">
+        <ContactBanner />
+      </div>
     </template>
   </HomeLayout>
 </template>
 
 <script>
 import HomeLayout from "@/layouts/HomeLayout.vue";
-import ProjectsBanner from "@/components/projects/ProjectsBanner.vue";
 import AstroBanner from "@/components/AstroBanner.vue";
 import SkillsBanner from "@/components/skills/SkillsBanner.vue";
-// import BasicScene from "@/components/scenes/BasicScene.vue";
+import ContactBanner from "@/components/ContactBanner.vue";
 
 export default {
   // eslint-disable-next-line vue/no-unused-components
-  components: { SkillsBanner, AstroBanner, HomeLayout, ProjectsBanner },
+  components: { SkillsBanner, AstroBanner, HomeLayout, ContactBanner },
   name: "HomeView",
   data() {
     return {
@@ -38,16 +39,15 @@ export default {
     },
   },
   mounted() {
-    document.addEventListener("nav", e => {
-      console.log(`Event ${e.NavTo}`)
-      this.$refs[e.NavTo].focus()
-    })
+    // document.addEventListener("nav", e => {
+    //   console.log(`Event ${e.NavTo}`)
+    //   this.$refs[e.NavTo].focus()
+    // })
   }
 }
 </script>
 
 <style scoped>
-
 .image {
   width: 100%;
   height: 100%;
@@ -67,6 +67,7 @@ export default {
   #myLogo {
     display: none;
   }
+
   .intro {
     left: 0;
   }

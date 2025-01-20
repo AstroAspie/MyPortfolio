@@ -1,7 +1,7 @@
 <template>
   <div class="banner-container">
     <h1 class="banner-title">Projects</h1>
-    <img id="projects-background" src="/projects-backdrop.png" alt="project-background" />
+    <img id="projects-background" src="/images/projects-backdrop.png" alt="project-background" />
     <div class="projects-bio"></div>
     <div class="projects-container">
       <ProjectCarousel />
@@ -166,7 +166,7 @@ export default {
     width: 100%;
     height: 80%;
   }
-  
+
   .projects-container {
     flex-direction: column;
     justify-content: center;
@@ -183,5 +183,4 @@ export default {
     max-height: 250px;
   }
 }
-
 </style>

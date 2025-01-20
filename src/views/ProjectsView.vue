@@ -1,9 +1,7 @@
 <template>
   <div class="projects-container" ref="projects-banner">
     <div v-for="project in projects" :key="project.title" class="cassette">
-      <ProjectCassette
-        :project="project"
-      />
+      <ProjectCassette :project="project" />
     </div>
   </div>
 </template>
@@ -11,13 +9,14 @@
 <script>
 import json from "@/assets/myStuff.json";
 import ProjectCassette from '@/components/projects/ProjectCassette.vue';
+// import ProjectsLayout from "@/layouts/ProjectsLayout.vue";
 
 export default {
   name: 'Projects-View',
-  components: { ProjectCassette},
-  data () {
+  components: { ProjectCassette },
+  data() {
     return {
-      projects: null
+      projects: null,
     }
   },
   methods: {

@@ -20,12 +20,11 @@ export default {
     return {
       hoverHome: false,
       links: [
-        { name: "Home", path: "home" },
-        { name: "Projects", path: "projects" },
-        { name: "Skills", path: "skills" },
-        { name: "Resume", path: "resume", },
+        { name: "Home", path: "/" },
+        { name: "Projects", path: "/projects" },
+        { name: "Skills", path: "/skills" },
         { name: "Write Ups", path: "/writeups" },
-        { name: "Certificates", path: "/certificates" },
+        { name: "About Me", path: "/about", },
         { name: "Contact", path: "/contact" },
       ],
       activeLink: null,
@@ -34,8 +33,9 @@ export default {
   methods: {
     hoverLink(linkName) {
       if (linkName != "Home") {
-        let link = document.getElementById(linkName);
-        link.style.border = "solid 1px cyan";
+        // let link = document.getElementById(linkName);
+        // link.style.border = "solid 1px cyan";
+        return;
       } else {
         this.hoverHome = true;
       }
@@ -47,11 +47,15 @@ export default {
     },
     openLink(link) {
       switch (link) {
-        case "projects":
-          scrollTo(0, 910)
+        case "/projects":
+          this.$nextTick(() => {
+            this.$router.push('/projects');
+          })
           break;
-        case "skills":
-          scrollTo(0, 10000)
+        case "/skills":
+          this.$nextTick(() => {
+            this.$router.push('/skills');
+          })
           break;
         case "resume":
           this.$nextTick(() => {
@@ -62,6 +66,7 @@ export default {
           this.$router.push('/certificates')
           break;
         default:
+          // this.$router.push('/');
           scrollTo(0, 0)
           break;
       }
@@ -76,15 +81,16 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 nav {
   position: fixed;
   top: 0;
+  left: 0;
   z-index: 100;
-  width: 100%;
+  width: 15%;
+  height: 100%;
   background: var(--color-background);
-  border-bottom: 1px solid var(--color-border);
-  margin-bottom: 2rem;
+  border-right: 1px solid var(--color-border);
 }
 
 .home-link {
@@ -94,7 +100,7 @@ nav {
 
 .container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   margin-left: 1%;
 }
 
@@ -102,12 +108,6 @@ nav {
   display: absolute;
   left: 0;
   height: 4rem;
-  min-width: 4%;
-  max-width: 6%;
-}
-
-link {
-  text-align: center;
 }
 
 .nav-links a {
@@ -119,20 +119,22 @@ link {
 }
 
 .link-container {
-  min-width: 100px;
+  width: 100%;
   height: 60%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 16px 14px;
+  margin: 16px 0;
+  padding: 1.2rem 60px;
 }
 
 .link-container:hover {
   cursor: pointer;
+  border: solid 1px cyan;
 }
 
 .link {
-  margin-right: 10px;
+  margin: 0 auto;
 }
 
 @media (max-width: 600px) {

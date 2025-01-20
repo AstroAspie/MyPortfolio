@@ -1,6 +1,8 @@
 <template>
   <div>
-    <NavBar />
+    <div class="showNav-bubble" id="navBubble"></div>
+    <div class="showNav" id="showNav" @click="triggerNav">{{ menuTrigger }}</div>
+    <NavBar v-if="showNav" />
     <div class="top banner" ref="home">
       <slot name="primary">
       </slot>
@@ -22,7 +24,10 @@ export default {
   name: "HomeLayout",
   components: { NavBar },
   data() {
-    return {}
+    return {
+      showNav: false,
+      menuTrigger: '->'
+    }
   },
   methods: {
     navEvent(e) {
@@ -31,15 +36,48 @@ export default {
         scrollTo(e.NavTo)
       })
       scrollTo(0, 1000);
+    },
+    triggerNav() {
+      this.showNav = !this.showNav
+      let bubble = document.getElementById('navBubble');
+      bubble.style.display = this.showNav ? 'none' : 'block';
+      let navTrigger = document.getElementById('showNav');
+      navTrigger.style.left = this.showNav ? '225px' : '25px';
+      this.menuTrigger = this.showNav ? '<-' : '->';
     }
   },
   created() {
     document.addEventListener("nav", this.navEvent)
+  },
+  mounted() {
   }
 };
 </script>
 
 <style scoped>
+.showNav {
+  position: fixed;
+  top: 1px;
+  left: 25px;
+  padding: 10px;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 200;
+  color: white;
+}
+
+.showNav-bubble {
+  display: block;
+  position: fixed;
+  top: 9px;
+  left: 25px;
+  padding: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  /* background-color: green; */
+  z-index: 180;
+}
+
 .image {
   background-size: cover;
   background-position: center;

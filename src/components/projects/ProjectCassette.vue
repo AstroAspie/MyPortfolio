@@ -1,6 +1,6 @@
 <template>
   <v-card class="cassette-card project-cassette" @mouseenter="mouseOver" @mouseleave="mouseOver" :style="hoverStyle()">
-    <v-img :src="`/MyPortfolio/${project.image}`" class="project-image"></v-img>
+    <v-img :src="`/MyPortfolio/images/${project.image}`" class="project-image"></v-img>
     <v-card-title class="project-title">{{ project.title }}</v-card-title>
     <v-card-text class="project-desc">{{ project.description }}</v-card-text>
     <div class="project-langs">
@@ -31,29 +31,29 @@ export default {
       hovering: false,
       incLogos: [],
       logos: [
-        { lang: "html", logo: "/MyPortfolio/html-5.svg" },
-        { lang: "css", logo: "/MyPortfolio/css-3.svg" },
-        { lang: "python", logo: "/MyPortfolio/python.svg" },
-        { lang: "javascript", logo: "/MyPortfolio/javascript.svg" },
-        { lang: "dotnet", logo: "/MyPortfolio/dotnet.svg" },
-        { lang: "java", logo: "/MyPortfolio/java.svg" },
-        { lang: "react", logo: "/MyPortfolio/react.svg" },
-        { lang: "vue", logo: "/MyPortfolio/vue.svg" },
-        { lang: "django", logo: "/MyPortfolio/django.svg" },
-        { lang: "postgresql", logo: "/MyPortfolio/postgresql.svg" },
-        { lang: "sqlite", logo: "/MyPortfolio/sqlite.svg" },
-        { lang: "unity", logo: "/MyPortfolio/unity.svg" },
-        { lang: "unreal engine", logo: "/MyPortfolio/unreal-engine.svg" },
-        { lang: "docker", logo: "/MyPortfolio/docker.svg" },
-        { lang: "sql", logo: "/MyPortfolio/sql.svg" },
-        { lang: "nosql", logo: "/MyPortfolio/nosql.svg" },
-        { lang: "git", logo: "/MyPortfolio/github-mark.png" },
-        { lang: "raspberrypi", logo: "/MyPortfolio/raspberry-pi.svg"},
-        { lang: "aws", logo: "/MyPortfolio/aws.svg" },
-        { lang: "azure", logo: "/MyPortfolio/azure.svg" },
-        { lang: "linux", logo: "/MyPortfolio/linux.svg" },
-        { lang: "microsoft", logo: "/MyPortfolio/microsoft.svg" },
-        { lang: "mac", logo: "/MyPortfolio/mac.svg" }
+        { lang: "html", logo: "/MyPortfolio/images/html-5.svg" },
+        { lang: "css", logo: "/MyPortfolio/images/css-3.svg" },
+        { lang: "python", logo: "/MyPortfolio/images/python.svg" },
+        { lang: "javascript", logo: "/MyPortfolio/images/javascript.svg" },
+        { lang: "dotnet", logo: "/MyPortfolio/images/dotnet.svg" },
+        { lang: "java", logo: "/MyPortfolio/images/java.svg" },
+        { lang: "react", logo: "/MyPortfolio/images/react.svg" },
+        { lang: "vue", logo: "/MyPortfolio/images/vue.svg" },
+        { lang: "django", logo: "/MyPortfolio/images/django.svg" },
+        { lang: "postgresql", logo: "/MyPortfolio/images/postgresql.svg" },
+        { lang: "sqlite", logo: "/MyPortfolio/images/sqlite.svg" },
+        { lang: "unity", logo: "/MyPortfolio/images/unity.svg" },
+        { lang: "unreal engine", logo: "/MyPortfolio/images/unreal-engine.svg" },
+        { lang: "docker", logo: "/MyPortfolio/images/docker.svg" },
+        { lang: "sql", logo: "/MyPortfolio/images/sql.svg" },
+        { lang: "nosql", logo: "/MyPortfolio/images/nosql.svg" },
+        { lang: "git", logo: "/MyPortfolio/images/github-mark.png" },
+        { lang: "raspberrypi", logo: "/MyPortfolio/images/raspberry-pi.svg" },
+        { lang: "aws", logo: "/MyPortfolio/images/aws.svg" },
+        { lang: "azure", logo: "/MyPortfolio/images/azure.svg" },
+        { lang: "linux", logo: "/MyPortfolio/images/linux.svg" },
+        { lang: "microsoft", logo: "/MyPortfolio/images/microsoft.svg" },
+        { lang: "mac", logo: "/MyPortfolio/images/mac.svg" }
       ],
       frameworks: [
         { name: 'React', score: 90, type: 'FE', lang: 'javascript' },
@@ -67,7 +67,7 @@ export default {
         { name: 'jQuery', score: 90, type: 'FE', lang: 'javascript' },
         { name: 'Django', score: 90, type: 'BE', lang: 'python' },
         { name: 'FastAPI', score: 90, type: 'BE', lang: 'python' },
-        { name: 'PyGame', score: 80, type: 'GD', lang: 'python' }, 
+        { name: 'PyGame', score: 80, type: 'GD', lang: 'python' },
         { name: 'Blazor', score: 90, type: 'FE', lang: '.NET' },
         { name: 'Electron', score: 60, type: 'FE', lang: 'javascript' },
         { name: 'GitHub', score: 100, type: 'INF', lang: 'git' },
@@ -206,8 +206,5 @@ export default {
 }
 
 /* Tablet devices */
-@media (max-width: 768px) {
-
-}
-
+@media (max-width: 768px) {}
 </style>

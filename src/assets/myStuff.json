@@ -90,12 +90,12 @@
   "socials": [
     {
       "name": "Github",
-      "source": "/MyPortfolio/github-mark.png",
+      "source": "/MyPortfolio/images/github-mark.png",
       "link": "https://github.com/astroaspie"
     },
     {
       "name": "LinkedIn",
-      "source": "/MyPortfolio/linkedin-logo.png",
+      "source": "/MyPortfolio/images/linkedin-logo.png",
       "link": "https://www.linkedin.com/in/alex-astro-smith/"
     }
   ],

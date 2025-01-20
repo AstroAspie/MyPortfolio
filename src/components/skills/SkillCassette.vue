@@ -1,10 +1,8 @@
 <template>
-  <div 
-    class="score-circle"
-  >
+  <div class="score-circle">
     <!-- <img :src="img_ref" :alt="skillLogo" class="logo" /> -->
     <!-- <img src="" alt="test" class="logo" /> -->
-    <img :src="skillLogo" :alt="skill.name" class="logo"/>
+    <img :src="skillLogo" :alt="skill.name" class="logo" />
     <!-- <v-progress-circular 
       :model-value="skill.score" 
       :size="size" 
@@ -34,24 +32,24 @@ export default {
       circleColour: "#008080",
       img_ref: null,
       logos: [
-        { lang: "html", logo: "/MyPortfolio/html-5.svg" },
-        { lang: "css", logo: "/MyPortfolio/css-3.svg" },
-        { lang: "python", logo: "/MyPortfolio/python.svg" },
-        { lang: "javascript", logo: "/MyPortfolio/javascript.svg" },
-        { lang: "dotnet", logo: "/MyPortfolio/dotnet.svg" },
-        { lang: "java", logo: "/MyPortfolio/java.svg" },
-        { lang: "unity", logo: "/MyPortfolio/unity.svg" },
-        { lang: "unreal engine", logo: "/MyPortfolio/unreal-engine.svg" },
-        { lang: "docker", logo: "/MyPortfolio/docker.svg" },
-        { lang: "sql", logo: "/MyPortfolio/sql.svg" },
-        { lang: "nosql", logo: "/MyPortfolio/nosql.svg" },
-        { lang: "git", logo: "/MyPortfolio/github-mark.png" },
-        { lang: "raspberrypi", logo: "/MyPortfolio/raspberry-pi.svg"},
-        { lang: "aws", logo: "/MyPortfolio/aws.svg" },
-        { lang: "azure", logo: "/MyPortfolio/azure.svg" },
-        { lang: "linux", logo: "/MyPortfolio/linux.svg" },
-        { lang: "microsoft", logo: "/MyPortfolio/microsoft.svg" },
-        { lang: "mac", logo: "/MyPortfolio/mac.svg" }
+        { lang: "html", logo: "/MyPortfolio/images/html-5.svg" },
+        { lang: "css", logo: "/MyPortfolio/images/css-3.svg" },
+        { lang: "python", logo: "/MyPortfolio/images/python.svg" },
+        { lang: "javascript", logo: "/MyPortfolio/images/javascript.svg" },
+        { lang: "dotnet", logo: "/MyPortfolio/images/dotnet.svg" },
+        { lang: "java", logo: "/MyPortfolio/images/java.svg" },
+        { lang: "unity", logo: "/MyPortfolio/images/unity.svg" },
+        { lang: "unreal engine", logo: "/MyPortfolio/images/unreal-engine.svg" },
+        { lang: "docker", logo: "/MyPortfolio/images/docker.svg" },
+        { lang: "sql", logo: "/MyPortfolio/images/sql.svg" },
+        { lang: "nosql", logo: "/MyPortfolio/images/nosql.svg" },
+        { lang: "git", logo: "/MyPortfolio/images/github-mark.png" },
+        { lang: "raspberrypi", logo: "/MyPortfolio/images/raspberry-pi.svg" },
+        { lang: "aws", logo: "/MyPortfolio/images/aws.svg" },
+        { lang: "azure", logo: "/MyPortfolio/images/azure.svg" },
+        { lang: "linux", logo: "/MyPortfolio/images/linux.svg" },
+        { lang: "microsoft", logo: "/MyPortfolio/images/microsoft.svg" },
+        { lang: "mac", logo: "/MyPortfolio/images/mac.svg" }
       ]
     };
   },
