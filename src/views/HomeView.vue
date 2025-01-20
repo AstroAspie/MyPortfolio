@@ -6,11 +6,6 @@
     <template #secondary>
       <SkillsBanner ref="skills" />
     </template>
-    <template #contact>
-      <div class="contact">
-        <ContactBanner />
-      </div>
-    </template>
   </HomeLayout>
 </template>
 

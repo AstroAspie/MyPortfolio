@@ -11,10 +11,6 @@
       <slot name="secondary">
       </slot>
     </div>
-    <div class="bottom banner" ref="skills">
-      <slot name="contact">
-      </slot>
-    </div>
   </div>
 </template>
 

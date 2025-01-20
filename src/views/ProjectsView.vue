@@ -1,27 +1,49 @@
 <template>
-  <div class="projects-container" ref="projects-banner">
-    <div v-for="project in projects" :key="project.title" class="cassette">
-      <ProjectCassette :project="project" />
-    </div>
-  </div>
+  <ProjectsLayout>
+    <template #first>
+      <h1>Game Projects</h1>
+      <SimpleCarousel :projects="gameProjects" />
+    </template>
+    <template #second>
+      <h1>Web Projects</h1>
+      <SimpleCarousel :projects="webProjects" />
+    </template>
+    <template #third>
+      <h1>Mobile Projects</h1>
+      <SimpleCarousel :projects="mobileProjects" />
+    </template>
+  </ProjectsLayout>
 </template>
 
 <script>
-import json from "@/assets/myStuff.json";
-import ProjectCassette from '@/components/projects/ProjectCassette.vue';
-// import ProjectsLayout from "@/layouts/ProjectsLayout.vue";
+import demoData from "@/assets/myStuff.json";
+import SimpleCarousel from "@/components/global/SimpleCarousel.vue";
+import ProjectsLayout from "@/layouts/ProjectsLayout.vue";
 
 export default {
   name: 'Projects-View',
-  components: { ProjectCassette },
+  components: { ProjectsLayout, SimpleCarousel },
   data() {
     return {
       projects: null,
     }
   },
+  computed: {
+    gameProjects() {
+      let test = demoData["projects"].filter(project => project.type.includes("Game"));
+      console.log(`test game: ${test}`);
+      return test
+    },
+    webProjects() {
+      return demoData["projects"].filter(project => project.type.includes("Web"));
+    },
+    mobileProjects() {
+      return demoData["projects"].filter(project => project.type.includes("Mobile"));
+    }
+  },
   methods: {
     LoadProjects() {
-      this.projects = json["projects"];
+      this.projects = demoData["projects"];
     }
   },
   mounted() {
@@ -30,20 +52,4 @@ export default {
 }
 </script>
 
-<style scoped>
-.projects-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  gap: 20px;
-  flex-wrap: wrap;
-  width: 90%;
-  margin: 120px auto;
-}
-
-.cassette {
-  width: 400px;
-  height: 500px;
-  margin-bottom: 40px;
-}
-</style>
+<style scoped></style>

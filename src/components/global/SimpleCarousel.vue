@@ -2,10 +2,7 @@
   <div class="slider-container">
     <button @click="prevSlide" class="nav-btn prev-btn">‹</button>
     <div class="slider">
-      <div
-        class="slider-track"
-        :style="{ transform: `translateX(-${currentIndex * 11}%)` }"
-      >
+      <div class="slider-track" :style="{ transform: `translateX(-${currentIndex * 11}%)` }">
         <div class="slide" v-for="(project, index) in projects" :key="index">
           <div class="card">
             <ProjectCassette :project="project" />
@@ -44,7 +41,6 @@ export default {
       }
     },
     nextSlide() {
-      console.log(this.projectsToShow)
       this.currentIndex += this.projectsToShow;
       if (this.currentIndex > this.projects.length) {
         this.currentIndex = 0;
@@ -65,14 +61,16 @@ export default {
   width: 80%;
   margin: auto;
   overflow: hidden;
-  background: none; /* No background color */
+  background: none;
+  /* No background color */
 }
 
 .slider {
   display: flex;
   width: 100%;
   overflow: hidden;
-  background: none; /* No background color */
+  background: none;
+  /* No background color */
   margin: 0 30px;
 }
 
@@ -82,7 +80,8 @@ export default {
 }
 
 .slide {
-  flex: 0 0 calc(100% / var(--projectsToShow)); /* Flex basis for number of projects to show */
+  flex: 0 0 calc(100% / var(--projectsToShow));
+  /* Flex basis for number of projects to show */
   box-sizing: border-box;
 }
 

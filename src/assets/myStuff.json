@@ -7,7 +7,7 @@
       "link": "https://github.com/AstroAspie/crypto-watcher",
       "demo": "https://crypto-watcher-lou8f328b-astroaspies-projects.vercel.app",
       "language": ["JavaScript", "Nuxt", "Vue"],
-      "type": "Web"
+      "type": ["Web"]
     },
     {
       "title": "Space Invaders Clone",
@@ -16,7 +16,7 @@
       "link": "https://github.com/AstroAspie/space_invaders_clone",
       "demo": "https://astroaspie.github.io/space_invaders_clone/",
       "language": ["HTML", "CSS", "JavaScript"],
-      "type": "Game"
+      "type": ["Game"]
     },
     {
       "title": "2048 in Python",
@@ -24,7 +24,7 @@
       "image": "/2048_Pygame-screenshot.png",
       "link": "https://github.com/AstroAspie/2048_pygame",
       "language": ["Python"],
-      "type": "Game"
+      "type": ["Game"]
     },
     {
       "title": "William's Water Sport Rentals",
@@ -32,13 +32,14 @@
       "image": "/Williams-Water-Sport-Rentals-Screenshot.png",
       "language": ["Dotnet", "Vue", "Postgresql", "Docker"],
       "complete": true,
-      "freelance": true
+      "freelance": true,
+      "type": ["Web"]
     },
     {
       "title": "Todo App",
       "description": "Simple Todo App using ASP.NET, Vue3 and Postgresql",
       "image": "",
-      "type": "Web",
+      "type": ["Web"],
       "language": ["Dotnet", "Vue", "Postgresql", "Docker"]
     },
     {
@@ -53,7 +54,7 @@
       "description": "Simple RestAPI using FastAPI to return mp3 files converted from a given text string",
       "image": "",
       "demo": "/MyPortfolio/Text-To-Speech-Demo.mkv",
-      "type": ["API"],
+      "type": ["API", "Web"],
       "language": ["Python", "FastAPI"]
     },
     {

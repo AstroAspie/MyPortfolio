@@ -88,9 +88,6 @@ export default {
     }
   },
   methods: {
-    likeProject(project) {
-      console.log("Liked Project: ", project.title);
-    },
     mouseOver() {
       this.hovering = !this.hovering;
     },
@@ -104,7 +101,6 @@ export default {
     loadLogos() {
       for (let logo of this.logos) {
         for (let lang of this.project.language) {
-          console.log(lang)
           if (logo.lang == lang.toLowerCase()) {
             this.incLogos.push(logo)
           }
