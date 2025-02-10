@@ -4,6 +4,7 @@
         <div class="card-content">
             <h3>{{ writeup.title }}</h3>
         </div>
+        <div></div>
     </div>
 </template>
 
