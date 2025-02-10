@@ -1,15 +1,21 @@
 <template>
-    <div class="writeups-container">
-        <h1>Write Ups</h1>
-        <div v-for="writeup in writeups" :key="writeup.id" class="writeup" @click="routeToWriteUp(writeup.id)">
-            <h2>{{ writeup.title }}</h2>
+    <div class="container">
+        <h1 class="title">Write Ups</h1>
+        <div class="writeup-container">
+            <WriteUpCard v-for="writeup in writeups" :key="writeup.id" :writeup="writeup"
+                @click="routeToWriteUp(writeup.id)" />
         </div>
     </div>
 </template>
 
 <script>
+import WriteUpCard from '@/components/projects/writeups/WriteUpCard.vue';
+
 export default {
     name: "WriteUpsView",
+    components: {
+        WriteUpCard
+    },
     data() {
         return {
             writeups: []
@@ -32,16 +38,41 @@ export default {
 </script>
 
 <style scoped>
+.container {
+    overflow-x: hidden;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.title {
+    color: #fcfeff;
+    font-size: 3rem;
+    text-align: center;
+    position: absolute;
+    top: 5%;
+    width: 90%;
+    border-bottom: 1px solid #fcfeff;
+}
+
 .writeups-container {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
+    width: 100%;
+    height: 100%;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 1rem;
 }
 
 .writeup {
+    position: relative;
     max-height: 200px;
     min-height: 45%;
-    max-width: 80%;
+    width: 100%;
     color: #fcfeff;
     opacity: 1;
     text-decoration: solid;
