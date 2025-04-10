@@ -4,9 +4,8 @@
         <div class="writeup-types">
             <div v-for="(type, index) in writeupTypes" :key="index" class="writeup-type">
                 <h2>{{ type }}</h2>
-                <div v-for="(writeup, index) of groupedWriteups[type]" :key="index" class="writeup"
-                    @click="routeToWriteUp(writeup.id)">
-                    <WriteUpCard :writeup="writeup" />
+                <div v-for="(writeup, index) of groupedWriteups[type]" :key="index" class="writeup">
+                    <WriteUpCard :writeup="writeup" @click="routeToWriteUp(writeup.id)" />
                 </div>
             </div>
         </div>
