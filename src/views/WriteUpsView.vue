@@ -8,7 +8,8 @@
             <div class="writeup-types">
                 <div v-for="(type, index) in writeupTypes" :key="index" class="writeup-type">
                     <h2>{{ type }}</h2>
-                    <div v-for="(writeup, index) of groupedWriteups[type]" :key="index" class="writeup">
+                    <div v-for="(writeup, index) of groupedWriteups[type]" :key="index" class="writeup"
+                        @click="routeToWriteUp(writeup.id)">
                         <WriteUpCard :writeup="writeup" @click="routeToWriteUp(writeup.id)" />
                     </div>
                 </div>
@@ -69,7 +70,7 @@ export default {
     width: 100%;
     min-height: 100vh;
     background-color: #000000;
-    color: #00ff00;
+    color: #00ffbb;
     font-family: 'Courier New', Courier, monospace;
     overflow-x: hidden;
     transition: margin-left 0.3s ease-in-out;
@@ -125,10 +126,9 @@ export default {
     color: #00ff00;
     font-weight: bold;
     text-align: center;
-    animation: glitch 1.5s infinite;
     z-index: 2;
     width: 100%;
-    text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 20px #00ff00;
+    text-shadow: 0 0 5px #006aff, 0 0 10px #00ffcc, 0 0 20px #006eff;
     background-color: #000000;
     padding: 10px 20px;
     box-shadow: 0 2px 5px rgba(0, 255, 0, 0.5);
@@ -163,7 +163,6 @@ export default {
     border-radius: 10px;
     background-color: #0d0d0d;
     box-shadow: 0 4px 6px rgba(0, 255, 0, 0.5);
-    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
     width: 100%;
     max-width: 400px;
     text-align: center;
@@ -215,28 +214,6 @@ export default {
     .writeup {
         font-size: 0.9rem;
         padding: 15px;
-    }
-}
-
-@keyframes glitch {
-    0% {
-        text-shadow: 2px 2px #ff0000, -2px -2px #0000ff;
-    }
-
-    25% {
-        text-shadow: -2px -2px #ff0000, 2px 2px #0000ff;
-    }
-
-    50% {
-        text-shadow: 2px -2px #ff0000, -2px 2px #0000ff;
-    }
-
-    75% {
-        text-shadow: -2px 2px #ff0000, 2px -2px #0000ff;
-    }
-
-    100% {
-        text-shadow: 2px 2px #ff0000, -2px -2px #0000ff;
     }
 }
 </style>
