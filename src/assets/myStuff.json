@@ -290,33 +290,27 @@
     },
     {
       "id": 7,
-      "title": "Temp Image",
-      "source": "Hacker101",
-      "file": "/writeups/hacker101/ctf-h101-temp-image.md"
-    },
-    {
-      "id": 8,
       "title": "Documentation API Vulnerability",
       "source": "Portswigger",
       "subject": "API Hacking",
       "file": "/writeups/portswigger/api-testing/documentation-api-vulnerability.md"
     },
     {
-      "id": 9,
+      "id": 8,
       "title": "Mass Assignment Vulnerability",
       "source": "Portswigger",
       "subject": "API Hacking",
-      "file": "/writeup/portswigger/api-testing/mass-assignment.md"
+      "file": "/writeups/portswigger/api-testing/mass-assignment.md"
     },
     {
-      "id": 10,
+      "id": 9,
       "title": "Server Side Parameter Pollution",
       "source": "Portswigger",
       "subject": "API Hacking",
       "file": "/writeups/portswigger/api-testing/server-side-parameter-pollution.md"
     },
     {
-      "id": 11,
+      "id": 10,
       "title": "Unused API Endpoint",
       "source": "Portswigger",
       "subject": "API Hacking",
