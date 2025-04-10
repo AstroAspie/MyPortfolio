@@ -3,7 +3,7 @@
 This challenge was quite fun and quite difficult.
 Initially we are presented with a page with a single input.
 
-#### Flag 0
+#### Flag 0 - Found
 
 I started by looking for some directories.
 
