@@ -71,13 +71,6 @@ export default {
     transition: 0.3s;
 }
 
-.card-container:hover {
-    background-color: #fcfeff;
-    color: #000;
-    cursor: pointer;
-    transition: all 0.3s ease 0s;
-}
-
 .card-content:hover {
     background-color: #fcfeff;
     color: #000;
