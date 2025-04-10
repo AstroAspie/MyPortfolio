@@ -46,30 +46,8 @@ export default {
       this.hoverHome = false;
     },
     openLink(link) {
-      switch (link) {
-        case "/projects":
-          this.$nextTick(() => {
-            this.$router.push('/projects');
-          })
-          break;
-        case "/skills":
-          this.$nextTick(() => {
-            this.$router.push('/skills');
-          })
-          break;
-        case "resume":
-          this.$nextTick(() => {
-            this.$router.push('alex-smith-resume.pdf')
-          })
-          break;
-        case "/certificates":
-          this.$router.push('/certificates')
-          break;
-        default:
-          // this.$router.push('/');
-          scrollTo(0, 0)
-          break;
-      }
+      this.activeLink = link;
+      this.$router.push(link);
     },
     loadHomeIcons() {
       let white = '@/assets/images/home-white.png';
