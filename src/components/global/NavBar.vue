@@ -22,7 +22,6 @@ export default {
       links: [
         { name: "Home", path: "/" },
         { name: "Projects", path: "/projects" },
-        { name: "Skills", path: "/skills" },
         { name: "Write Ups", path: "/writeups" },
         { name: "About Me", path: "/about", },
         { name: "Contact", path: "/contact" },
@@ -33,8 +32,6 @@ export default {
   methods: {
     hoverLink(linkName) {
       if (linkName != "Home") {
-        // let link = document.getElementById(linkName);
-        // link.style.border = "solid 1px cyan";
         return;
       } else {
         this.hoverHome = true;

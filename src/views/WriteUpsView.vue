@@ -50,7 +50,6 @@ export default {
             for (const type of this.writeupTypes) {
                 group[type] = this.writeups.filter(writeup => writeup.source === type);
             };
-            console.log(group);
             return group;
         },
         routeToWriteUp(writeupId = 1) {

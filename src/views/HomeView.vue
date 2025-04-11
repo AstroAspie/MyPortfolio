@@ -33,12 +33,6 @@ export default {
       };
     },
   },
-  mounted() {
-    // document.addEventListener("nav", e => {
-    //   console.log(`Event ${e.NavTo}`)
-    //   this.$refs[e.NavTo].focus()
-    // })
-  }
 }
 </script>
 
@@ -46,7 +40,6 @@ export default {
 .image {
   width: 100%;
   height: 100%;
-  /* background-image: url("/circuit-image.jpg"); */
   z-index: -1;
   opacity: 0.2;
 }

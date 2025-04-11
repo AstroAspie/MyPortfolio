@@ -1,11 +1,18 @@
 <template>
   <div>
     <div class="showNav-bubble" id="navBubble"></div>
-    <div class="showNav" id="showNav" @click="triggerNav">{{ menuTrigger }}</div>
+    <div class="showNav" id="showNav" @click="triggerNav">
+      <span class="menu-icon">{{ menuTrigger }}</span>
+    </div>
     <NavBar v-if="showNav" />
     <div class="top banner" ref="home">
       <slot name="primary">
       </slot>
+      <svg class="down-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="12" y1="5" x2="12" y2="19"></line>
+        <polyline points="19 12 12 19 5 12"></polyline>
+      </svg>
     </div>
     <div class="middle banner" ref="projects">
       <slot name="secondary">
@@ -22,12 +29,11 @@ export default {
   data() {
     return {
       showNav: false,
-      menuTrigger: '->'
+      menuTrigger: 'Menu'
     }
   },
   methods: {
     navEvent(e) {
-      console.log(e)
       this.$nextTick(() => {
         scrollTo(e.NavTo)
       })
@@ -39,39 +45,68 @@ export default {
       bubble.style.display = this.showNav ? 'none' : 'block';
       let navTrigger = document.getElementById('showNav');
       navTrigger.style.left = this.showNav ? '225px' : '25px';
-      this.menuTrigger = this.showNav ? '<-' : '->';
+      this.menuTrigger = this.showNav ? '<-' : 'Menu';
     }
   },
   created() {
     document.addEventListener("nav", this.navEvent)
   },
-  mounted() {
-  }
 };
 </script>
 
 <style scoped>
-.showNav {
-  position: fixed;
-  top: 1px;
-  left: 25px;
-  padding: 10px;
-  font-size: 2rem;
+.down-arrow {
+  width: 50px;
+  height: 50px;
+  margin: 20px auto;
+  display: block;
   cursor: pointer;
-  z-index: 200;
+  animation: bounce 2s infinite;
   color: white;
 }
 
-.showNav-bubble {
-  display: block;
+@keyframes bounce {
+
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+
+  40% {
+    transform: translateY(-10px);
+  }
+
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+.showNav {
   position: fixed;
-  top: 9px;
-  left: 25px;
-  padding: 30px;
-  border-radius: 50%;
+  top: 10px;
+  left: 20px;
+  padding: 8px;
+  font-size: 1.5rem;
   cursor: pointer;
-  /* background-color: green; */
-  z-index: 180;
+  z-index: 200;
+  color: white;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  border-radius: 8px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.showNav:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.15);
+}
+
+.showNav-bubble:hover {
+  transform: scale(1.1);
+  opacity: 0.9;
 }
 
 .image {

@@ -31,7 +31,6 @@ export default {
   computed: {
     gameProjects() {
       let test = demoData["projects"].filter(project => project.type.includes("Game"));
-      console.log(`test game: ${test}`);
       return test
     },
     webProjects() {

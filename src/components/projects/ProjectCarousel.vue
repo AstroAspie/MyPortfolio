@@ -1,5 +1,5 @@
 <template>
-  <SimpleCarousel :projects="projects" :projectsToShow="displayCount"/>
+  <SimpleCarousel :projects="projects" :projectsToShow="displayCount" />
 </template>
 
 <script>
@@ -9,7 +9,7 @@ import SimpleCarousel from "../global/SimpleCarousel.vue";
 
 export default {
   name: 'Project-Carousel',
-  components: {SimpleCarousel},
+  components: { SimpleCarousel },
   data() {
     return {
       selectedProject: null,
@@ -20,7 +20,6 @@ export default {
   methods: {
     LoadProjects() {
       this.projects = json["projects"];
-      console.log(window.innerWidth)
       if (window.innerWidth <= 610) {
         this.displayCount = 1;
       }
