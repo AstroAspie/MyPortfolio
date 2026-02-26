@@ -1,3 +1,20 @@
+<script lang="js" setup>
+import { computed } from 'vue';
+import HomeLayout from "@/layouts/HomeLayout.vue";
+import AstroBanner from "@/components/AstroBanner.vue";
+import SkillsBanner from "@/components/skills/SkillsBanner.vue";
+
+computed(() => {
+  return {
+    ScreenDimensions: {
+      width: window.innerWidth,
+      height: window.innerHeight,
+    },
+  };
+})
+</script>
+
+
 <template>
   <HomeLayout>
     <template #primary>
@@ -9,32 +26,6 @@
   </HomeLayout>
 </template>
 
-<script>
-import HomeLayout from "@/layouts/HomeLayout.vue";
-import AstroBanner from "@/components/AstroBanner.vue";
-import SkillsBanner from "@/components/skills/SkillsBanner.vue";
-import ContactBanner from "@/components/ContactBanner.vue";
-
-export default {
-  // eslint-disable-next-line vue/no-unused-components
-  components: { SkillsBanner, AstroBanner, HomeLayout, ContactBanner },
-  name: "HomeView",
-  data() {
-    return {
-      BasicScene: import("@/components/scenes/BasicScene.vue"),
-    };
-  },
-  methods: {},
-  computed: {
-    ScreenDimensions() {
-      return {
-        width: window.innerWidth,
-        height: window.innerHeight,
-      };
-    },
-  },
-}
-</script>
 
 <style scoped>
 .image {

@@ -1,3 +1,14 @@
+<script lang="js" setup>
+import SocialsBar from './global/SocialsBar.vue';
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
+
+const navigateTo = (path) => {
+  router.push(path);
+}
+</script>
+
 <template>
   <div class="astro">
     <div class="socials">
@@ -7,38 +18,12 @@
     <p>Full Stack Engineer & Ethical Hacker</p>
     <p>My passion is to create and secure the future of technology</p>
     <div class="page-links">
-      <button @click="this.$router.push('/about')">About Me</button>
-      <button @click="this.$router.push('/projects')">Projects</button>
-      <button @click="this.$router.push('/writeups')">Write-Ups</button>
+      <button @click="navigateTo('/about')">About Me</button>
+      <button @click="navigateTo('/projects')">Projects</button>
+      <button @click="navigateTo('/writeups')">Write-Ups</button>
     </div>
   </div>
 </template>
-
-<script>
-// import MyBio from './global/MyBio.vue';
-import SocialsBar from './global/SocialsBar.vue';
-
-export default {
-  name: "AstroBanner",
-  components: { SocialsBar },
-  data() {
-    return {
-      welcome_msg_array: [
-        "Full Stack Engineer",
-      ],
-      welcome_msg: "",
-    };
-  },
-  methods: {
-  },
-  mounted() {
-    this.welcome_msg =
-      this.welcome_msg_array[
-      Math.floor(Math.random() * this.welcome_msg_array.length)
-      ];
-  },
-};
-</script>
 
 <style scoped>
 .astro {

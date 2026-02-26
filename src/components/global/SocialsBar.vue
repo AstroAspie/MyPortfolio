@@ -1,3 +1,42 @@
+<script lang="js" setup>
+import { ref, onMounted } from "vue";
+import json from "@/data/socials.json";
+
+const socials = ref([]);
+
+const onHover = (item) => {
+  // grow the size of the icon being hovered over
+  const itemSelector = `#${item}`;
+  const icon = document.querySelector(itemSelector);
+
+  // smoothly transition the icon to a larger size
+  icon.style.transition = "width 0.5s, height 0.5s";
+  icon.style.width = "60px";
+  icon.style.height = "60px";
+}
+
+const offHover = (item) => {
+  const itemSelector = `#${item}`;
+  const icon = document.querySelector(itemSelector);
+  // smoothly transition the icon back to its original size
+  icon.style.transition = "width 0.5s, height 0.5s";
+  icon.style.width = "50px";
+  icon.style.height = "50px";
+}
+
+const openLink = (link) => {
+  window.open(link, "_blank");
+}
+
+const loadSocials = () => {
+  socials.value = json;
+}
+
+onMounted(() => {
+  loadSocials();
+})
+</script>
+
 <template>
   <div class="header-socials">
     <div class="social-icons">
@@ -13,119 +52,8 @@
           @click="openLink(social.link)"
       />
     </div>
-    <div class="box-container">
-      <div id="box"></div>
-    </div>
   </div>
 </template>
-
-<script>
-import json from "@/assets/myStuff.json";
-import * as THREE from 'three';
-// import BasicScene from "../scenes/BasicScene.vue";
-
-export default {
-  name: "SocialsBar",
-  data() {
-    return {
-      socials: null
-    }
-  },
-  methods: {
-    onHover(item) {
-      // grow the size of the icon being hovered over
-      const itemSelector = `#${item}`;
-      const icon = this.$el.querySelector(itemSelector);
-
-      // smoothly transition the icon to a larger size
-      icon.style.transition = "width 0.5s, height 0.5s";
-      this.$el.querySelector(itemSelector).style.width = "60px";
-      this.$el.querySelector(itemSelector).style.height = "60px";
-    },
-    offHover(item) {
-      const itemSelector = `#${item}`;
-      // shrink the size of the icon being hovered over
-      this.$el.querySelector(itemSelector).style.width = "50px";
-      this.$el.querySelector(itemSelector).style.height = "50px";
-    },
-    openLink(link) {
-      window.open(link, "_blank");
-    },
-    loadSocials() {
-      this.socials = json["socials"];
-    },
-    downloadResume() {
-      this.loading = true;
-      setTimeout(() => {
-        this.loading = false;
-      }, 1000);
-      
-      const localString = "src/assets/Alex-Smith_Resume.pdf";
-
-      fetch(localString)
-        .then((response) => response.blob())
-        .then((blob) => {
-          const url = window.URL.createObjectURL(new Blob([blob]));
-          const link = document.createElement('a');
-          link.href = url;
-          link.setAttribute('download', 'Alex-Smith_Resume.pdf');
-          document.body.appendChild(link);
-          link.click();
-        })
-        .catch((error) => {
-          console.error(error);
-        });
-    },
-    loadThree() {
-      const scene = new THREE.Scene();
-      
-      const appHeight = 200;
-      const appWidth = 200;
-
-      // Camera 
-      const fov = 75;
-      const near = 0.1;
-      const far = 1000;
-      const camera = new THREE.PerspectiveCamera( fov, appWidth / appHeight, near, far );
-
-
-      const renderer = new THREE.WebGLRenderer();
-      renderer.setClearColor(0, 0, 0, 0.5)
-      renderer.setSize( appWidth, appHeight );
-      renderer.setAnimationLoop( animate );
-      const container = document.getElementById('box')
-      renderer.domElement.style.backgroundColor = "transparent"
-      container.appendChild( renderer.domElement );
-
-      // Set cube geometry
-      const geometry = new THREE.BoxGeometry( 3.4, 3.4, 3.4 );
-      const wireGeometry = new THREE.WireframeGeometry(geometry);
-      const material = new THREE.MeshBasicMaterial( { color: 0x0000ff } );
-
-      const line = new THREE.LineSegments(wireGeometry, material);
-      line.material.depthTest = true;
-      line.material.opacity = 0.5;
-      line.material.transparent = false;
-      // const cube = new THREE.Mesh( geometry, material );
-      // scene.add( cube );
-      scene.add( line );
-
-      camera.position.z = 5;
-
-
-      function animate() {
-        renderer.render( scene, camera );
-        line.rotation.x += 0.01;
-        line.rotation.y += 0.01;
-      }
-    }
-  },
-  mounted() {
-    this.loadSocials();
-    this.loadThree();
-  }
-}
-</script>
 
 <style scoped>
 .box-container {
@@ -161,6 +89,10 @@ export default {
   text-align: center;
   padding-right: 40px;
   margin-left: 10px;
+}
+
+.icon:hover {
+  cursor: pointer;
 }
 
 @media (max-width: 600px) {

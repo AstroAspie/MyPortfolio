@@ -27,7 +27,7 @@ export default {
     methods: {
         getWriteUp() {
             let id = this.$route.params.id;
-            import('../../../assets/myStuff.json').then(data => {
+            import('../../../data/sec_writeups.json').then(data => {
                 this.writeup = data["writeups"][id - 1].file;
             }).finally(() => {
                 fetch(`/MyPortfolio/${this.writeup}`)

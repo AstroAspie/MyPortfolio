@@ -1,0 +1,14 @@
+[
+  { "lang": "python", "logo": "/python.svg" },
+  { "vue": "/vue.svg" },
+  { "docker": "/docker.svg" },
+  { "Postgresql": "/Postgresql.svg" },
+  { "dotnet": "/dotnet.svg" },
+  { "html": "/html-5.svg" },
+  { "css": "/css-3.svg" },
+  { "javascript": "/javascript.svg" },
+  { "java": "/java.svg" },
+  { "react": "/react.svg" },
+  { "aws": "/aws.svg" },
+  { "raspberry-pi": "/raspberry-pi-svgrepo-com.svg" }
+]

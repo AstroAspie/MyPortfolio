@@ -153,7 +153,6 @@ hr {
   font-size: 14px;
 }
 
-
 .banner-title {
   font-size: 2.2rem;
   font-weight: bold;
@@ -186,7 +185,7 @@ hr {
 }
 
 .nav-bar li:hover {
-  color: green;
+  color: #02465b;
 }
 
 .sort-container {
@@ -234,6 +233,8 @@ hr {
   margin-top: 2%;
   flex-wrap: wrap;
 }
+
+
 
 /* Mobile devices */
 @media (max-width: 600px) {

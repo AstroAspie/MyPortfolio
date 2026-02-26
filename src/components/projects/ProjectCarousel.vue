@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import json from "@/assets/myStuff.json";
+import json from "@/data/projects.json";
 // import ProjectCassette from "@/components/projects/ProjectCassette.vue";
 import SimpleCarousel from "../global/SimpleCarousel.vue";
 

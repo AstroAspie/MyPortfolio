@@ -1,18 +1,12 @@
+<script lang="js" setup>
+
+</script>
+
 <template>
   <div>
-    <div class="showNav-bubble" id="navBubble"></div>
-    <div class="showNav" id="showNav" @click="triggerNav">
-      <span class="menu-icon">{{ menuTrigger }}</span>
-    </div>
-    <NavBar v-if="showNav" />
     <div class="top banner" ref="home">
       <slot name="primary">
       </slot>
-      <svg class="down-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="12" y1="5" x2="12" y2="19"></line>
-        <polyline points="19 12 12 19 5 12"></polyline>
-      </svg>
     </div>
     <div class="middle banner" ref="projects">
       <slot name="secondary">
@@ -21,38 +15,6 @@
   </div>
 </template>
 
-<script>
-import NavBar from "@/components/global/NavBar.vue";
-export default {
-  name: "HomeLayout",
-  components: { NavBar },
-  data() {
-    return {
-      showNav: false,
-      menuTrigger: 'Menu'
-    }
-  },
-  methods: {
-    navEvent(e) {
-      this.$nextTick(() => {
-        scrollTo(e.NavTo)
-      })
-      scrollTo(0, 1000);
-    },
-    triggerNav() {
-      this.showNav = !this.showNav
-      let bubble = document.getElementById('navBubble');
-      bubble.style.display = this.showNav ? 'none' : 'block';
-      let navTrigger = document.getElementById('showNav');
-      navTrigger.style.left = this.showNav ? '225px' : '25px';
-      this.menuTrigger = this.showNav ? '<-' : 'Menu';
-    }
-  },
-  created() {
-    document.addEventListener("nav", this.navEvent)
-  },
-};
-</script>
 
 <style scoped>
 .down-arrow {
@@ -66,7 +28,6 @@ export default {
 }
 
 @keyframes bounce {
-
   0%,
   20%,
   50%,
@@ -126,11 +87,12 @@ export default {
   width: 99vw;
   height: 98vh;
   margin: auto 0;
+  border: 1px solid lightblue;
 }
 
 .top {
   padding: 20px;
-  margin: 30px 10px 10px;
+  margin: 10px 7px;
   overflow-x: hidden;
 }
 
@@ -138,13 +100,14 @@ export default {
   display: flex;
   flex-direction: row;
   padding: 20px;
-  margin: 10px;
+  margin: 10px 7px;
   overflow-x: hidden;
 }
 
 .bottom {
-  margin: 10px;
+  margin: 10px 7px;
   overflow-x: hidden;
+  padding: 20px;
 }
 
 @media (max-width: 480px) {

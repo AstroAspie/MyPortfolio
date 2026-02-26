@@ -1,0 +1,66 @@
+[
+  {
+    "id": 1,
+    "title": "RTFM",
+    "source": "Hacker101",
+    "file": "/writeups/hacker101/ctf-h101-rtfm.md"
+  },
+  {
+    "id": 2,
+    "title": "Y2FuIHlvdSByZWNvbj8",
+    "source": "Hacker101",
+    "file": "/writeups/hacker101/ctf-h101-Y2FuIHlvdSByZWNvbj8.md"
+  },
+  {
+    "id": 3,
+    "title": "HackyHolidays",
+    "source": "Hacker101",
+    "file": "/writeups/hacker101/ctf-h101-hackyholidays.md"
+  },
+  {
+    "id": 4,
+    "title": "Model e1337 Rolling Code Lock",
+    "source": "Hacker101",
+    "file": "/writeups/hacker101/ctf-h101-model-e1337-rolling-code-lock.md"
+  },
+  {
+    "id": 5,
+    "title": "Petshop Pro",
+    "source": "Hacker101",
+    "file": "/writeups/hacker101/ctf-h101-petshop-pro.md"
+  },
+  {
+    "id": 6,
+    "title": "Photo Gallery",
+    "source": "Hacker101",
+    "file": "/writeups/hacker101/ctf-h101-photo-gallery.md"
+  },
+  {
+    "id": 7,
+    "title": "Documentation API Vulnerability",
+    "source": "Portswigger",
+    "subject": "API Hacking",
+    "file": "/writeups/portswigger/api-testing/documentation-api-vulnerability.md"
+  },
+  {
+    "id": 8,
+    "title": "Mass Assignment Vulnerability",
+    "source": "Portswigger",
+    "subject": "API Hacking",
+    "file": "/writeups/portswigger/api-testing/mass-assignment.md"
+  },
+  {
+    "id": 9,
+    "title": "Server Side Parameter Pollution",
+    "source": "Portswigger",
+    "subject": "API Hacking",
+    "file": "/writeups/portswigger/api-testing/server-side-parameter-pollution.md"
+  },
+  {
+    "id": 10,
+    "title": "Unused API Endpoint",
+    "source": "Portswigger",
+    "subject": "API Hacking",
+    "file": "/writeups/portswigger/api-testing/unused-api-endpoint.md"
+  }
+]
