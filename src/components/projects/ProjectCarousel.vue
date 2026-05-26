@@ -1,34 +1,26 @@
+<script setup lang="js">
+import { ref, onMounted } from 'vue';
+import SimpleCarousel from '@/components/global/SimpleCarousel.vue';
+import json from "@/data/projects.json";
+
+const selectedProject = ref(null);
+const projects = ref([]);
+const displayCount = ref(4);
+
+const LoadProjects = () => {
+  projects.value = json["projects"];
+  if (window.innerWidth <= 610) {
+    displayCount.value = 1;
+  }
+};
+
+onMounted(() => {
+  LoadProjects();
+});
+</script>
+
 <template>
   <SimpleCarousel :projects="projects" :projectsToShow="displayCount" />
 </template>
-
-<script>
-import json from "@/data/projects.json";
-// import ProjectCassette from "@/components/projects/ProjectCassette.vue";
-import SimpleCarousel from "../global/SimpleCarousel.vue";
-
-export default {
-  name: 'Project-Carousel',
-  components: { SimpleCarousel },
-  data() {
-    return {
-      selectedProject: null,
-      projects: [],
-      displayCount: 4,
-    }
-  },
-  methods: {
-    LoadProjects() {
-      this.projects = json["projects"];
-      if (window.innerWidth <= 610) {
-        this.displayCount = 1;
-      }
-    }
-  },
-  mounted() {
-    this.LoadProjects()
-  }
-}
-</script>
 
 <style></style>

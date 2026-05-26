@@ -1,5 +1,5 @@
 <template>
-  <div class="banner-container">
+  <div class="banner-container" ref="projectsBanner">
     <h1 class="banner-title">Projects</h1>
     <img id="projects-background" src="/images/projects-backdrop.png" alt="project-background" />
     <div class="projects-bio"></div>
@@ -10,36 +10,31 @@
 </template>
 
 
-<script>
+<script setup>
+import { ref, onMounted } from 'vue';
+import { useRouter } from 'vue-router';
 import ProjectCarousel from './ProjectCarousel.vue';
 
-export default {
-  name: "ProjectsBanner",
-  components: {
-    ProjectCarousel,
-  },
-  data() {
-    return {
-      hoveringLink: false,
-      selected_project: null,
-    };
-  },
-  mounted() {
-    this.alignBanner();
-  },
-  methods: {
-    alignBanner() {
-      if (this.$router.currentRoute == "Projects") {
-        this.$refs["projects-banner"].style = {
-          "margin-top": "12%"
-        };
-      }
-    },
-    goToProjects() {
-      this.$router.push("/projects");
+const router = useRouter();
+const hoveringLink = ref(false);
+const selected_project = ref(null);
+const projectsBanner = ref(null);
+
+const alignBanner = () => {
+  if (router.currentRoute.value.name === "Projects") {
+    if (projectsBanner.value) {
+      projectsBanner.value.style.marginTop = "12%";
     }
-  },
+  }
 };
+
+const goToProjects = () => {
+  router.push("/projects");
+};
+
+onMounted(() => {
+  alignBanner();
+});
 </script>
 
 <style scoped>

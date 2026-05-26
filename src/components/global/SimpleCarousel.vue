@@ -1,3 +1,40 @@
+<script setup>
+import { ref } from 'vue';
+import ProjectCassette from '../projects/ProjectCassette.vue';
+
+const props = defineProps({
+  projects: {
+    type: Array,
+    required: true
+  },
+  projectsToShow: {
+    type: Number,
+    default: 4
+  }
+});
+
+
+const currentIndex = ref(0);
+
+const prevSlide = () => {
+  if (currentIndex.value > 0) {
+    currentIndex.value--;
+  }
+};
+
+const nextSlide = () => {
+  currentIndex.value += props.projectsToShow;
+  if (currentIndex.value > props.projects.length) {
+    currentIndex.value = 0;
+  }
+  // if (currentIndex.value < props.projects.length - props.projectsToShow) {
+  //   currentIndex.value++;
+  // } else {
+  //   currentIndex.value = 0;
+  // }
+};
+</script>
+
 <template>
   <div class="slider-container">
     <button @click="prevSlide" class="nav-btn prev-btn">‹</button>
@@ -13,47 +50,6 @@
     <button @click="nextSlide" class="nav-btn next-btn">›</button>
   </div>
 </template>
-
-<script>
-import ProjectCassette from '../projects/ProjectCassette.vue';
-
-export default {
-  props: {
-    projects: {
-      type: Array,
-      required: true
-    },
-    projectsToShow: {
-      type: Number,
-      default: 4
-    }
-  },
-  components: { ProjectCassette },
-  data() {
-    return {
-      currentIndex: 0
-    };
-  },
-  methods: {
-    prevSlide() {
-      if (this.currentIndex > 0) {
-        this.currentIndex--;
-      }
-    },
-    nextSlide() {
-      this.currentIndex += this.projectsToShow;
-      if (this.currentIndex > this.projects.length) {
-        this.currentIndex = 0;
-      }
-      // if (this.currentIndex < this.projects.length - this.projectsToShow) {
-      //   this.currentIndex++;
-      // } else {
-      //   this.currentIndex = 0;
-      // }
-    }
-  }
-};
-</script>
 
 <style scoped>
 .slider-container {

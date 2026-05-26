@@ -13,46 +13,45 @@
   </nav>
 </template>
 
-<script>
-export default {
-  name: "NavBar",
-  data() {
-    return {
-      hoverHome: false,
-      links: [
-        { name: "Home", path: "/" },
-        { name: "Projects", path: "/projects" },
-        { name: "Write Ups", path: "/writeups" },
-        { name: "About Me", path: "/about", },
-        { name: "Contact", path: "/contact" },
-      ],
-      activeLink: null,
-    };
-  },
-  methods: {
-    hoverLink(linkName) {
-      if (linkName != "Home") {
-        return;
-      } else {
-        this.hoverHome = true;
-      }
-    },
-    mouseoutLink(linkName) {
-      let link = document.getElementById(linkName);
-      link.style.border = "";
-      this.hoverHome = false;
-    },
-    openLink(link) {
-      this.activeLink = link;
-      this.$router.push(link);
-    },
-    loadHomeIcons() {
-      let white = '@/assets/images/home-white.png';
-      this.homeImages.push(white);
-      let cyan = '@/assets/images/home-cyan.png';
-      this.homeImages.push(cyan);
-    }
-  },
+<script setup>
+import { ref } from 'vue';
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
+const hoverHome = ref(false);
+const links = ref([
+  { name: "Home", path: "/" },
+  { name: "Projects", path: "/projects" },
+  { name: "Write Ups", path: "/writeups" },
+  { name: "About Me", path: "/about", },
+  { name: "Contact", path: "/contact" },
+]);
+const activeLink = ref(null);
+
+const hoverLink = (linkName) => {
+  if (linkName != "Home") {
+    return;
+  } else {
+    hoverHome.value = true;
+  }
+};
+
+const mouseoutLink = (linkName) => {
+  let link = document.getElementById(linkName);
+  link.style.border = "";
+  hoverHome.value = false;
+};
+
+const openLink = (link) => {
+  activeLink.value = link;
+  router.push(link);
+};
+
+const loadHomeIcons = () => {
+  let white = '@/assets/images/home-white.png';
+  homeImages.value.push(white);
+  let cyan = '@/assets/images/home-cyan.png';
+  homeImages.value.push(cyan);
 };
 </script>
 

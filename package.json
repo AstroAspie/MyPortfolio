@@ -13,8 +13,6 @@
   },
   "dependencies": {
     "@fortawesome/vue-fontawesome": "^3.0.6",
-    "@tresjs/cientos": "^3.9.0",
-    "@tresjs/core": "^4.0.2",
     "myportfolio": "file:",
     "vue": "^3.4.21",
     "vue-markdown-render": "^2.2.1",
@@ -22,7 +20,6 @@
     "vuetify": "^3.6.5"
   },
   "devDependencies": {
-    "@canvasjs/vue-charts": "^1.0.4",
     "@rushstack/eslint-patch": "^1.8.0",
     "@vitejs/plugin-vue": "^6.0.0",
     "@vue/eslint-config-prettier": "^9.0.0",

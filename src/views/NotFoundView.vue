@@ -6,11 +6,12 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'NotFoundView'
+
+<style scoped>
+.not-found {
+  text-align: center;
 }
-</script>
+</style>
 
 <style scoped>
 .not-found {
