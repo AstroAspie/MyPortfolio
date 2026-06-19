@@ -60,7 +60,7 @@ const filteredProjects = computed(() => {
   flex-wrap: wrap;
   gap: 24px;
   justify-content: center;
-  max-width: 1200px;
+  max-width: 1280px;
   width: 100%;
 }
 </style>
