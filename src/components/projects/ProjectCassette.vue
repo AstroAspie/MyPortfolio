@@ -1,6 +1,6 @@
 <template>
   <v-card class="cassette-card project-cassette" @mouseenter="mouseOver" @mouseleave="mouseOver" :style="hoverStyle()">
-    <v-img :src="`/MyPortfolio/images/${project.image}`" class="project-image"></v-img>
+    <v-img :src="`/MyPortfolio/images/project-thumbnails/${project.image}`" class="project-image"></v-img>
     <v-card-title class="project-title">{{ project.title }}</v-card-title>
     <v-card-text class="project-desc">{{ project.description }}</v-card-text>
     <div class="project-langs">
@@ -18,7 +18,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
+import { ref } from 'vue';
 
 const props = defineProps({
   project: {
@@ -28,49 +28,39 @@ const props = defineProps({
 });
 
 const hovering = ref(false);
-const incLogos = ref([]);
-const logos = ref([
-  { lang: "html", logo: "/MyPortfolio/images/html-5.svg" },
-  { lang: "css", logo: "/MyPortfolio/images/css-3.svg" },
-  { lang: "python", logo: "/MyPortfolio/images/python.svg" },
-  { lang: "javascript", logo: "/MyPortfolio/images/javascript.svg" },
-  { lang: "dotnet", logo: "/MyPortfolio/images/dotnet.svg" },
-  { lang: "java", logo: "/MyPortfolio/images/java.svg" },
-  { lang: "react", logo: "/MyPortfolio/images/react.svg" },
-  { lang: "vue", logo: "/MyPortfolio/images/vue.svg" },
-  { lang: "django", logo: "/MyPortfolio/images/django.svg" },
-  { lang: "postgresql", logo: "/MyPortfolio/images/postgresql.svg" },
-  { lang: "sqlite", logo: "/MyPortfolio/images/sqlite.svg" },
-  { lang: "unity", logo: "/MyPortfolio/images/unity.svg" },
-  { lang: "unreal engine", logo: "/MyPortfolio/images/unreal-engine.svg" },
-  { lang: "docker", logo: "/MyPortfolio/images/docker.svg" },
-  { lang: "sql", logo: "/MyPortfolio/images/sql.svg" },
-  { lang: "nosql", logo: "/MyPortfolio/images/nosql.svg" },
-  { lang: "git", logo: "/MyPortfolio/images/github-mark.png" },
-  { lang: "raspberrypi", logo: "/MyPortfolio/images/raspberry-pi.svg" },
-  { lang: "aws", logo: "/MyPortfolio/images/aws.svg" },
-  { lang: "azure", logo: "/MyPortfolio/images/azure.svg" },
-  { lang: "linux", logo: "/MyPortfolio/images/linux.svg" },
-  { lang: "microsoft", logo: "/MyPortfolio/images/microsoft.svg" },
-  { lang: "mac", logo: "/MyPortfolio/images/mac.svg" }
-]);
-const frameworks = ref([
-  { name: 'React', score: 90, type: 'FE', lang: 'javascript' },
-  { name: 'Vue', score: 95, type: 'FE', lang: 'javascript' },
-  { name: 'Express', score: 90, type: 'BE', lang: 'javascript' },
-  { name: 'MongoDB', score: 90, type: 'DB', lang: 'NoSQL' },
-  { name: 'React Native', score: 70, type: 'Mobile', lang: 'javascript' },
-  { name: 'Android Studio', score: 100, type: 'Mobile' },
-  { name: 'Bootstrap', score: 90, type: 'FE', lang: 'css' },
-  { name: 'Tailwind', score: 90, type: 'FE', lang: 'css' },
-  { name: 'jQuery', score: 90, type: 'FE', lang: 'javascript' },
-  { name: 'Django', score: 90, type: 'BE', lang: 'python' },
-  { name: 'FastAPI', score: 90, type: 'BE', lang: 'python' },
-  { name: 'PyGame', score: 80, type: 'GD', lang: 'python' },
-  { name: 'Blazor', score: 90, type: 'FE', lang: '.NET' },
-  { name: 'Electron', score: 60, type: 'FE', lang: 'javascript' },
-  { name: 'GitHub', score: 100, type: 'INF', lang: 'git' },
-]);
+
+const LOGO_MAP = {
+  html: "/MyPortfolio/images/logos/html-5.svg",
+  css: "/MyPortfolio/images/logos/css-3.svg",
+  python: "/MyPortfolio/images/logos/python.svg",
+  javascript: "/MyPortfolio/images/logos/javascript.svg",
+  dotnet: "/MyPortfolio/images/logos/dotnet.svg",
+  java: "/MyPortfolio/images/logos/java.svg",
+  react: "/MyPortfolio/images/logos/react.svg",
+  vue: "/MyPortfolio/images/logos/vue.svg",
+  django: "/MyPortfolio/images/logos/django.svg",
+  postgresql: "/MyPortfolio/images/logos/postgresql.svg",
+  sqlite: "/MyPortfolio/images/logos/sqlite.svg",
+  unity: "/MyPortfolio/images/logos/unity.svg",
+  "unreal engine": "/MyPortfolio/images/logos/unreal-engine.svg",
+  docker: "/MyPortfolio/images/logos/docker.svg",
+  sql: "/MyPortfolio/images/logos/sql.svg",
+  nosql: "/MyPortfolio/images/logos/nosql.svg",
+  git: "/MyPortfolio/images/logos/github-mark.png",
+  raspberrypi: "/MyPortfolio/images/logos/raspberry-pi.svg",
+  aws: "/MyPortfolio/images/logos/aws.svg",
+  azure: "/MyPortfolio/images/logos/azure.svg",
+  linux: "/MyPortfolio/images/logos/linux.svg",
+  microsoft: "/MyPortfolio/images/logos/microsoft.svg",
+  mac: "/MyPortfolio/images/logos/mac.svg"
+};
+
+const incLogos = ref(
+  (props.project.language || [])
+    .map(l => l.toLowerCase())
+    .filter(l => LOGO_MAP[l])
+    .map(l => ({ name: l, logo: LOGO_MAP[l] }))
+);
 
 const mouseOver = () => {
   hovering.value = !hovering.value;
@@ -78,25 +68,9 @@ const mouseOver = () => {
 
 const hoverStyle = () => {
   if (hovering.value) {
-    return {
-      "box-shadow": "10px 10px #2c3c4c"
-    }
+    return { boxShadow: "10px 10px #4c1d95" }
   }
 };
-
-const loadLogos = () => {
-  for (let logo of logos.value) {
-    for (let lang of props.project.language) {
-      if (logo.lang == lang.toLowerCase()) {
-        incLogos.value.push(logo)
-      }
-    }
-  }
-};
-
-onMounted(() => {
-  loadLogos();
-});
 </script>
 
 <style lang="scss" scoped>
@@ -146,11 +120,11 @@ onMounted(() => {
 }
 
 .project-cassette:hover {
-  box-shadow: 0 0 20px 0 rgba(0, 0, 255, 0.5);
+  box-shadow: 0 0 20px 0 rgba(139, 92, 246, 0.5);
 }
 
 .project-link-btn:hover {
-  background: #2a3a4a;
+  background: #3b0764;
   color: var(--color-text);
   border: 1px solid var(--color-border);
   border-radius: 0;

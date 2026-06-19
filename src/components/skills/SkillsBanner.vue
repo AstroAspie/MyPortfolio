@@ -1,13 +1,17 @@
 
 <script setup>
-import { ref, reactive, computed, onMounted, onUnmounted } from 'vue'
+import { ref, reactive, computed, onMounted, onUnmounted, nextTick } from 'vue'
 import SkillCassette from './SkillCassette.vue'
+import logos from '@/data/logos.json'
 
 const containerRef = ref(null)
+const gridRef = ref(null)
+const gridItemRefs = {}
 const containerWidth = ref(800)
 const containerHeight = ref(600)
 const sortSelect = ref(false)
 const activeTags = ref(null)
+const interactive = ref(false)
 
 const BUBBLE_RADIUS = 24   // collision radius for each bubble (px)
 const SPEED = 1.2          // base speed multiplier for random initial velocity
@@ -17,50 +21,54 @@ const CURSOR_FORCE = 0.4   // strength of cursor repulsion impulse
 const mouseX = ref(null)
 const mouseY = ref(null)
 
-// const categories = reactive([
-//   { name: 'Web-Dev', tags: ['BE', 'FE', 'DB'] },
-//   // { name: 'Game-Dev', tags: ['GD'] },
-//   { name: 'Systems & Arcitecture', tags: ['INF', 'IOT'] },
-//   { name: 'Cloud', tags: ['C'] }
-// ])
+const categories = reactive([
+  { name: 'Web-Dev', tags: ['BE', 'FE', 'DB'] },
+  { name: 'Systems & Architecture', tags: ['INF', 'IOT'] },
+  { name: 'Cloud', tags: ['C'] }
+])
 
 const skills_list = reactive([
-  { name: 'HTML', type: 'FE' },
-  { name: 'CSS', type: 'FE' },
-  { name: 'JavaScript', type: 'FS' },
-  { name: 'Python', type: 'BE' },
-  { name: 'Java', type: 'BE' },
-  { name: 'C/C++', type: 'BE' },
-  { name: 'SQL', type: 'DB' },
-  { name: 'NoSQL', type: 'DB' },
-  { name: 'Docker', type: 'INF' },
   { name: 'Dotnet', type: 'BE' },
-  { name: 'Git', type: 'INF' },
+  { name: 'Python', type: 'BE' },
+  { name: 'Vue', type: 'FE', lang: 'javascript' },
+  { name: 'React', type: 'FE', lang: 'javascript' },
+  { name: 'JavaScript', type: 'FS' },
+  { name: 'GitHub', type: 'INF' },
+  { name: 'Docker', type: 'INF' },
+  { name: 'Java', type: 'BE' },
+  // { name: 'C/C++', type: 'BE' },
   { name: 'RaspberryPi', type: 'IoT' },
   { name: 'AWS', type: 'C' },
   { name: 'Azure', type: 'C' },
   { name: 'Linux', type: 'INF' },
-  { name: 'React', type: 'FE', lang: 'javascript' },
-  { name: 'Vue', type: 'FE', lang: 'javascript' },
-  { name: 'Django', type: 'BE', lang: 'python' },
+  // { name: 'Django', type: 'BE', lang: 'python' },
   { name: 'FastAPI', type: 'BE', lang: 'python' },
   { name: 'Blazor', type: 'FE', lang: '.NET' },
-  { name: 'MongoDB', type: 'DB', lang: 'NoSQL' }
+  { name: 'MongoDB', type: 'DB', lang: 'NoSQL' },
+  { name: 'PostgreSQL', type: 'DB', lang: 'SQL' },
 ])
 
 const bubbles = reactive([])
 
-// Spawn each bubble at a random position (clamped inside walls) with a
-// random velocity (±SPEED on each axis) and a random depth layer.
-const initBubbles = () => {
+const logoMap = computed(() => {
+  const map = {}
+  for (const entry of logos) {
+    const [key, value] = Object.entries(entry)[0]
+    map[key.toLowerCase()] = value
+  }
+  return map
+})
+
+const initBubbles = (positions = {}) => {
   bubbles.length = 0
   const w = containerWidth.value - BUBBLE_RADIUS * 2
   const h = containerHeight.value - BUBBLE_RADIUS * 2
   for (const skill of skills_list) {
+    const pos = positions[skill.name]
     bubbles.push({
       skill,
-      x: Math.random() * w + BUBBLE_RADIUS,
-      y: Math.random() * h + BUBBLE_RADIUS,
+      x: pos ? pos.x : Math.random() * w + BUBBLE_RADIUS,
+      y: pos ? pos.y : Math.random() * h + BUBBLE_RADIUS,
       vx: (Math.random() - 0.5) * SPEED * 2,
       vy: (Math.random() - 0.5) * SPEED * 2,
       zIndex: Math.floor(Math.random() * 10)
@@ -73,6 +81,46 @@ const visibleBubbles = computed(() => {
   const tags = activeTags.value.map((t) => t.toLowerCase())
   return bubbles.filter((b) => tags.includes(b.skill.type.toLowerCase()))
 })
+
+const filteredSkills = computed(() => {
+  if (!activeTags.value) return skills_list
+  const tags = activeTags.value.map((t) => t.toLowerCase())
+  return skills_list.filter((s) => tags.includes(s.type.toLowerCase()))
+})
+
+const toggleInteractive = async () => {
+  if (interactive.value) {
+    interactive.value = false
+    if (animFrameId) cancelAnimationFrame(animFrameId)
+    containerRef.value?.removeEventListener('mousemove', onMouseMove)
+    containerRef.value?.removeEventListener('mouseleave', onMouseLeave)
+  } else {
+    const positions = {}
+    if (gridRef.value) {
+      const bannerRect = gridRef.value.parentElement.getBoundingClientRect()
+      for (const skill of filteredSkills.value) {
+        const el = gridItemRefs[skill.name]
+        if (el) {
+          const rect = el.getBoundingClientRect()
+          positions[skill.name] = {
+            x: rect.left - bannerRect.left + rect.width / 2,
+            y: rect.top - bannerRect.top + rect.height / 2
+          }
+        }
+      }
+    }
+    interactive.value = true
+    await nextTick()
+    if (containerRef.value) {
+      containerWidth.value = containerRef.value.offsetWidth
+      containerHeight.value = containerRef.value.offsetHeight
+      containerRef.value.addEventListener('mousemove', onMouseMove)
+      containerRef.value.addEventListener('mouseleave', onMouseLeave)
+    }
+    initBubbles(positions)
+    animFrameId = requestAnimationFrame(animate)
+  }
+}
 
 let animFrameId = null
 
@@ -177,27 +225,53 @@ const onMouseLeave = () => {
   mouseY.value = null
 }
 
+let observer = null
+
 onMounted(() => {
   if (containerRef.value) {
     containerWidth.value = containerRef.value.offsetWidth
     containerHeight.value = containerRef.value.offsetHeight
-    containerRef.value.addEventListener('mousemove', onMouseMove)
-    containerRef.value.addEventListener('mouseleave', onMouseLeave)
+    if (interactive.value) {
+      containerRef.value.addEventListener('mousemove', onMouseMove)
+      containerRef.value.addEventListener('mouseleave', onMouseLeave)
+    }
   }
-  initBubbles()
-  animFrameId = requestAnimationFrame(animate)
+  if (interactive.value) {
+    initBubbles()
+    animFrameId = requestAnimationFrame(animate)
+  }
+
+  observer = new IntersectionObserver(([entry]) => {
+    if (entry.isIntersecting) {
+      if (interactive.value && !animFrameId) {
+        animFrameId = requestAnimationFrame(animate)
+      }
+    } else {
+      if (animFrameId) {
+        cancelAnimationFrame(animFrameId)
+        animFrameId = null
+      }
+    }
+  }, { threshold: 0 })
+  observer.observe(containerRef.value || gridRef.value?.parentElement)
 })
 
 onUnmounted(() => {
   if (animFrameId) cancelAnimationFrame(animFrameId)
   containerRef.value?.removeEventListener('mousemove', onMouseMove)
   containerRef.value?.removeEventListener('mouseleave', onMouseLeave)
+  if (observer) observer.disconnect()
 })
 </script>
 
 <template>
   <div class="container">
-    <h1 class="banner-title">Skills Board</h1>
+    <div class="header-row">
+      <h1 class="banner-title">Skills Board</h1>
+      <button class="toggle-btn" @click="toggleInteractive">
+        {{ interactive ? 'Interactive' : 'Grid' }}
+      </button>
+    </div>
     <div class="skills-nav">
       <div class="nav-bar">
         <ul class="skill-items">
@@ -212,7 +286,7 @@ onUnmounted(() => {
         </ul>
       </div>
     </div>
-    <div class="banner-container">
+    <div v-if="interactive" class="banner-container">
       <div class="skills-container" ref="containerRef">
         <div
           v-for="bubble in visibleBubbles"
@@ -220,7 +294,22 @@ onUnmounted(() => {
           class="bubble-wrapper"
           :style="{ left: bubble.x + 'px', top: bubble.y + 'px', zIndex: bubble.zIndex }"
         >
-          <SkillCassette :skill="bubble.skill" />
+          <SkillCassette :skill="bubble.skill" :skillLogo="logoMap[bubble.skill.name.toLowerCase()]"/>
+        </div>
+      </div>
+    </div>
+    <div v-else class="banner-container">
+      <div class="skills-grid" ref="gridRef">
+        <div
+          v-for="skill in filteredSkills"
+          :key="skill.name"
+          :ref="(el) => { if (el) gridItemRefs[skill.name] = el }"
+          class="grid-item"
+        >
+          <SkillCassette
+            :skill="skill"
+            :skillLogo="logoMap[skill.name.toLowerCase()]"
+          />
         </div>
       </div>
     </div>
@@ -235,11 +324,35 @@ onUnmounted(() => {
   flex-direction: column;
 }
 
+.header-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin: 10px auto;
+}
+
 .banner-title {
   font-size: 2.2rem;
   font-weight: bold;
   text-wrap: nowrap;
-  margin: 10px auto;
+  margin: 0;
+}
+
+.toggle-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  padding: 6px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.toggle-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.5);
 }
 
 .skills-nav {
@@ -271,7 +384,7 @@ onUnmounted(() => {
 }
 
 .nav-bar li:hover {
-  color: #02465b;
+  color: #6d28d9;
 }
 
 .banner-container {
@@ -306,10 +419,26 @@ onUnmounted(() => {
   font-size: 14px;
 }
 
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+  align-content: start;
+  justify-items: center;
+}
+
 @media (max-width: 600px) {
   .banner-title {
     font-size: 2.2rem;
     margin: 10px auto;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
   }
 }
 

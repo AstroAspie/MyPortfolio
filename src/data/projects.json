@@ -25,27 +25,19 @@
     "language": ["Python"],
     "type": ["Game"]
   },
-  {
-    "title": "William's Water Sport Rentals",
-    "description": "Client Website for William's Water Sport Rentals. Built using Vue.js and Vuetify.",
-    "image": "/Williams-Water-Sport-Rentals-Screenshot.png",
-    "language": ["Dotnet", "Vue", "Postgresql", "Docker"],
-    "complete": true,
-    "type": ["Web"]
-  },
-  {
-    "title": "Todo App",
+{
+    "title": "Household Task Share App",
     "description": "Simple Todo App using ASP.NET, Vue3 and Postgresql",
     "image": "",
-    "type": ["Web"],
-    "language": ["Dotnet", "Vue", "Postgresql", "Docker"]
+    "type": ["Web", "Mobile"],
+    "language": ["Dotnet", "React", "Postgresql", "Docker"]
   },
   {
     "title": "Smart Shopper App",
     "description": "Shopping Assistant that scrapes and manages local shopping catalog data to plot shopping trips for the cheapest bargains",
     "image": "",
-    "type": ["Web", "Mobile", "Chrome Extension"],
-    "language": [".NET", "Vue", "Nuxt", "Postgresql", "Python", "Docker"]
+    "type": ["Web", "Mobile"],
+    "language": [".NET", "React", "Nuxt", "Postgresql", "Python", "Docker"]
   },
   {
     "title": "Text to Speech API",

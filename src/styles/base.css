@@ -18,6 +18,16 @@
   --vt-c-text-light-2: rgba(60, 60, 60, 0.66);
   --vt-c-text-dark-1: var(--vt-c-white);
   --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
+
+  --c-blue: #3b82f6;
+  --c-blue-light: #93c5fd;
+  --c-blue-dark: #1d4ed8;
+  --c-indigo: #6366f1;
+  --c-purple: #8b5cf6;
+  --c-purple-light: #a78bfa;
+  --c-purple-dark: #6d28d9;
+  --c-pink: #ec4899;
+  --c-pink-light: #f472b6;
 }
 
 /* semantic color variables for this project */

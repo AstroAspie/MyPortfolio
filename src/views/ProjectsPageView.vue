@@ -1,40 +1,66 @@
 <script lang="js" setup>
-  import { computed } from 'vue';
+import { ref, computed } from 'vue'
+import projectData from '@/data/projects.json'
+import ProjectCassette from '@/components/projects/ProjectCassette.vue'
 
-  import projectData from "@/data/projects.json";
-  import SimpleCarousel from "@/components/global/SimpleCarousel.vue";
-  import ProjectsLayout from "@/layouts/ProjectsLayout.vue";
-  
-  const gameProjects = computed(() => {
-    return projectData["Game"]  // (Unreal Engine, Unity, Web, Python etc.)
-  });
-  const webMobProjects = computed(() => {
-    const web = projectData["Web"]
-    const mobile = projectData["Mobile"]
+const allTypes = computed(() => {
+  const types = new Set()
+  projectData.forEach(p => p.type.forEach(t => types.add(t)))
+  return Array.from(types)
+})
 
-    return { web, mobile }
-  })  // Web & Mobile Projects
-  const securityProjects = computed(() => {
-    return projectData["Security"]
-  }); // Security (Offensive, Defensive, Networking etc.)
- 
+const activeFilter = ref('All')
+
+const filteredProjects = computed(() => {
+  if (activeFilter.value === 'All') return projectData
+  return projectData.filter(p => p.type.includes(activeFilter.value))
+})
 </script>
 
 <template>
-  <ProjectsLayout>
-    <template #first>
-      <h1>Game Projects</h1>
-      <SimpleCarousel :projects="gameProjects" />
-    </template>
-    <template #second>
-      <h1>Web & Mobile Projects</h1>
-      <SimpleCarousel :projects="webMobProjects" />
-    </template>
-    <template #third>
-      <h1>Security Projects</h1>
-      <SimpleCarousel :projects="securityProjects" />
-    </template>
-  </ProjectsLayout>
+  <div class="projects-page">
+    <div class="filter-bar">
+      <v-btn
+        v-for="type in ['All', ...allTypes]"
+        :key="type"
+        :variant="activeFilter === type ? 'flat' : 'outlined'"
+        @click="activeFilter = type"
+      >
+        {{ type }}
+      </v-btn>
+    </div>
+    <div class="projects-grid">
+      <ProjectCassette
+        v-for="(project, index) in filteredProjects"
+        :key="project.title + index"
+        :project="project"
+      />
+    </div>
+  </div>
 </template>
 
-<style scoped></style>
+<style lang="scss" scoped>
+.projects-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px;
+}
+
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 32px;
+}
+
+.projects-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+  max-width: 1200px;
+  width: 100%;
+}
+</style>

@@ -1,3 +1,25 @@
+<script setup>
+import { ref, onMounted } from 'vue';
+import { useRouter } from 'vue-router';
+import ProjectCarousel from './ProjectCarousel.vue';
+
+const router = useRouter();
+const projectsBanner = ref(null);
+
+const alignBanner = () => {
+  if (router.currentRoute.value.name === "Projects") {
+    if (projectsBanner.value) {
+      projectsBanner.value.style.marginTop = "12%";
+    }
+  }
+};
+
+onMounted(() => {
+  alignBanner();
+});
+</script>
+
+
 <template>
   <div class="banner-container" ref="projectsBanner">
     <h1 class="banner-title">Projects</h1>
@@ -10,38 +32,13 @@
 </template>
 
 
-<script setup>
-import { ref, onMounted } from 'vue';
-import { useRouter } from 'vue-router';
-import ProjectCarousel from './ProjectCarousel.vue';
-
-const router = useRouter();
-const hoveringLink = ref(false);
-const selected_project = ref(null);
-const projectsBanner = ref(null);
-
-const alignBanner = () => {
-  if (router.currentRoute.value.name === "Projects") {
-    if (projectsBanner.value) {
-      projectsBanner.value.style.marginTop = "12%";
-    }
-  }
-};
-
-const goToProjects = () => {
-  router.push("/projects");
-};
-
-onMounted(() => {
-  alignBanner();
-});
-</script>
-
 <style scoped>
 .banner-container {
   position: relative;
   top: 0;
   display: flex;
+  justify-content: space-between;
+  flex-direction: column;
   overflow-y: hidden;
   width: 100%;
   height: 100%;
@@ -53,41 +50,6 @@ onMounted(() => {
   position: relative;
   margin: 0 auto;
   font-size: 3rem;
-}
-
-#projects-background {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  opacity: 0.2;
-  z-index: -1;
-}
-
-.projects-container {
-  position: relative;
-  z-index: 10;
-}
-
-.page-link {
-  position: relative;
-  margin: 2rem auto;
-  font-size: 36px;
-  cursor: pointer;
-}
-
-.cassette {
-  display: flex;
-  max-width: 300px;
-  max-height: 400px;
-}
-
-.banner-container {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
-  overflow-y: hidden;
 }
 
 #projects-background {
@@ -108,6 +70,7 @@ onMounted(() => {
   margin-top: 2%;
   height: 90%;
   gap: 20px;
+  z-index: 10;
 }
 
 .page-link {
@@ -123,7 +86,6 @@ onMounted(() => {
   max-height: 400px;
 }
 
-/* Tablet devices */
 @media (max-width: 768px) {
   .banner-container {
     position: relative;
@@ -151,7 +113,6 @@ onMounted(() => {
   }
 }
 
-/* Mobile devices */
 @media (max-width: 600px) {
   .banner-container {
     position: relative;

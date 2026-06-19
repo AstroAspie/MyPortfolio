@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
 import ProjectCassette from '../projects/ProjectCassette.vue';
 
 const props = defineProps({
@@ -13,41 +13,42 @@ const props = defineProps({
   }
 });
 
-
 const currentIndex = ref(0);
+const totalSlides = computed(() => Math.max(props.projects.length, 1));
 
 const prevSlide = () => {
-  if (currentIndex.value > 0) {
-    currentIndex.value--;
-  }
+  const step = props.projectsToShow;
+  currentIndex.value = Math.max(currentIndex.value - step, 0);
 };
 
 const nextSlide = () => {
-  currentIndex.value += props.projectsToShow;
-  if (currentIndex.value > props.projects.length) {
+  const step = props.projectsToShow;
+  const next = currentIndex.value + step;
+  if (next >= props.projects.length) {
     currentIndex.value = 0;
+  } else {
+    currentIndex.value = next;
   }
-  // if (currentIndex.value < props.projects.length - props.projectsToShow) {
-  //   currentIndex.value++;
-  // } else {
-  //   currentIndex.value = 0;
-  // }
 };
+
+const translateX = computed(() => {
+  return -(currentIndex.value / totalSlides.value) * 100;
+});
 </script>
 
 <template>
   <div class="slider-container">
-    <button @click="prevSlide" class="nav-btn prev-btn">‹</button>
+    <button @click="prevSlide" class="nav-btn prev-btn">&#8249;</button>
     <div class="slider">
-      <div class="slider-track" :style="{ transform: `translateX(-${currentIndex * 11}%)` }">
-        <div class="slide" v-for="(project, index) in projects" :key="index">
+      <div class="slider-track" :style="{ transform: `translateX(${translateX}%)`, '--projectsToShow': projectsToShow }">
+        <div class="slide" v-for="(project, index) in projects" :key="project.title + index">
           <div class="card">
             <ProjectCassette :project="project" />
           </div>
         </div>
       </div>
     </div>
-    <button @click="nextSlide" class="nav-btn next-btn">›</button>
+    <button @click="nextSlide" class="nav-btn next-btn">&#8250;</button>
   </div>
 </template>
 
@@ -58,7 +59,6 @@ const nextSlide = () => {
   margin: auto;
   overflow: hidden;
   background: none;
-  /* No background color */
 }
 
 .slider {
@@ -66,7 +66,6 @@ const nextSlide = () => {
   width: 100%;
   overflow: hidden;
   background: none;
-  /* No background color */
   margin: 0 30px;
 }
 
@@ -77,14 +76,12 @@ const nextSlide = () => {
 
 .slide {
   flex: 0 0 calc(100% / var(--projectsToShow));
-  /* Flex basis for number of projects to show */
   box-sizing: border-box;
 }
 
 .card {
   padding: 20px;
   background: none;
-  /* border: 1px solid #ddd; */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
@@ -99,12 +96,12 @@ const nextSlide = () => {
   padding-bottom: 20px;
   font-size: 4rem;
   cursor: pointer;
-  color: teal;
+  color: #8b5cf6;
   z-index: 10;
 }
 
 .nav-btn:hover {
-  border: solid 1px teal;
+  border: solid 1px #8b5cf6;
 }
 
 .prev-btn {

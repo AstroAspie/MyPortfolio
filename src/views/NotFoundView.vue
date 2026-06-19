@@ -12,9 +12,3 @@
   text-align: center;
 }
 </style>
-
-<style scoped>
-.not-found {
-  text-align: center;
-}
-</style>

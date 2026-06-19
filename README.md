@@ -1,36 +1,15 @@
 # MyPortfolio
 
-This template should help get you started developing with Vue 3 in Vite.
+Personal portfolio site for Alex Smith — Full-Stack Developer & Ethical Hacker.
 
-## Recommended IDE Setup
+Built with **Vue 3**, **Vite 7**, **Vuetify 3**, and **Sass**.
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## Tech Stack
 
-## Customize configuration
+- **Framework:** Vue 3 (Composition API + `<script setup>`)
+- **Build Tool:** Vite 7
+- **UI Library:** Vuetify 3
+- **Router:** Vue Router 4 (lazy-loaded routes)
+- **Styling:** SCSS, CSS Variables (light/dark mode)
+- **Linting:** ESLint + Prettier
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
-# MyPortfolio

@@ -1,17 +1,7 @@
 <script lang="js" setup>
-import { computed } from 'vue';
 import HomeLayout from "@/layouts/HomeLayout.vue";
 import AstroBanner from "@/components/AstroBanner.vue";
 import SkillsBanner from "@/components/skills/SkillsBanner.vue";
-
-computed(() => {
-  return {
-    ScreenDimensions: {
-      width: window.innerWidth,
-      height: window.innerHeight,
-    },
-  };
-})
 </script>
 
 
