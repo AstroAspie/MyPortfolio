@@ -18,7 +18,9 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, computed, onMounted } from 'vue';
+import logos from '@/data/logos.json'
+
 
 const props = defineProps({
   project: {
@@ -29,37 +31,24 @@ const props = defineProps({
 
 const hovering = ref(false);
 
-const LOGO_MAP = {
-  html: "/MyPortfolio/images/logos/html-5.svg",
-  css: "/MyPortfolio/images/logos/css-3.svg",
-  python: "/MyPortfolio/images/logos/python.svg",
-  javascript: "/MyPortfolio/images/logos/javascript.svg",
-  dotnet: "/MyPortfolio/images/logos/dotnet.svg",
-  java: "/MyPortfolio/images/logos/java.svg",
-  react: "/MyPortfolio/images/logos/react.svg",
-  vue: "/MyPortfolio/images/logos/vue.svg",
-  django: "/MyPortfolio/images/logos/django.svg",
-  postgresql: "/MyPortfolio/images/logos/postgresql.svg",
-  sqlite: "/MyPortfolio/images/logos/sqlite.svg",
-  unity: "/MyPortfolio/images/logos/unity.svg",
-  "unreal engine": "/MyPortfolio/images/logos/unreal-engine.svg",
-  docker: "/MyPortfolio/images/logos/docker.svg",
-  sql: "/MyPortfolio/images/logos/sql.svg",
-  nosql: "/MyPortfolio/images/logos/nosql.svg",
-  git: "/MyPortfolio/images/logos/github-mark.png",
-  raspberrypi: "/MyPortfolio/images/logos/raspberry-pi.svg",
-  aws: "/MyPortfolio/images/logos/aws.svg",
-  azure: "/MyPortfolio/images/logos/azure.svg",
-  linux: "/MyPortfolio/images/logos/linux.svg",
-  microsoft: "/MyPortfolio/images/logos/microsoft.svg",
-  mac: "/MyPortfolio/images/logos/mac.svg"
-};
+const logoMap = computed(() => {
+  const map = {}
+  for (const entry of logos) {
+    const [key, value] = Object.entries(entry)[0]
+    map[key.toLowerCase()] = value
+  }
+  return map
+})
+
+onMounted(() => {
+  console.log(logoMap.value)
+})
 
 const incLogos = ref(
-  (props.project.language || [])
+  (props.project.techStack || [])
     .map(l => l.toLowerCase())
-    .filter(l => LOGO_MAP[l])
-    .map(l => ({ name: l, logo: LOGO_MAP[l] }))
+    .filter(l => logoMap.value[l])
+    .map(l => ({ name: l, logo: logoMap.value[l] }))
 );
 
 const mouseOver = () => {

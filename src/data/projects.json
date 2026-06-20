@@ -5,7 +5,7 @@
     "image": "/Crypto-Watcher-Screenshot.png",
     "link": "https://github.com/AstroAspie/crypto-watcher",
     "demo": "https://crypto-watcher-lou8f328b-astroaspies-projects.vercel.app",
-    "language": ["JavaScript", "Nuxt", "Vue"],
+    "techStack": ["JavaScript", "Nuxt", "Vue"],
     "type": ["Web"]
   },
   {
@@ -14,7 +14,7 @@
     "image": "/Space-Invaders-Clone-Screenshot.png",
     "link": "https://github.com/AstroAspie/space_invaders_clone",
     "demo": "https://astroaspie.github.io/space_invaders_clone/",
-    "language": ["HTML", "CSS", "JavaScript"],
+    "techStack": ["HTML", "CSS", "JavaScript"],
     "type": ["Game"]
   },
   {
@@ -22,7 +22,7 @@
     "description": "2048 mathematical tile game made using PyGame.",
     "image": "/2048_Pygame-screenshot.png",
     "link": "https://github.com/AstroAspie/2048_pygame",
-    "language": ["Python"],
+    "techStack": ["Python"],
     "type": ["Game"]
   },
 {
@@ -30,14 +30,14 @@
     "description": "Simple Todo App using ASP.NET, Vue3 and Postgresql",
     "image": "",
     "type": ["Web", "Mobile"],
-    "language": ["Dotnet", "React", "Postgresql", "Docker"]
+    "techStack": ["Dotnet", "React", "Postgresql", "Docker"]
   },
   {
     "title": "Smart Shopper App",
     "description": "Shopping Assistant that scrapes and manages local shopping catalog data to plot shopping trips for the cheapest bargains",
     "image": "",
     "type": ["Web", "Mobile"],
-    "language": [".NET", "React", "Nuxt", "Postgresql", "Python", "Docker"]
+    "techStack": [".NET", "React", "Nuxt", "Postgresql", "Python", "Docker"]
   },
   {
     "title": "Text to Speech API",
@@ -45,28 +45,21 @@
     "image": "",
     "demo": "/MyPortfolio/Text-To-Speech-Demo.mkv",
     "type": ["API", "Web"],
-    "language": ["Python", "FastAPI"]
+    "techStack": ["Python", "FastAPI"]
   },
   {
     "title": "Watch Party APP",
     "description": "A web application for downloading, sharing and watching movies with friends around the globe.",
     "image": "",
     "type": ["Web", "Streaming"],
-    "language": ["React", "Dotnet", "Postgresql", "Docker"]
-  },
-  {
-    "title": "Dev Blog",
-    "description": "Developer blog site built using Django and React",
-    "image": "",
-    "type": ["Web"],
-    "language": ["Python", "Django", "Javascript", "React", "Sqlite"]
+    "techStack": ["React", "Dotnet", "Postgresql", "Docker"]
   },
   {
     "title": "Wheatbelt-Way",
     "description": "Android App for the Wheatbelt Way tourist trail",
     "image": "",
     "type": ["Mobile"],
-    "language": ["Java", "Android"],
+    "techStack": ["Java", "Android"],
     "freelance": true
   },
   {
@@ -74,7 +67,7 @@
     "description": "Business Intelligence Dashboard for a local business",
     "image": "",
     "type": ["Web"],
-    "language": ["Dotnet", "Vue", "Postgresql", "Docker"],
+    "techStack": ["Dotnet", "Angular", "Postgresql", "Docker"],
     "freelance": true
   }
 ]

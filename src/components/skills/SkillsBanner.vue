@@ -30,20 +30,21 @@ const categories = reactive([
 const skills_list = reactive([
   { name: 'Dotnet', type: 'BE' },
   { name: 'Python', type: 'BE' },
-  { name: 'Vue', type: 'FE', lang: 'javascript' },
+  { name: 'Angular', type: 'FE', lang: 'javascript'},
   { name: 'React', type: 'FE', lang: 'javascript' },
+  { name: 'Vue', type: 'FE', lang: 'javascript' },
   { name: 'JavaScript', type: 'FS' },
   { name: 'GitHub', type: 'INF' },
   { name: 'Docker', type: 'INF' },
   { name: 'Java', type: 'BE' },
-  // { name: 'C/C++', type: 'BE' },
+  { name: 'C++', type: 'BE' },
   { name: 'RaspberryPi', type: 'IoT' },
   { name: 'AWS', type: 'C' },
   { name: 'Azure', type: 'C' },
   { name: 'Linux', type: 'INF' },
-  // { name: 'Django', type: 'BE', lang: 'python' },
+  { name: 'Django', type: 'BE', lang: 'python' },
   { name: 'FastAPI', type: 'BE', lang: 'python' },
-  { name: 'Blazor', type: 'FE', lang: '.NET' },
+  // { name: 'Blazor', type: 'FE', lang: '.NET' },
   { name: 'MongoDB', type: 'DB', lang: 'NoSQL' },
   { name: 'PostgreSQL', type: 'DB', lang: 'SQL' },
 ])
@@ -397,7 +398,8 @@ onUnmounted(() => {
 .skills-container {
   position: relative;
   width: 100%;
-  height: 100%;
+  max-height: 120px;
+  min-height: 800px;
   overflow: hidden;
 }
 
